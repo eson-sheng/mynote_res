@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf8'><title>js event 事件 sum</title><script src='../res/util.js'></script><link rel='stylesheet' type='text/css' href='../res/common.css'><style>.s0{color:#0000ff;}
+.s1{color:#0000ff;}
+.s2{color:#000000;}
+.s3{color:#0000ff;}
+.s4{color:#000000;}
+.s5{color:#c80000;}
+.s6{color:#000000;}
+.s7{color:#000000;}
+.s8{color:#0000ff;}
+.s9{color:#c80000;}
+.s10{color:#0000ff;}
+.s11{color:#000000;}
+.s12{color:#000000;}
+.s13{color:#000080;}
+.s14{color:#0000ff;}
+.s15{color:#008000;}
+.s16{color:#000000;}
+.s17{color:#660e7a;}
+.s18{color:#000000;}
+.s19{color:#000000;}
+.s20{color:#7a7a43;}
+.s21{color:#000000;}
+.s22{color:#000000;}
+.s23{color:#660e7a;}
+.s24{color:#000080;}
+.s25{color:#000000;}
+.s26{color:#7a7a43;}
+.s27{color:#808080;}
+.s28{color:#458383;}
+</style></head><body>
+<div id='outline'>
+<li><a href='#ol_0' style='font-weight:bold; font-size:22px'>js event 事件 sum</a></li>
+<li> <a href='#ol_1' >DOM事件简介</a></li>
+<li> <a href='#ol_2' >event target &amp; this</a></li>
+<li> <a href='#ol_3' >GlobalEventHandlers</a></li>
+<li>  <a href='#ol_4' >onclick</a></li>
+<li> <a href='#ol_5' >event 阻止默认行为(如弹出书签等) 阻止传播 stop Immediate Propagation</a></li>
+<li> <a href='#ol_6' >Creating and triggering events -- simulating</a></li>
+<li> <a href='#ol_7' >EventUtil</a></li>
+<li> <a href='#ol_8' >js 快捷键 shortcuts</a></li>
+<li> <a href='#ol_9' >MouseEvent interface</a></li>
+<li> <a href='#ol_10' >Touch events</a></li>
+</div>
+
+<t id='fa9ae8cd-80a7-4d59-814f-79c6c778d5a1'>
+<pre><d class='s0'><br/><font size=8>js event 事件 sum</font>
+</d><d class='s0'></d></pre>
+<pre><d class='s1'>js event 事件 sum</d></pre>
+<pre><d class='s1'></d></pre>
+<t id='0eafbf4c-98b6-499c-8141-de1d7c8b64d6'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s2'>event abs</d></pre>
+<pre><d class='s2'>global handler；target，this，prevent，stop，</d></pre>
+<pre><d class='s2'>event，interface（type），handler</d></pre>
+</t>
+<pre><d class='s0'></d><d class='s1'></d></pre>
+<pre><d class='s2'><a href='events.html#71037ed2-669d-4f79-9515-1359806c55ed'>js events </a></d></pre>
+<pre><d class='s2'><a href='api.html#36bb590c-ca99-464d-aedf-b85da2b6fac7'>Event api </a></d></pre>
+<pre><d class='s2'><a href='sqlite_locate_failed!'>jquery event 事件 </a></d></pre>
+<pre><d class='s2'><a href='sqlite_locate_failed!'>jquery event dispatch </a></d></pre>
+<pre><d class='s2'><a href='event.html#255beded-8c5f-4cd6-849e-a8eae079416b'>js 快捷键 </a></d></pre>
+<pre><d class='s2'><a href='js_h5.html#cbb52d6d-2150-4870-bf90-13c15e407edf'>html anchor </a></d></pre>
+<pre><d class='s2'><a href='js_h5.html#1eb9c956-9e9f-4b35-ad6b-c8834b7bd2a6'>load test; onload DOMContentLoaded </a></d></pre>
+<pre><d class='s0'></d></pre>
+<pre><d class='s3'>要区分event & event interface，一个interface可以对应多个events</d><d class='s0'></d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s2'>instanceof event === window.Event // true</d></pre>
+<pre><d class='s0'></d></pre>
+<pre><d class='s2'>Event reference -- index</d></pre>
+<pre><d class='s1'><a href='https://developer.mozilla.org/en-US/docs/Web/Events'>https://developer.mozilla.org/en-US/docs/Web/Events</a></d></pre>
+<pre><d class='s2'>Event developer guide</d></pre>
+<pre><d class='s2'><a href='https://developer.mozilla.org/en-US/docs/Web/Guide/Events'>https://developer.mozilla.org/en-US/docs/Web/Guide/Events</a></d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s2'>EventTarget interface <a href='api.html#e48bf0d7-585c-45ca-97f7-e55cd23dda96'>EventTarget </a></d></pre>
+<pre><d class='s2'><a href='https://developer.mozilla.org/en-US/docs/Web/API/EventTarget'>https://developer.mozilla.org/en-US/docs/Web/API/EventTarget</a></d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s4'>Standard events</d></pre>
+<pre><d class='s4'><a href='https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events'>https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events</a></d></pre>
+<pre><d class='s5'>Event Type 就是 interface</d><d class='s4'></d></pre>
+<pre><d class='s4'><img src='..\pic\b1b730ebb9fa1c293fc21e8afed202fa.jpg' /></d><d class='s6'></d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s2'>HTML 事件属性</d></pre>
+<pre><d class='s2'>〖mk:@MSITStore:X:\ebook\JavaScript\w3cschool.cc.chm::/ref-eventattributes.html〗</d></pre>
+<pre><d class='s2'><a href='http://www.runoob.com/tags/ref-eventattributes.html'>http://www.runoob.com/tags/ref-eventattributes.html</a></d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s2'>X:/fe/tests_w3c\DomEvents2.html</d></pre>
+<pre><d class='s7'>addEventListener 同一个function，只能use-capture true/false添加两次</d></pre>
+<pre><d class='s2'>会显示两次:</d></pre>
+<pre><d class='s2'>Tag: 'BUTTON'. EventPhase: 'target'</d></pre>
+<pre><d class='s2'></d></pre>
+<t id='f4a2a3f9-1a2e-415d-bc69-65314eeb040e'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s8'><h1 id='ol_1'>DOM事件简介</h1>
+<a href='api.html#36bb590c-ca99-464d-aedf-b85da2b6fac7'>Event api </a></d><d class='s2'></d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s2'><a href='http://blog.jobbole.com/52430/'>http://blog.jobbole.com/52430/</a></d></pre>
+<pre><d class='s9'>Event对象</d><d class='s2'></d></pre>
+<pre><d class='s2'>Event对象在event第一次触发的时候被创建出来，并且一直伴随着事件在DOM结构中流转的整个生命周期。event对象会被作为第一个参数传递给事件监听的回调函数。我们可以通过这个event对象来获取到大量当前事件相关的信息：</d></pre>
+<pre><d class='s2'>type (String) - 事件的名称</d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s9'>currentTarget</d><d class='s2'>?(node) - 当前回调函数被触发的DOM节点（后面会做比较详细的介绍）</d></pre>
+<pre><d class='s2'>bubbles (boolean) - 指明这个事件是否是一个冒泡事件（接下来会做解释）</d></pre>
+<pre><d class='s9'>preventDefault</d><d class='s2'>(function) - 这个方法将阻止浏览器中用户代理对当前事件的相关默认行为被触发。比如阻止&lt;a&gt;元素的click事件加载一个新的页面</d></pre>
+<pre><d class='s9'>stopPropagation</d><d class='s2'> (function) - 这个方法将阻止当前事件链上后面的元素的回调函数被触发，当前节点上针对此事件的其他回调函数依然会被触发。（我们稍后会详细介绍。）</d></pre>
+<pre><d class='s2'>stopImmediatePropagation (function) - 这个方法将阻止当前事件链上所有的回调函数被触发，也包括当前节点上针对此事件已绑定的其他回调函数。</d></pre>
+<pre><d class='s2'>cancelable (boolean) - 这个变量指明这个事件的默认行为是否可以通过调用event.preventDefault来阻止。也就是说，只有cancelable为true的时候，调用event.preventDefault才能生效。</d></pre>
+<pre><d class='s2'>defaultPrevented (boolean) - 这个状态变量表明当前事件对象的preventDefault方法是否被调用过</d></pre>
+<pre><d class='s2'>isTrusted (boolean) - 如果一个事件是由设备本身（如浏览器）触发的，而不是通过JavaScript模拟合成的，那个这个事件被称为可信任的(trusted)</d></pre>
+<pre><d class='s2'>eventPhase (number) - 这个数字变量表示当前这个事件所处的阶段(phase):none(0), capture(1),target(2),bubbling(3)。我们会在下一个部分介绍事件的各个阶段</d></pre>
+<pre><d class='s2'>timestamp (number) - 事件发生的时间</d></pre>
+<pre><d class='s2'>此外事件对象还可能拥有很多其他的属性，但是他们都是针对特定的event的。比如，鼠标事件包含clientX和clientY属性来表明鼠标在当前视窗的位置。</d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s2'>Event Phases:</d></pre>
+<pre><d class='s2'><img src='..\pic\3de137b8c8342d4c4d598ad93711f5c4.jpg' /></d><d class='s2'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s2'></d></pre>
+<pre><d class='s8'><h1 id='ol_2'>event target & this</h1>
+</d><d class='s10'>event.target, event.currentTarget, this in handler & this outside handler</d><d class='s2'></d></pre>
+<pre><d class='s2'>file:///X:/fe/tests_w3c/DomEvents_target_this.html</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Comparison of Event Targets</d></pre>
+<pre><d class='s4'><a href='https://developer.mozilla.org/en-US/docs/Web/API/Event/Comparison_of_Event_Targets'>https://developer.mozilla.org/en-US/docs/Web/API/Event/Comparison_of_Event_Targets</a></d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s8'><h1 id='ol_3'>GlobalEventHandlers</h1>
+<a href='https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers'>https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers</a></d><d class='s2'></d></pre>
+<pre><d class='s2'>The GlobalEventHandlers mixin describes the event handlers common to several interfaces like HTMLElement, Document, or Window. Each of these interfaces can, of course, add more event handlers in addition to the ones listed below.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>这样写是可以的，因为</d><d class='s11'>eventhandler仅在event触发时才会eval，在此之前仅以字符串形式存在</d><d class='s4'>？</d></pre>
+<pre><d class='s12'>&lt;</d><d class='s13'>body </d><d class='s14'>onclick=</d><d class='s15'>"</d><d class='s16'>test_after(</d><d class='s17'>event</d><d class='s16'>, </d><d class='s13'>this</d><d class='s16'>);</d><d class='s15'>"</d><d class='s16'>&gt;</d></pre>
+<pre><d class='s16'>&lt;</d><d class='s13'>script</d><d class='s16'>&gt;</d></pre>
+<pre><d class='s16'>    </d><d class='s13'>function </d><d class='s16'>test_after(event, that) {</d></pre>
+<pre><d class='s16'>        scroll_here(event, that);</d></pre>
+<pre><d class='s16'>    }</d></pre>
+<pre><d class='s16'>&lt;/</d><d class='s13'>script</d><d class='s16'>&gt;</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>这样也没有问题，仅在触发时报语法错误：</d></pre>
+<pre><d class='s12'>&lt;</d><d class='s13'>body </d><d class='s14'>onclick=</d><d class='s15'>"</d><d class='s16'>t);</d><d class='s15'>"</d><d class='s16'>&gt;</d></pre>
+<pre><d class='s16'>&lt;</d><d class='s13'>script</d><d class='s16'>&gt;</d></pre>
+<pre><d class='s16'>    </d><d class='s13'>function </d><d class='s16'>test_after(event, that) {</d></pre>
+<pre><d class='s16'>        scroll_here(event, that);</d></pre>
+<pre><d class='s16'>    }</d></pre>
+<pre><d class='s2'></d></pre>
+<t id='2b81ec7f-bbb5-48bb-a9d1-94b2ce78e845'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s1'><h2 id='ol_4'>onclick</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick'>https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick</a></d><d class='s2'></d></pre>
+<pre><d class='s4'>The single argument passed to the specified event handler function is a MouseEvent object. Within the handler, this will be the element upon which the event was triggered.??</d><d class='s2'></d></pre>
+<pre><d class='s2'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s2'></d></pre>
+<pre><d class='s1'><h1 id='ol_5'>event 阻止默认行为(如弹出书签等) 阻止传播 stop Immediate Propagation</h1>
+</d><d class='s18'>:</d><d class='s19'>event.</d><d class='s20'>preventDefault</d><d class='s21'>();</d><d class='s22'> + 二选一 </d><d class='s21'>event.</d><d class='s23'>cancelBubble </d><d class='s21'>= </d><d class='s24'>true</d><d class='s21'>;</d><d class='s22'> </d><d class='s21'>event.</d><d class='s20'>stopPropagation</d><d class='s21'>();</d><d class='s16'></d></pre>
+<pre><d class='s16'></d></pre>
+<pre><d class='s8'><a href='http://a.fe.my/tests_w3c/DomEvents2_2.html'>http://a.fe.my/tests_w3c/DomEvents2_2.html</a></d></pre>
+<pre><d class='s8'><a href='http://a.fe.my/tests_w3c/DomEvents2_3.html'>http://a.fe.my/tests_w3c/DomEvents2_3.html</a></d></pre>
+<pre><d class='s10'>preventDefault()  Cancels the event (if it is cancelable).</d></pre>
+<pre><d class='s10'>cancelBubble A historical alias to Event.stopPropagation().  -- chrome 不兼容</d></pre>
+<pre><d class='s10'>stopPropagation() Stops the propagation of events further along in the DOM.</d></pre>
+<pre><d class='s10'>stopImmediatePropagation() For this particular event, no other listener will be called. Neither those attached on the same element, nor those attached on elements which will be traversed later (in capture phase, for instance)</d></pre>
+<pre><d class='s10'></d></pre>
+<pre><d class='s10'>stopPropagation & stopImmediatePropagation 区别：如果target node是调用stop的node，则前者比后者多一个EventPhase: 'target'的callback；其他情况下，两者一致</d><d class='s8'></d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>改写默认的滚动事件,避免传递到parents</d></pre>
+<pre><d class='s8'><a href='http://a.fe.my/lf/lf.html'>http://a.fe.my/lf/lf.html</a></d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>JavaScript停止冒泡和阻止浏览器默认行为</d></pre>
+<pre><d class='s8'><a href='http://caibaojian.com/javascript-stoppropagation-preventdefault.html'>http://caibaojian.com/javascript-stoppropagation-preventdefault.html</a></d></pre>
+<pre><d class='s25'>阻止默认行为</d></pre>
+<pre><d class='s25'>w3c的方法是e.preventDefault()，IE则是使用e.returnValue = false;</d></pre>
+<pre><d class='s1'></d></pre>
+<pre><d class='s1'><h1 id='ol_6'>Creating and triggering events -- simulating</h1>
+<a href='https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events'>https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events</a></d></pre>
+<pre><d class='s1'><a href='https://developer.mozilla.org/samples/domref/dispatchEvent.html'>https://developer.mozilla.org/samples/domref/dispatchEvent.html</a></d></pre>
+<pre><d class='s1'><a href='http://a.fe.my/tests_w3c/DomEvents_simulating.html'>http://a.fe.my/tests_w3c/DomEvents_simulating.html</a></d></pre>
+<pre><d class='s23'>document</d><d class='s21'>.createEvent</d></pre>
+<pre><d class='s19'>dispatchEvent</d></pre>
+<pre><d class='s20'>preventDefault</d></pre>
+<pre><d class='s20'>addEventListener</d><d class='s26'></d></pre>
+<pre><d class='s1'></d></pre>
+<t id='fa578ac2-c53c-44d9-a518-8a578a9cd74d'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s14'><h1 id='ol_7'>EventUtil</h1>
+</d><d class='s27'>// WITHOUT Plugin</d></pre>
+<pre><d class='s13'>var </d><d class='s17'>EventUtil </d><d class='s16'>= {</d></pre>
+<pre><d class='s16'></d></pre>
+<pre><d class='s16'>    </d><d class='s26'>addHandler</d><d class='s16'>: </d><d class='s13'>function</d><d class='s16'>(element, type, handler){</d></pre>
+<pre><d class='s16'>        </d><d class='s13'>if </d><d class='s16'>(element.</d><d class='s26'>addEventListener</d><d class='s16'>){</d></pre>
+<pre><d class='s16'>            element.</d><d class='s26'>addEventListener</d><d class='s16'>(type, handler, </d><d class='s13'>false</d><d class='s16'>);</d></pre>
+<pre><d class='s16'>        } </d><d class='s13'>else if </d><d class='s16'>(element.</d><d class='s26'>attachEvent</d><d class='s16'>){</d></pre>
+<pre><d class='s16'>            element.</d><d class='s26'>attachEvent</d><d class='s16'>(</d><d class='s15'>"on" </d><d class='s16'>+ type, handler);</d></pre>
+<pre><d class='s16'>        } </d><d class='s13'>else </d><d class='s16'>{</d></pre>
+<pre><d class='s16'>            element[</d><d class='s15'>"on" </d><d class='s16'>+ type] = handler;</d></pre>
+<pre><d class='s16'>        }</d></pre>
+<pre><d class='s16'>    },</d></pre>
+<pre><d class='s16'>	</d></pre>
+<pre><d class='s16'>	</d><d class='s26'>removeHandler</d><d class='s16'>: </d><d class='s13'>function</d><d class='s16'>(element, type, handler){</d></pre>
+<pre><d class='s16'>        </d><d class='s13'>if </d><d class='s16'>(element.</d><d class='s26'>removeEventListener</d><d class='s16'>){</d></pre>
+<pre><d class='s16'>            element.</d><d class='s26'>removeEventListener</d><d class='s16'>(type, handler, </d><d class='s13'>false</d><d class='s16'>);</d></pre>
+<pre><d class='s16'>        } </d><d class='s13'>else if </d><d class='s16'>(element.</d><d class='s26'>detachEvent</d><d class='s16'>){</d></pre>
+<pre><d class='s16'>            element.</d><d class='s26'>detachEvent</d><d class='s16'>(</d><d class='s15'>"on" </d><d class='s16'>+ type, handler);</d></pre>
+<pre><d class='s16'>        } </d><d class='s13'>else </d><d class='s16'>{</d></pre>
+<pre><d class='s16'>            element[</d><d class='s15'>"on" </d><d class='s16'>+ type] = </d><d class='s13'>null</d><d class='s16'>;</d></pre>
+<pre><d class='s16'>        }</d></pre>
+<pre><d class='s16'>    },</d></pre>
+<pre><d class='s16'>	</d></pre>
+<pre><d class='s16'>	</d><d class='s26'>getEvent</d><d class='s16'>: </d><d class='s13'>function</d><d class='s16'>(event) {</d></pre>
+<pre><d class='s16'>        </d><d class='s13'>return </d><d class='s16'>event ? event : </d><d class='s17'>window</d><d class='s16'>.</d><d class='s17'>event</d><d class='s16'>;</d></pre>
+<pre><d class='s16'>    },</d></pre>
+<pre><d class='s16'>	</d></pre>
+<pre><d class='s16'>	</d><d class='s26'>getTarget</d><d class='s16'>: </d><d class='s13'>function</d><d class='s16'>(event) {</d></pre>
+<pre><d class='s16'>		</d><d class='s13'>return </d><d class='s16'>event.</d><d class='s17'>target </d><d class='s16'>|| event.</d><d class='s17'>srcElement</d><d class='s16'>;    </d></pre>
+<pre><d class='s16'>	},</d></pre>
+<pre><d class='s16'>	</d></pre>
+<pre><d class='s16'>	</d><d class='s26'>getWheelDelta</d><d class='s16'>: </d><d class='s13'>function</d><d class='s16'>(event) {</d></pre>
+<pre><d class='s16'>        </d><d class='s13'>if </d><d class='s16'>(event.</d><d class='s17'>wheelDelta</d><d class='s16'>){</d></pre>
+<pre><d class='s16'>            </d><d class='s13'>return </d><d class='s16'>event.</d><d class='s17'>wheelDelta</d><d class='s16'>;</d></pre>
+<pre><d class='s16'>        } </d><d class='s13'>else </d><d class='s16'>{</d></pre>
+<pre><d class='s16'>            </d><d class='s13'>return </d><d class='s16'>-event.</d><d class='s17'>detail </d><d class='s16'>* </d><d class='s14'>40</d><d class='s16'>;</d></pre>
+<pre><d class='s16'>        }</d></pre>
+<pre><d class='s16'>    },</d></pre>
+<pre><d class='s16'>	</d></pre>
+<pre><d class='s16'>	</d><d class='s26'>preventDefault</d><d class='s16'>: </d><d class='s13'>function</d><d class='s16'>(event) {</d></pre>
+<pre><d class='s16'>        </d><d class='s13'>if </d><d class='s16'>(event.</d><d class='s26'>preventDefault</d><d class='s16'>){</d></pre>
+<pre><d class='s16'>            event.</d><d class='s26'>preventDefault</d><d class='s16'>();</d></pre>
+<pre><d class='s16'>        } </d><d class='s13'>else </d><d class='s16'>{</d></pre>
+<pre><d class='s16'>            event.</d><d class='s17'>returnValue </d><d class='s16'>= </d><d class='s13'>false</d><d class='s16'>;</d></pre>
+<pre><d class='s16'>        }</d></pre>
+<pre><d class='s16'>    }</d></pre>
+<pre><d class='s16'>    </d></pre>
+<pre><d class='s16'>};</d></pre>
+</t>
+<pre><d class='s0'></d><d class='s2'></d></pre>
+<t id='255beded-8c5f-4cd6-849e-a8eae079416b'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s8'><h1 id='ol_8'>js 快捷键 shortcuts</h1>
+</d><d class='s2'>&lt;body onkeydown="save();"&gt;</d></pre>
+<pre><d class='s2'>function save() {</d></pre>
+<pre><d class='s2'>	if (window.event.keyCode == 13 && window.event.ctrlKey) {</d></pre>
+<pre><d class='s2'>		pi.log("---save---")</d></pre>
+<pre><d class='s2'>	}</d></pre>
+<pre><d class='s2'>}</d></pre>
+<pre><d class='s2'>将code转为string：</d></pre>
+<pre><d class='s13'>var </d><d class='s28'>key </d><d class='s16'>= String.fromCharCode(event.</d><d class='s17'>keyCode</d><d class='s16'>);</d></pre>
+<pre><d class='s13'>if </d><d class='s16'>(event.</d><d class='s17'>ctrlKey</d><d class='s16'>) {</d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<pre><d class='s1'><h1 id='ol_9'>MouseEvent interface</h1>
+<a href='https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent'>https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent</a></d></pre>
+<pre><d class='s4'>Inheritance:</d></pre>
+<pre><d class='s4'>UIEvent</d></pre>
+<pre><d class='s4'>Event</d></pre>
+<pre><d class='s1'></d></pre>
+<pre><d class='s1'><a href='http://a.fe.my/tests_w3c/DomEvents_mouseevent.htm'>http://a.fe.my/tests_w3c/DomEvents_mouseevent.htm</a></d></pre>
+<pre><d class='s4'>page原点会scroll，window不会：</d></pre>
+<pre><d class='s4'>y: Alias for clientY, clientY: client window原点, screenY: 屏幕原点, pageY: 相对于page原点, offsetY: target node</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>相关event:</d></pre>
+<pre><d class='s4'><a href='https://developer.mozilla.org/en-US/docs/Web/Events'>https://developer.mozilla.org/en-US/docs/Web/Events</a></d></pre>
+<pre><d class='s4'>Event Name	Fired When</d></pre>
+<pre><d class='s4'>mouseenter	A pointing device is moved onto the element that has the listener attached.</d></pre>
+<pre><d class='s4'>mouseover	A pointing device is moved onto the element that has the listener attached or onto one of its children.</d></pre>
+<pre><d class='s4'>mousemove	A pointing device is moved over an element. (Fired continously as the mouse moves.)</d></pre>
+<pre><d class='s4'>mousedown	A pointing device button is pressed on an element.</d></pre>
+<pre><d class='s4'>mouseup	A pointing device button is released over an element.</d></pre>
+<pre><d class='s4'>auxclick	A pointing device button (ANY non-primary button) has been pressed and released on an element.</d></pre>
+<pre><d class='s4'>click	A pointing device button (ANY button; soon to be primary button only) has been pressed and released on an element.</d></pre>
+<pre><d class='s4'>dblclick	A pointing device button is clicked twice on an element.</d></pre>
+<t id='a7c23c96-f97a-494c-933c-30b03f4a2304'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s4'>contextmenu	The right button of the mouse is clicked (before the context menu is displayed).</d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'>wheel	A wheel button of a pointing device is rotated in any direction.</d></pre>
+<pre><d class='s4'>mouseleave	A pointing device is moved off the element that has the listener attached.</d></pre>
+<pre><d class='s4'>mouseout	A pointing device is moved off the element that has the listener attached or off one of its children.</d></pre>
+<pre><d class='s4'>select	Some text is being selected.</d></pre>
+<pre><d class='s4'>pointerlockchange	The pointer was locked or released.</d></pre>
+<pre><d class='s4'>pointerlockerror	It was impossible to lock the pointer for technical reasons or because the permission was denied.</d></pre>
+<pre><d class='s2'></d></pre>
+<t id='7ae091b6-38e3-472a-a5d8-b6ac091e7609'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s1'><h1 id='ol_10'>Touch events</h1>
+<a href='https://developer.mozilla.org/en-US/docs/Web/API/Touch_events'>https://developer.mozilla.org/en-US/docs/Web/API/Touch_events</a></d><d class='s2'></d></pre>
+<pre><d class='s4'>X:\fe\demo\mobile\Example.htm</d></pre>
+<pre><d class='s4'>  from <a href='https://mdn.mozillademos.org/en-US/docs/Web/API/Touch_events'>https://mdn.mozillademos.org/en-US/docs/Web/API/Touch_events</a>$samples/Example?revision=1245069</d><d class='s2'></d></pre>
+</t>
+<pre><d class='s0'></body></html>

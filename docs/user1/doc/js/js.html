@@ -1,0 +1,1435 @@
+﻿<!DOCTYPE html>
+<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf8'><title>js sum</title><script src='../res/util.js'></script><link rel='stylesheet' type='text/css' href='../res/common.css'><style>.s0{color:#0000ff;}
+.s1{color:#000000;}
+.s2{color:#000000;}
+.s3{color:#000000;}
+.s4{color:#000000;}
+.s5{color:#0000ff;}
+.s6{color:#0000ff;}
+.s7{color:#c80000;}
+.s8{color:#000000;}
+.s9{color:#c80000;}
+.s10{color:#000000;}
+.s11{color:#000000;}
+.s12{color:#000000;}
+.s13{color:#000000;}
+.s14{color:#c80000;}
+.s15{color:#0000ff;}
+.s16{color:#000000;}
+.s17{color:#0000ff;}
+.s18{color:#0000ff;}
+.s19{color:#000000;}
+.s20{color:#000080;}
+.s21{color:#660e7a;}
+.s22{color:#008000;}
+.s23{color:#7a7a43;}
+.s24{color:#c80000;}
+.s25{color:#4d4e53;}
+.s26{color:#00b7dd;}
+.s27{color:#000000;}
+.s28{color:#666666;}
+.s29{color:#c80000;}
+.s30{color:#000000;}
+.s31{color:#808080;}
+.s32{color:#c80000;}
+.s33{color:#000000;}
+.s34{color:#458383;}
+.s35{color:#000000;}
+.s36{color:#c80000;}
+.s37{color:#000000;}
+.s38{color:#808080;}
+.s39{color:#100010;}
+.s40{color:#100010;}
+.s41{color:#c80000;}
+.s42{color:#c80000;}
+.s43{color:#000000;}
+.s44{color:#0000ff;}
+.s45{color:#000000;}
+</style></head><body>
+<div id='outline'>
+<li><a href='#ol_0' style='font-weight:bold; font-size:22px'>js sum</a></li>
+<li> <a href='#ol_1' >js basic</a></li>
+<li> <a href='#ol_2' >js code gallery</a></li>
+<li> <a href='#ol_3' >js code cmm common</a></li>
+<li> <a href='#ol_4' >prototype __proto__ constructor instanceof</a></li>
+<li>  <a href='#ol_5' >instanceof</a></li>
+<li> <a href='#ol_6' >js links</a></li>
+<li> <a href='#ol_7' >mdn</a></li>
+<li>  <a href='#ol_8' >digger 生成工具</a></li>
+<li> <a href='#ol_9' >mdn: JavaScript data types and data structures</a></li>
+<li> <a href='#ol_10' >encodeURI &amp; encodeURIComponent ; URL</a></li>
+<li> <a href='#ol_11' >js中eval详解</a></li>
+<li> <a href='#ol_12' >ArrayBuffer; typed array</a></li>
+<li> <a href='#ol_13' >Standard built-in objects</a></li>
+<li> <a href='#ol_14' >js Map</a></li>
+<li> <a href='#ol_15' >js Object</a></li>
+<li>  <a href='#ol_16' >js defineProperty accessor __defineGetter__ __defineSetter__</a></li>
+<li> <a href='#ol_17' >js Array</a></li>
+<li>  <a href='#ol_18' >array like; arguments; string</a></li>
+<li> <a href='#ol_19' >js function call apply(for array), hook, arguments; named function expression; function declaration hoisting</a></li>
+<li>  <a href='#ol_20' >Function</a></li>
+<li>  <a href='#ol_21' >Arrow functions</a></li>
+<li> <a href='#ol_22' >js string</a></li>
+<li>  <a href='#ol_23' >String.prototype.substr()</a></li>
+<li>  <a href='#ol_24' >String.prototype.slice()</a></li>
+<li>  <a href='#ol_25' >String.prototype.substring()</a></li>
+<li>  <a href='#ol_26' >String.prototype.repeat()</a></li>
+<li> <a href='#ol_27' >js RegExp</a></li>
+<li> <a href='#ol_28' >js Math</a></li>
+<li> <a href='#ol_29' >use strict</a></li>
+<li> <a href='#ol_30' >js Date Time</a></li>
+<li>  <a href='#ol_31' >js实现日期的相加减</a></li>
+<li> <a href='#ol_32' >js Number</a></li>
+<li> <a href='#ol_33' >for in; keys; getOwnPropertyNames</a></li>
+<li> <a href='#ol_34' >Expressions and operators</a></li>
+<li>  <a href='#ol_35' >Destructuring assignment</a></li>
+<li>  <a href='#ol_36' >typeof</a></li>
+<li> <a href='#ol_37' >Statements and declarations</a></li>
+<li>  <a href='#ol_38' >for...of</a></li>
+<li>  <a href='#ol_39' >class</a></li>
+<li>  <a href='#ol_40' >let</a></li>
+<li>  <a href='#ol_41' >import</a></li>
+<li>  <a href='#ol_42' >export</a></li>
+<li> <a href='#ol_43' >misc</a></li>
+<li>  <a href='#ol_44' >Template literals</a></li>
+<li> <a href='#ol_45' >js fqt</a></li>
+<li> <a href='#ol_46' >js unit test</a></li>
+</div>
+
+<t id='e704dc0b-6582-4fcb-94e2-3eeb62591b87'>
+<pre><d class='s0'><br/><font size=8>js sum</font>
+</d><d class='s0'></d></pre>
+<pre><d class='s1'>js sum</d></pre>
+<pre><d class='s2'></d></pre>
+<t id='04c16b23-137e-4ae1-b2e2-adf98faf68a6'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s0'>js s-index</d></pre>
+<pre><d class='s3'>func apply call bind</d><d class='s2'></d></pre>
+<pre><d class='s4'><a href='js.html#1a137e3f-de5f-42f5-8153-02525708834b'>ArrayBuffer </a></d></pre>
+<pre><d class='s3'>regex @</d></pre>
+<pre><d class='s3'>string</d><d class='s4'></d></pre>
+<pre><d class='s4'>array</d></pre>
+<pre><d class='s4'>date Time</d></pre>
+</t>
+<pre><d class='s0'></d></pre>
+<t id='f58def30-21da-46d2-8249-f92e382b41b9'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'>JavaScript </d><d class='s6'>sum; js sum</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'><a href='DOM.html#7e00f784-595f-47d2-bb11-ae663fe06856'>Dom sum </a></d></pre>
+<pre><d class='s4'><a href='sqlite_locate_failed!'>fe frontend sum </a></d></pre>
+<pre><d class='s4'><a href='js.html#2cd503db-7299-44cb-95d2-77edb6f0e551'>prototype __proto__ constructor </a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s7'>JavaScript root</d><d class='s4'></d></pre>
+<pre><d class='s4'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript'>https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></d></pre>
+<pre><d class='s4'> JavaScript reference</d></pre>
+<pre><d class='s4'> <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a></d></pre>
+<pre><d class='s7'></d></pre>
+<pre><d class='s8'>..,, Glossary <a href='https://developer.mozilla.org/en-US/docs/Glossary'>https://developer.mozilla.org/en-US/docs/Glossary</a></d><d class='s7'></d></pre>
+<pre><d class='s7'></d></pre>
+<pre><d class='s7'>x:\work\jskit\out\DomAPIs</d></pre>
+<pre><d class='s7'></d></pre>
+<pre><d class='s4'>JavaScript 和 HTML DOM 参考手册</d><d class='s7'></d></pre>
+<pre><d class='s7'>〖mk:@MSITStore:X:\ebook\JavaScript\w3cschool.cc.chm::/jsref-tutorial.html〗</d></pre>
+<pre><d class='s7'><a href='http://www.runoob.com/jsref/jsref-tutorial.html'>http://www.runoob.com/jsref/jsref-tutorial.html</a></d></pre>
+<pre><d class='s7'></d></pre>
+<pre><d class='s5'>HTML 参考手册- (HTML5 标准)</d><d class='s4'></d></pre>
+<pre><d class='s4'>〖mk:@MSITStore:X:\ebook\JavaScript\w3cschool.cc.chm::/ref-byfunc.html〗</d></pre>
+<pre><d class='s4'><a href='http://www.runoob.com/tags/html-reference.html'>http://www.runoob.com/tags/html-reference.html</a> 字母排序</d></pre>
+<pre><d class='s4'><a href='http://www.runoob.com/tags/ref-byfunc.html'>http://www.runoob.com/tags/ref-byfunc.html</a> 功能排序</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>前端开发面试题 - very good!</d></pre>
+<pre><d class='s4'><a href='http://www.runoob.com/w3cnote/front-end-developer-questions-and-answers.html'>http://www.runoob.com/w3cnote/front-end-developer-questions-and-answers.html</a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>兼容性问题</d></pre>
+<pre><d class='s4'><a href='http://caniuse.comd'>http://caniuse.comd</a></d></pre>
+<pre><d class='s4'><a href='js_h5.html#346a0200-741f-4b67-b02f-7991df4b0fa0'>兼容性 </a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'><a href='js.html#1a137e3f-de5f-42f5-8153-02525708834b'>ArrayBuffer </a></d></pre>
+<pre><d class='s7'></d></pre>
+<pre><d class='s9'>book: </d></pre>
+<pre><d class='s10'>〖X:\ebook\JavaScript〗</d><d class='s11'></d></pre>
+<pre><d class='s11'>Professional JavaScript</d><d class='s12'> for Web Developers.pdf</d><d class='s11'></d></pre>
+<pre><d class='s11'>Professional JavaScrip</d><d class='s10'>t</d><d class='s12'> for Web Developers</d><d class='s13'>_</d><d class='s10'>cn</d><d class='s12'>.pdf</d><d class='s14'></d></pre>
+<pre><d class='s4'>X:\ebook\javascript\Professional JavaScript for Web Developers_2ed</d></pre>
+<pre><d class='s4'>language specification:</d></pre>
+<pre><d class='s3'> E:\ebook\JavaScript\Ecma-262</d></pre>
+<pre><d class='s3'> www.ecma-international.org/ecma-262/5.1/</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'><a href='js_tips.html#fc083c2d-3be3-41d0-a94e-5f56d36e655d'>js tips </a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s7'>reading:</d><d class='s4'></d></pre>
+<pre><d class='s4'><a href='js_pro.html#f3cda9a8-1e21-45f1-8ce4-cd7ec037925a'>3ed ch06 </a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>JavaScript 标准参考教程--阮一峰</d></pre>
+<pre><d class='s4'><a href='http://javascript.ruanyifeng.com/'>http://javascript.ruanyifeng.com/</a></d></pre>
+<pre><d class='s4'>开发工具</d></pre>
+<pre><d class='s7'>console对象</d><d class='s4'></d></pre>
+<pre><d class='s4'>PhantomJS</d></pre>
+<pre><d class='s4'>Bower：客户端库管理工具</d></pre>
+<pre><d class='s4'>Grunt：任务自动管理工具</d></pre>
+<pre><d class='s4'>Gulp：任务自动管理工具</d></pre>
+<pre><d class='s4'>Browserify：浏览器加载Node.js模块</d></pre>
+<pre><d class='s4'>RequireJS和AMD规范</d></pre>
+<pre><d class='s7'>Source map</d><d class='s4'></d></pre>
+<pre><d class='s4'>Lint工具</d></pre>
+<pre><d class='s4'>JavaScript 测试</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>模拟touch事件</d></pre>
+<pre><d class='s4'>我们可以在PC端模拟JavaScript的touch事件。</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>首先，打开chrome浏览器的开发者工具，选择设置中的Overrides面板，勾选Enable touch events选项。</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Enable touch events的图片</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>然后，鼠标就会触发touchstart、touchmove和touchend事件。（此时，鼠标本身的事件依然有效。）</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>至于多点触摸，必须要有支持这个功能的设备才能模拟，具体可以参考Multi-touch web development。</d></pre>
+</t>
+<pre><d class='s0'></d><d class='s11'></d></pre>
+<pre><d class='s11'><img src='..\pic\0372ef2ff788d7196cd35ed6acba84ce.jpg' /></d><d class='s4'></d></pre>
+<pre><d class='s4'><a href='https://www.codeschool.com/paths/javascript'>https://www.codeschool.com/paths/javascript</a></d><d class='s11'></d></pre>
+<pre><d class='s11'></d></pre>
+<pre><d class='s11'>〖javasript reading〗</d><d class='s4'></d></pre>
+<pre><d class='s11'>〖Javascript PC Emulator〗</d></pre>
+<pre><d class='s5'></d></pre>
+<pre><d class='s5'><h1 id='ol_1'>js basic</h1>
+</d><d class='s3'>parseInt</d></pre>
+<pre><d class='s3'>parseFloat</d></pre>
+<pre><d class='s3'>没有bool: b = str === "true" ? true : false;</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s0'></d></pre>
+<t id='3a74d117-798b-4a47-af7d-00d7978dea70'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s15'><h1 id='ol_2'>js code gallery</h1>
+</d><d class='s11'>X:\work\nut\jskit</d></pre>
+<pre><d class='s11'>X:\work\jskit</d></pre>
+<pre><d class='s11'>pjk</d></pre>
+<pre><d class='s4'><a href='sqlite_locate_failed!'>fe frontend sum </a></d></pre>
+<pre><d class='s4'><a href='sqlite_locate_failed!'>pjkit </a></d></pre>
+<pre><d class='s4'></d></pre>
+<t id='23b4debf-16f2-4366-a858-0bdb60b12990'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s15'><h1 id='ol_3'>js code cmm common</h1>
+</d><d class='s7'>X:\fe\js_common\common.js</d><d class='s5'></d></pre>
+<pre><d class='s5'>X:\work\nut\jskit\tools\common.js</d></pre>
+<pre><d class='s5'>X:\piaojuke\code\pjkit\tools\common.js</d></pre>
+<pre><d class='s5'>X:\sh\html\tools\common.js</d><d class='s4'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s11'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<t id='2cd503db-7299-44cb-95d2-77edb6f0e551'>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<pre><d class='s5'><h1 id='ol_4'>prototype __proto__ constructor instanceof</h1>
+<a href='js.html#7a8d3ea6-08fa-4ae2-bdc6-c4d244312f08'>js Object </a></d><d class='s4'></d></pre>
+<pre><d class='s4'><a href='sqlite_locate_failed!'>wke & chrome差异: </a></d></pre>
+<pre><d class='s16'>长为对象,横着长:line for self, no line for outer and pair to ctor</d><d class='s4'></d></pre>
+<pre><d class='s17'>enote</d><d class='s18'> </d><d class='s17'>JavaScript instanceof </d><d class='s18'>运算符深入剖析: A instanceof B,则在A的原型链(__proto__)上能够找到one_proto === B.prototype</d></pre>
+<pre><d class='s19'>注意:</d></pre>
+<pre><d class='s19'>Function()的_p,p相同</d></pre>
+<pre><d class='s19'>正常情况下,每个对象(函数也是对象)都有一个直接_p/constructor,和n个间接_p/constructor</d></pre>
+<pre><d class='s19'>copy on write: 当修改某个property propA(self.propA=*)在_p上,则会在self上创建该属性;如果确实需要修改_p上的,使用_p.PropA=*</d></pre>
+<pre><d class='s19'>原型链类似于class,用于定义shared data/functions,私有的都放在self上.</d></pre>
+<pre><d class='s19'>prototype仅function才有,用于在construct object之后设置其__proto__</d></pre>
+<pre><d class='s19'></d></pre>
+<pre><d class='s19'>Function Object Function.p, Object.p四大金刚：</d></pre>
+<pre><d class='s19'>Function.prototype 即为function (){},包含了call，bind，apply等。</d></pre>
+<pre><d class='s19'>Object.prototype 为唯一的real object，包含了hasOwnProperty等</d></pre>
+<pre><d class='s19'></d></pre>
+<pre><d class='s19'>__proto__ 无法通过Object.getOwnPropertyDescriptor获取</d></pre>
+<pre><d class='s19'></d></pre>
+<pre><d class='s19'><img src='..\pic\1d7cc44a94e37981984e43c493e150ba.jpg' /></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>file:///X:/fe/tests_w3c/Object_prototype_test.html</d></pre>
+<pre><d class='s20'>var </d><d class='s21'>result </d><d class='s2'>= </d><d class='s22'>""</d><d class='s2'>;</d></pre>
+<pre><d class='s20'>function </d><d class='s2'>logOP(title, obj) {</d></pre>
+<pre><d class='s2'>    </d><d class='s21'>result </d><d class='s2'>+= title + </d><d class='s22'>": " </d><d class='s2'>+ Object.</d><d class='s23'>getOwnPropertyNames</d><d class='s2'>(obj) + </d><d class='s22'>"</d><d class='s20'>\n</d><d class='s22'>"</d><d class='s2'>;</d></pre>
+<pre><d class='s2'>}</d></pre>
+<pre><d class='s2'>logOP(</d><d class='s22'>"Object"</d><d class='s2'>, Object);</d></pre>
+<pre><d class='s2'>logOP(</d><d class='s22'>"Object.prototype"</d><d class='s2'>, Object.</d><d class='s21'>prototype</d><d class='s2'>);</d></pre>
+<pre><d class='s2'>logOP(</d><d class='s22'>"Object.__proto__"</d><d class='s2'>, Object.__proto__);</d></pre>
+<pre><d class='s2'>logOP(</d><d class='s22'>"Function"</d><d class='s2'>, </d><d class='s21'>Function</d><d class='s2'>);</d></pre>
+<pre><d class='s2'>logOP(</d><d class='s22'>"Function.prototype"</d><d class='s2'>, </d><d class='s21'>Function</d><d class='s2'>.</d><d class='s21'>prototype</d><d class='s2'>);</d></pre>
+<pre><d class='s2'>logOP(</d><d class='s22'>"Function.__proto__"</d><d class='s2'>, </d><d class='s21'>Function</d><d class='s2'>.</d><d class='s23'>__proto__</d><d class='s2'>);</d></pre>
+<pre><d class='s21'>console</d><d class='s2'>.</d><d class='s23'>log</d><d class='s2'>(</d><d class='s21'>result</d><d class='s2'>);</d></pre>
+<pre><d class='s4'>---result----:</d></pre>
+<pre><d class='s4'>Object: length,name,arguments,caller,prototype,assign,create,freeze,getOwnPropertyDescriptor,getOwnPropertyNames,getOwnPropertySymbols,is,isExtensible,isFrozen,isSealed,keys,preventExtensions,seal,defineProperty,defineProperties,getPrototypeOf,setPrototypeOf</d></pre>
+<pre><d class='s4'>Object.prototype: constructor,toString,toLocaleString,valueOf,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,__defineGetter__,__lookupGetter__,__defineSetter__,__lookupSetter__,__proto__</d></pre>
+<pre><d class='s4'>Object.__proto__: length,name,arguments,caller,apply,bind,call,toString,constructor</d></pre>
+<pre><d class='s4'>Function: length,name,arguments,caller,prototype</d></pre>
+<pre><d class='s4'>Function.prototype: length,name,arguments,caller,apply,bind,call,toString,constructor</d></pre>
+<pre><d class='s4'>Function.__proto__: length,name,arguments,caller,apply,bind,call,toString,constructor</d></pre>
+<pre><d class='s0'></d></pre>
+<t id='7ccc5d62-4e9d-42b6-969d-100a2b1573dd'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s15'><h2 id='ol_5'>instanceof</h2>
+<a href='js.html#a36a5b71-f20a-4540-8e94-f1fbb4128023'>typeof </a></d><d class='s4'></d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof</a></d></pre>
+<pre><d class='s3'>The instanceof operator tests whether an object in its prototype chain has the prototype property of a constructor.</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>Syntax</d></pre>
+<pre><d class='s3'>object instanceof constructor</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>The instanceof operator tests presence of constructor.prototype in object's prototype chain.</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'><a href='http://a.fe.my/tests_w3c/instanceof.htm'>http://a.fe.my/tests_w3c/instanceof.htm</a></d></pre>
+<pre><d class='s3'>        function C() {</d></pre>
+<pre><d class='s3'>        }</d></pre>
+<pre><d class='s3'>        C.prototype = {};</d></pre>
+<pre><d class='s3'>        var o2 = new C();</d></pre>
+<pre><d class='s3'>        alert(o2 instanceof C); // true, although o2.constructor === Object is true !</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s8'>Note that the value of an instanceof test </d><d class='s24'>can change</d><d class='s8'> based on changes to the prototype property of constructors, and it can also be changed by changing an object prototype using Object.setPrototypeOf. It is also possible using the non-standard __proto__ pseudo-property.</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>instanceof and multiple context (e.g. </d><d class='s24'>frames or windows</d><d class='s8'>)</d></pre>
+<pre><d class='s8'>you can securely check if a given object is in fact an Array using Array.isArray(myObj)</d><d class='s3'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+</t>
+<pre><d class='s5'></d><d class='s4'></d></pre>
+<t id='ec346e27-6079-476c-b406-24fdc73f0944'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h1 id='ol_6'>js links</h1>
+</d><d class='s4'>codeschool</d></pre>
+<pre><d class='s4'><a href='https://www.codeschool.com/paths/javascript'>https://www.codeschool.com/paths/javascript</a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>ECMAScript® Language Specification</d></pre>
+<pre><d class='s4'><a href='http://www.ecma-international.org/ecma-262/5.1'>http://www.ecma-international.org/ecma-262/5.1</a></d></pre>
+<pre><d class='s4'>ECMAScript Language Specification - ECMA-262 Edition 5.1.htm</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>hasOwnProperty,Functions,this</d></pre>
+<pre><d class='s4'><a href='http://www.cnblogs.com/sanshi/archive/2011/03/15/1985344.html'>http://www.cnblogs.com/sanshi/archive/2011/03/15/1985344.html</a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h1 id='ol_7'>mdn</h1>
+</d><d class='s25'>Quick Table of Contents</d></pre>
+<pre><d class='s26'>JavaScript Guide &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide</a>&gt;</d></pre>
+<pre><d class='s26'>About this Guide &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/About'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/About</a>&gt;</d></pre>
+<pre><d class='s26'>JavaScript Overview &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview</a>&gt;</d></pre>
+<pre><d class='s26'>Values, variables, and literals &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Values,_variables,_and_literals'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Values,_variables,_and_literals</a>&gt;</d></pre>
+<pre><d class='s26'>Expressions and operators &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators</a>&gt;</d></pre>
+<pre><d class='s26'>Regular Expressions &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions</a>&gt;</d></pre>
+<pre><d class='s26'>Statements (Control Flow) &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Statements'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Statements</a>&gt;</d></pre>
+<pre><d class='s26'>Functions &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions</a>&gt;</d></pre>
+<pre><d class='s26'>Working with objects &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects</a>&gt;</d></pre>
+<pre><d class='s26'>Predefined Core Objects &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects</a>&gt;</d></pre>
+<pre><d class='s26'>Details of the object model &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model</a>&gt;</d></pre>
+<pre><d class='s26'>Inheritance revisited &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_Revisited'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_Revisited</a>&gt;</d></pre>
+<pre><d class='s26'>Iterators and generators &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators</a>&gt;</d></pre>
+<pre><d class='s26'>Closures &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures</a>&gt;</d></pre>
+<pre><d class='s26'>Sameness in JavaScript &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Sameness'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Sameness</a>&gt;</d></pre>
+<pre><d class='s27'></d></pre>
+<pre><d class='s27'>JavaScript Overview</d></pre>
+<pre><d class='s26'>What is JavaScript? &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview#What_is_JavaScript.3F'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview#What_is_JavaScript.3F</a>&gt;JavaScript and Java &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview#JavaScript_and_Java'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview#JavaScript_and_Java</a>&gt;JavaScript and the ECMAScript Specification &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview#JavaScript_and_the_ECMAScript_Specification'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview#JavaScript_and_the_ECMAScript_Specification</a>&gt;Relationship between JavaScript Versions and ECMAScript Editions &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview#Relationship_between_JavaScript_Versions_and_ECMAScript_Editions'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview#Relationship_between_JavaScript_Versions_and_ECMAScript_Editions</a>&gt;JavaScript Documentation versus the ECMAScript Specification &lt;<a href='https://developer.mozilla.org/en-US/docs/Web/JavaS'>https://developer.mozilla.org/en-US/docs/Web/JavaS</a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s7'>JavaScript root</d><d class='s4'></d></pre>
+<pre><d class='s4'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript'>https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></d></pre>
+<pre><d class='s25'>JavaScript? (often shortened to JS) is a lightweight, interpreted, object-oriented language with </d><d class='s26'>first-class functions &lt;<a href='https://en.wikipedia.org/wiki/First-class_functions'>https://en.wikipedia.org/wiki/First-class_functions</a>&gt;</d><d class='s25'>, most known as the scripting language for Web pages, but </d><d class='s26'>used in many non-browser environments &lt;<a href='http://en.wikipedia.org/wiki/JavaScript#Uses_outside_web_pages'>http://en.wikipedia.org/wiki/JavaScript#Uses_outside_web_pages</a>&gt;</d><d class='s25'> as well such as </d><d class='s26'>node.js &lt;<a href='http://nodejs.org/'>http://nodejs.org/</a>&gt;</d><d class='s25'> or </d><d class='s26'>Apache CouchDB &lt;<a href='http://couchdb.apache.org/'>http://couchdb.apache.org/</a>&gt;</d><d class='s25'>. It is a </d><d class='s26'>prototype-based &lt;<a href='https://en.wikipedia.org/wiki/Prototype-based'>https://en.wikipedia.org/wiki/Prototype-based</a>&gt;</d><d class='s25'>, </d><d class='s26'>multi-paradigm &lt;<a href='https://developer.mozilla.org/en-US/docs/multiparadigmlanguage.html'>https://developer.mozilla.org/en-US/docs/multiparadigmlanguage.html</a>&gt;</d><d class='s25'> scripting language that is dynamic</d><d class='s28'>, </d><d class='s25'>and supports object-oriented, imperative, and functional programming styles.</d></pre>
+<pre><d class='s25'>The JavaScript standard is </d><d class='s26'>ECMAScript &lt;<a href='https://developer.mozilla.org/en-US/docs/JavaScript/Language_Resources'>https://developer.mozilla.org/en-US/docs/JavaScript/Language_Resources</a>&gt;</d><d class='s25'>. As of 2012, all modern browsers fully support ECMAScript 5.1. Older browsers support at least ECMAScript 3. A 6th major revision of the standard is in the works. The current progress of different new and improved features can be followed on the </d><d class='s26'>dedicated wiki &lt;<a href='http://wiki.ecmascript.org/doku.php?id=harmony:proposals'>http://wiki.ecmascript.org/doku.php?id=harmony:proposals</a>&gt;</d><d class='s25'>.</d></pre>
+<pre><d class='s25'>This section of the site is dedicated to the JavaScript language itself, the parts that are not specific to Web pages, or other host environments. For information about APIs specific to Web pages, please see </d><d class='s26'>Document Object Model &lt;<a href='https://developer.mozilla.org/en-US/docs/DOM'>https://developer.mozilla.org/en-US/docs/DOM</a>&gt;</d><d class='s25'> (DOM). Read more about how DOM and JavaScript fit together in the</d><d class='s26'>DOM Reference &lt;<a href='https://developer.mozilla.org/en-US/docs/Gecko_DOM_Reference/Introduction#DOM_and_JavaScript'>https://developer.mozilla.org/en-US/docs/Gecko_DOM_Reference/Introduction#DOM_and_JavaScript</a>&gt;</d><d class='s25'>.</d></pre>
+<pre><d class='s4'>Multi-Paradigm Programming Language</d></pre>
+<pre><d class='s4'><a href='https://developer.mozilla.org/en-US/docs/multiparadigmlanguage.html'>https://developer.mozilla.org/en-US/docs/multiparadigmlanguage.html</a></d></pre>
+<pre><d class='s4'>A multi-paradigm programming language is a programming language that supports more than one programming paradigm. The central idea of a multiparadigm language is to provide a framework in which programmers can work in a variety of styles, freely intermixing constructs from different paradigms. The design goal of such languages is to allow programmers to use the best tool for a job, admitting that a single paradigm cannot solve all problems in the easiest or most efficient way.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Supporting this view, JavaScript supports, or infact uses various styles. For example, its syntax follows a </d><d class='s7'>C</d><d class='s4'> language like structure, which is a procedural language, and at the same time JavaScript copies </d><d class='s7'>many names and naming conventions from an object-oriented programming language, Java,</d><d class='s4'> but the two languages are otherwise unrelated and have very different semantics. The key design principles within JavaScript are taken from the </d><d class='s7'>Self and Scheme </d><d class='s4'>programming languages.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>JavaScript reference</d></pre>
+<pre><d class='s4'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference</a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<t id='e8bd61e6-9fce-4003-a3ee-2881e023c8f1'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h2 id='ol_8'>digger 生成工具</h2>
+</d><d class='s3'>http://localhost:811/tools/www_saver/digger.html</d></pre>
+<pre><d class='s3'>http://localhost:811/tools/www_saver/digger_template.html</d></pre>
+<pre><d class='s3'>X:\piaojuke\code\pjkit\tools\www_saver\digger.js</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>eg input:</d></pre>
+<pre><d class='s3'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object</a></d><d class='s4'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+</t>
+<pre><d class='s0'></d></pre>
+<pre><d class='s0'><h1 id='ol_9'>mdn: JavaScript data types and data structures</h1>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures</a></d><d class='s8'></d></pre>
+<pre><d class='s8'>nnbus + symbol + object</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>All types except objects define immutable values (values, which are incapable of being changed). For example and unlike to C, Strings are immutable. We refer to values of these types as "primitive values".??</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>Number type</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>In addition to being able to represent floating-point numbers, the number type has three symbolic values: </d><d class='s24'>+Infinity, -Infinity</d><d class='s8'>, and </d><d class='s24'>NaN</d><d class='s8'> (not-a-number).</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>To check for the largest available value or smallest available value within +/-Infinity, you can use the constants Number.MAX_VALUE or Number.MIN_VALUE and starting with ECMAScript 6, you are also able to check if a number is in the double-precision floating-point number range using Number.isSafeInteger() as well as Number.</d><d class='s24'>MAX_SAFE_INTEGER</d><d class='s8'> and Number.</d><d class='s24'>MIN_SAFE_INTEGER</d><d class='s8'>. Beyond this range, integers in JavaScript are not safe anymore and will be a double-precision floating point approximation of the value.</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>超过此范围就不一定连续了：</d></pre>
+<pre><d class='s8'>(Number.MAX_SAFE_INTEGER + 4) - (Number.MAX_SAFE_INTEGER + 3)</d></pre>
+<pre><d class='s8'>2</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>&gt; 42 / +0</d></pre>
+<pre><d class='s8'>Infinity</d></pre>
+<pre><d class='s8'>&gt; 42 / -0</d></pre>
+<pre><d class='s8'>-Infinity</d></pre>
+<pre><d class='s5'></d></pre>
+<t id='91be21cf-986a-446e-b1ef-035f19693261'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h1 id='ol_10'>encodeURI & encodeURIComponent ; URL</h1>
+<a href='js_h5.html#2ce1fc21-ca6b-41d5-9a87-c9645cd8d253'>js urlencode/urldecode gbk </a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s3'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI</a></d></pre>
+<pre><d class='s3'>Not Escaped:</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>    A-Z a-z 0-9 ; , / ? : @ & = + $ - _ . ! ~ * ' ( ) #</d></pre>
+<pre><d class='s3'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI</a></d></pre>
+<pre><d class='s3'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent</a></d></pre>
+<pre><d class='s3'>Not Escaped:</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>    A-Z a-z 0-9 - _ . ! ~ * ' ( )</d></pre>
+<pre><d class='s3'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent</a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s3'>eg:</d></pre>
+<pre><d class='s4'>encodeURI("/a/ /")</d></pre>
+<pre><d class='s4'>"/a/%20/"</d></pre>
+<pre><d class='s4'>encodeURIComponent("/a/ /")</d></pre>
+<pre><d class='s4'>"%2Fa%2F%20%2F"</d></pre>
+<pre><d class='s4'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<t id='6cafb962-7961-476f-b81b-141a56c6097e'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h1 id='ol_11'>js中eval详解</h1>
+<a href='http://www.jb51.net/article/30008.htm'>http://www.jb51.net/article/30008.htm</a></d><d class='s4'></d></pre>
+<pre><d class='s19'>直接调用eval函数，则在调用者的空间执行；</d><d class='s29'>如果调用 window.eval则在全局空间执行</d><d class='s4'></d></pre>
+<pre><d class='s30'>&lt;</d><d class='s20'>script</d><d class='s2'>&gt;</d></pre>
+<pre><d class='s2'>    </d><d class='s21'>console</d><d class='s2'>.</d><d class='s23'>log</d><d class='s2'>(</d><d class='s22'>"-------------"</d><d class='s2'>)</d></pre>
+<pre><d class='s2'>    </d><d class='s21'>s </d><d class='s2'>= </d><d class='s22'>"console.log(this); var a = 1;"</d></pre>
+<pre><d class='s22'>    </d><d class='s31'>// eval(s);</d></pre>
+<pre><d class='s31'></d></pre>
+<pre><d class='s31'>    </d><d class='s20'>function </d><d class='s2'>func() {</d></pre>
+<pre><d class='s2'>        eval(</d><d class='s21'>s</d><d class='s2'>);</d></pre>
+<pre><d class='s2'>    }</d></pre>
+<pre><d class='s2'>    func();</d></pre>
+<pre><d class='s2'>    </d><d class='s21'>console</d><d class='s2'>.</d><d class='s23'>log</d><d class='s2'>(</d><d class='s20'>typeof  </d><d class='s2'>a);</d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s2'>    (</d><d class='s20'>function </d><d class='s2'>() {</d></pre>
+<pre><d class='s2'>        </d><d class='s21'>window</d><d class='s2'>.eval(</d><d class='s21'>s</d><d class='s2'>);</d></pre>
+<pre><d class='s2'>    })();</d></pre>
+<pre><d class='s2'>    </d><d class='s21'>console</d><d class='s2'>.</d><d class='s23'>log</d><d class='s2'>(</d><d class='s20'>typeof  </d><d class='s2'>a);</d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s2'>&lt;/</d><d class='s20'>script</d><d class='s2'>&gt;</d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<t id='1a137e3f-de5f-42f5-8153-02525708834b'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h1 id='ol_12'>ArrayBuffer; typed array</h1>
+</d><d class='s7'>二进制数组</d></pre>
+<pre><d class='s4'><a href='http://javascript.ruanyifeng.com/stdlib/arraybuffer.html'>http://javascript.ruanyifeng.com/stdlib/arraybuffer.html</a></d><d class='s7'></d></pre>
+<pre><d class='s7'><img src='..\pic\b6279bbc4e300bcbbe726ea6699737d6.jpg' /></d><d class='s7'></d></pre>
+<pre><d class='s7'></d></pre>
+<pre><d class='s4'>Uint8Array</d></pre>
+<pre><d class='s4'><a href='https://developer.mozilla.org/en/JavaScript_typed_arrays/Uint8Array'>https://developer.mozilla.org/en/JavaScript_typed_arrays/Uint8Array</a></d></pre>
+<pre><d class='s4'>I:\chrome5\src\third_party\WebKit\WebCore\html\canvas\</d><d class='s7'>ArrayBuffer.</d><d class='s4'>h</d></pre>
+<pre><d class='s4'></d></pre>
+</t>
+<pre><d class='s0'></d></pre>
+<pre><d class='s0'><h1 id='ol_13'>Standard built-in objects</h1>
+</d><d class='s8'> <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects</a></d><d class='s0'></d></pre>
+<pre><d class='s8'>Indexed collections</d></pre>
+<pre><d class='s8'>Keyed collections</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>window.NaN === Number.NaN</d></pre>
+<pre><d class='s8'>false</d></pre>
+<pre><d class='s4'>NaN === NaN</d></pre>
+<pre><d class='s4'>false</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>typeof window.NaN</d></pre>
+<pre><d class='s8'>number</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>NaN === NaN;        // false</d></pre>
+<pre><d class='s4'>Number.NaN === NaN; // false</d></pre>
+<pre><d class='s4'>isNaN(NaN);         // true</d></pre>
+<pre><d class='s4'>isNaN(Number.NaN);  // true</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>function valueIsNaN(v) { return v !== v; }</d></pre>
+<pre><d class='s4'>valueIsNaN(1);          // false</d></pre>
+<pre><d class='s4'>valueIsNaN(NaN);        // true</d></pre>
+<pre><d class='s4'>valueIsNaN(Number.NaN); // true</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h1 id='ol_14'>js Map</h1>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map</a></d><d class='s3'></d></pre>
+<pre><d class='s3'>key任意</d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>new Map([iterable])</d></pre>
+<pre><d class='s4'>数组需要长度为2</d></pre>
+<pre><d class='s4'>NaN 也可以为 key(NaNs are indistinguishable from each other)</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>优势:</d></pre>
+<pre><d class='s4'>1,An Object has a prototype, so there are default keys in the map that could collide with your keys if you're not careful. As of ES5 can be bypassed by using </d><d class='s7'>map = Object.create(null), </d><d class='s4'>but is seldom done.</d></pre>
+<pre><d class='s4'>2,The keys of an Object are Strings and Symbols, whereas they </d><d class='s7'>can be any value for a Map, including functions, objects, and any primitive</d><d class='s4'>.</d></pre>
+<pre><d class='s4'>3,You can get the </d><d class='s7'>size</d><d class='s4'> of a Map easily with the size property, while the size of an Object must be determined manually.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>map.set() map.get()</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>array转换：</d></pre>
+<pre><d class='s4'>var myMap = new Map(kvArray);</d></pre>
+<pre><d class='s4'>Array.from(myMap)</d></pre>
+<pre><d class='s0'></d></pre>
+<t id='7a8d3ea6-08fa-4ae2-bdc6-c4d244312f08'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h1 id='ol_15'>js Object</h1>
+<a href='js.html#2cd503db-7299-44cb-95d2-77edb6f0e551'>prototype __proto__ constructor </a></d><d class='s4'></d></pre>
+<pre><d class='s4'><a href='js_pro.html#81f0f4f1-fe75-4292-af5b-f791d3f418ee'>6.　面向对象的程序设计 </a></d></pre>
+<pre><d class='s4'><a href='sqlite_locate_failed!'>console.dir 显示fields的特殊处理 </a></d></pre>
+<pre><d class='s8'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object</a></d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s5'></d></pre>
+<pre><d class='s5'>file:///X:/fe/tests_w3c/Object_test.html</d></pre>
+<pre><d class='s5'></d></pre>
+<pre><d class='s4'>Object.freeze() shallow</d></pre>
+<pre><d class='s4'>// silently does nothing</d></pre>
+<pre><d class='s4'>// ...and in strict mode such attempts will throw TypeErrors</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s4'>..,, Object.prototype <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype</a></d></pre>
+<pre><d class='s4'>..,, Object.assign() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s29'>Object.create</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s19'>Object.</d><d class='s29'>defineProperty</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</a></d></pre>
+<pre><d class='s4'>..,, Object.</d><d class='s7'>defineProperties</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties</a></d></pre>
+<pre><d class='s4'>..,, Object.entries() [experimental] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s19'>Object.</d><d class='s29'>freeze</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s19'>Object.</d><d class='s29'>getOwnPropertyDescriptor</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s19'>Object.</d><d class='s29'>getOwnPropertyDescriptors</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s19'>Object.</d><d class='s29'>getOwnPropertyNames</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames</a></d></pre>
+<pre><d class='s4'>..,, Object.getOwnPropertySymbols() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols</a></d></pre>
+<pre><d class='s4'>..,, Object.getPrototypeOf() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf</a></d></pre>
+<pre><d class='s4'>..,, Object.is() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is</a></d></pre>
+<pre><d class='s4'>..,, Object.isExtensible() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s19'>Object.isFrozen</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen</a></d></pre>
+<pre><d class='s4'>..,, Object.isSealed() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s19'>Object.</d><d class='s29'>keys</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys</a></d></pre>
+<pre><d class='s4'>..,, Object.preventExtensions() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions</a></d></pre>
+<pre><d class='s4'>..,, Object.seal() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/seal'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/seal</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s19'>Object.setPrototypeOf</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf</a></d></pre>
+<pre><d class='s4'>  因为__proto__是非标准的</d></pre>
+<pre><d class='s4'>..,, Object.values() [experimental] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.constructor <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.__proto__ [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__proto__'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__proto__</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.__noSuchMethod__ [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__noSuchMethod__'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__noSuchMethod__</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.__count__ [obsolete] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/count'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/count</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.__parent__ [obsolete] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/parent'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/parent</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.</d><d class='s7'>__defineGetter__</d><d class='s4'>() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.</d><d class='s7'>__defineSetter__</d><d class='s4'>() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.__lookupGetter__() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.__lookupSetter__() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s19'>Object.prototype.</d><d class='s29'>hasOwnProperty</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s19'>Object.prototype.</d><d class='s29'>isPrototypeOf</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s19'>Object.prototype.</d><d class='s29'>propertyIsEnumerable</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.toSource() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toSource'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toSource</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.toLocaleString() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.toString() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.unwatch() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/unwatch'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/unwatch</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.valueOf() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.watch() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/watch'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/watch</a></d></pre>
+<pre><d class='s4'>..,, Object.prototype.eval() [obsolete] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/eval'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/eval</a></d></pre>
+<pre><d class='s4'></d></pre>
+<t id='531b326f-7d1d-4133-88f8-c8afcec2d2ab'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h2 id='ol_16'>js defineProperty accessor __defineGetter__ __defineSetter__</h2>
+<a href='js.html#7a8d3ea6-08fa-4ae2-bdc6-c4d244312f08'>js Object </a></d><d class='s4'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+</t>
+<pre><d class='s0'></d></pre>
+<pre><d class='s0'><h1 id='ol_17'>js Array</h1>
+<a href='js_pro.html#f1976cec-ec13-4f25-8a3c-196d2981598b'>5.2　Array类型　　86 </a></d><d class='s4'></d></pre>
+<pre><d class='s0'></d></pre>
+<pre><d class='s0'><a href='http://a.fe.my/tests_w3c/array/array1.html'>http://a.fe.my/tests_w3c/array/array1.html</a></d></pre>
+<pre><d class='s0'></d></pre>
+<pre><d class='s32'>length: -- 指向push的位置</d><d class='s33'></d></pre>
+<pre><d class='s33'>The length property represents an unsigned, 32-bit integer that </d><d class='s32'>is always numerically greater than the highest index in the array</d><d class='s33'>.</d></pre>
+<pre><d class='s33'>Property attributes of array.length</d></pre>
+<pre><d class='s33'>Writable	yes</d></pre>
+<pre><d class='s33'>Enumerable	no</d></pre>
+<pre><d class='s33'>Configurable	no</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>JS合并数组的几种方法及优劣比较 array merge</d></pre>
+<pre><d class='s4'><a href='http://www.jb51.net/article/55364.htm'>http://www.jb51.net/article/55364.htm</a></d></pre>
+<pre><d class='s30'>Array.</d><d class='s21'>prototype</d><d class='s2'>.</d><d class='s23'>push</d><d class='s2'>.</d><d class='s23'>apply</d><d class='s2'>(</d><d class='s20'>this</d><d class='s2'>, </d><d class='s34'>args_new</d><d class='s2'>);</d></pre>
+<pre><d class='s35'></d></pre>
+<pre><d class='s4'>var arr = Array.from(arguments);// ECMA-262 第六版标准添加的，不用再slice.apply了</d></pre>
+<pre><d class='s35'></d></pre>
+<pre><d class='s4'>---------------------------------</d></pre>
+<pre><d class='s3'>forEach some every filter map 等callback参数：</d></pre>
+<pre><d class='s36'>callback is invoked with three arguments:</d></pre>
+<pre><d class='s36'>the element value</d></pre>
+<pre><d class='s36'>the element index</d></pre>
+<pre><d class='s36'>the array being traversed</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>..,, get Array[@@species] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype</a></d></pre>
+<pre><d class='s4'>..,, </d><d class='s7'>Array.from</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from</a></d></pre>
+<pre><d class='s4'>..,, Array.isArray() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray</a></d></pre>
+<pre><d class='s4'>..,, Array.of() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.length <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype[@@unscopables] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@unscopables'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@unscopables</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.copyWithin() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.fill() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.pop() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.push() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.reverse() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.shift() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.sort() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.</d><d class='s7'>splice</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice</a></d></pre>
+<pre><d class='s4'>array.splice(start)</d></pre>
+<pre><d class='s4'>array.splice(start, deleteCount)</d></pre>
+<pre><d class='s4'>array.splice(start, deleteCount, item1, item2, ...)</d></pre>
+<pre><d class='s4'>..,, Array.prototype.</d><d class='s7'>unshift</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.</d><d class='s7'>concat</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat</a></d></pre>
+<pre><d class='s4'>相当于jquery 的extend()</d></pre>
+<pre><d class='s4'>var new_array = old_array.concat(value1[, value2[, ...[, valueN]]])</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>..,, Array.prototype.includes() [experimental] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.join() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.slice() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice</a></d></pre>
+<pre><d class='s4'>arr.slice()</d></pre>
+<pre><d class='s4'>arr.slice(begin)</d></pre>
+<pre><d class='s4'>arr.slice(begin, end)</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>..,, Array.prototype.toSource() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSource'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSource</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.toString() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.toLocaleString() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.indexOf() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.lastIndexOf() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.</d><d class='s7'>forEach</d><d class='s4'>() function callback(currentValue, index, array) <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach</a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>..,, Array.prototype.entries() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.</d><d class='s7'>every</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every</a></d></pre>
+<pre><d class='s36'>  like forEach,但可中断</d><d class='s3'>	检查数组元素是否都符合某个条件，</d><d class='s36'>只要有一个不符合返回false(同时breaking the loop)</d><d class='s3'>，否则返回true</d><d class='s4'></d></pre>
+<pre><d class='s4'>..,, Array.prototype.some() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.filter() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.find() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.findIndex() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.keys() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.map() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.reduce() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce</a></d></pre>
+<pre><d class='s11'>     values.reduce(function(prev, cur, index, array){</d><d class='s4'></d></pre>
+<pre><d class='s4'>..,, Array.prototype.reduceRight() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype.values() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values</a></d></pre>
+<pre><d class='s4'>..,, Array.prototype[@@iterator]() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator</a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s15'><h2 id='ol_18'>array like; arguments; string</h2>
+</d><d class='s3'>string, arguments 使用array方法：</d></pre>
+<pre><d class='s37'>arr=</d><d class='s38'>"ab"</d><d class='s37'></d></pre>
+<pre><d class='s37'>Array.prototype.forEach.call(arr, logArrayElements);</d></pre>
+<pre><d class='s4'></d></pre>
+<t id='dd12e9b6-37a1-43be-a1ce-ee95e676c25e'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h1 id='ol_19'>js function call apply(for array), hook, arguments; named function expression; function declaration hoisting</h1>
+<a href='js_pro.html#84b9a063-fc8c-4af5-88fc-59530848043e'>7.　函数表达式　　175 function expressions </a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>var obj = {</d></pre>
+<pre><d class='s4'>	"a_": "aa",</d></pre>
+<pre><d class='s4'>};</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>obj.origin = function(b, c){</d></pre>
+<pre><d class='s4'>	console.log("a_=" + this.a_ + ", b=" + b + ", c=" + c);</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>var old_origin = obj.origin;</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>function wrapper1(b, c){</d></pre>
+<pre><d class='s4'>	old_origin.</d><d class='s7'>call</d><d class='s4'>(obj, b, c);</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>function wrapper2(){</d></pre>
+<pre><d class='s4'>	old_origin.</d><d class='s7'>apply</d><d class='s4'>(obj, arguments);</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>function wrapper(b){</d></pre>
+<pre><d class='s4'>	var args = </d><d class='s7'>Array.prototype.slice.call</d><d class='s4'>(arguments); // </d><d class='s15'>arguments: array like</d><d class='s4'></d></pre>
+<pre><d class='s4'>	origin.apply(first_arg, args);</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>// direct invoke</d></pre>
+<pre><d class='s4'>obj.origin("bb", "c");</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>wrapper1("bb", "c");</d></pre>
+<pre><d class='s4'>wrapper2("bb", "c");</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>obj.origin = function(){</d></pre>
+<pre><d class='s4'>	old_origin.apply(obj, arguments);</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'>obj.origin("bb", "c");</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>获取当前调用的函数名:arguments.callee.name</d><d class='s23'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions</a></d></pre>
+<pre><d class='s4'>hosting: 仅在所在的scope提升，并不会提升到global</d></pre>
+<pre><d class='s4'>    // hosting in the scope</d></pre>
+<pre><d class='s4'>    var a = 1;</d></pre>
+<pre><d class='s4'>    if(a == 1) {</d></pre>
+<pre><d class='s4'>        log(1);</d></pre>
+<pre><d class='s4'>        function log(s) {</d></pre>
+<pre><d class='s4'>            console.log(s);</d></pre>
+<pre><d class='s4'>        }</d></pre>
+<pre><d class='s4'>    }</d></pre>
+<pre><d class='s5'></d></pre>
+<pre><d class='s5'><h2 id='ol_20'>Function</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function</a></d><d class='s4'></d></pre>
+<pre><d class='s4'>Function constructor 更低效</d></pre>
+<pre><d class='s4'>Function objects created with the Function constructor are parsed when the function is created. This is less efficient than declaring a function with a function expression or function statement and calling it within your code, because such functions are parsed with the rest of the code.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Difference between Function constructor and function declaration</d></pre>
+<pre><d class='s7'>var x = 10;</d><d class='s4'></d></pre>
+<pre><d class='s4'>function createFunction1() {</d></pre>
+<pre><d class='s4'>    </d><d class='s7'>var x = 20;</d></pre>
+<pre><d class='s4'>    return new Function('return x;'); </d><d class='s7'>// this |x| refers global |x|</d><d class='s4'></d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>..,, Function.arguments [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments</a></d></pre>
+<pre><d class='s4'>..,, Function.arity [obsolete] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arity'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arity</a></d></pre>
+<pre><d class='s4'>..,, Function.caller [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller</a></d></pre>
+<pre><d class='s4'>..,, Function.</d><d class='s7'>length</d><d class='s4'> <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length</a></d></pre>
+<pre><d class='s4'>console.log((function(a, b = 1, c) {}).length);</d></pre>
+<pre><d class='s4'>// 1, only parameters before the first one with </d></pre>
+<pre><d class='s4'>// a default value is counted</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>..,, Function.name <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name</a></d></pre>
+<pre><d class='s4'>..,, Function.displayName [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/displayName'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/displayName</a></d></pre>
+<pre><d class='s4'>..,, Function.prototype.apply() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply</a></d></pre>
+<pre><d class='s4'>..,, Function.prototype.</d><d class='s7'>bind</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind</a></d></pre>
+<pre><d class='s4'>The bind() function creates a new bound function (BF). A BF is an exotic function object (a term from ECMAScript 2015) that wraps the original function object</d></pre>
+<pre><d class='s4'>syntax: fun.bind(thisArg[, arg1[, arg2[, ...]]]), prepend</d></pre>
+<pre><d class='s4'>Partially applied functions</d></pre>
+<pre><d class='s4'>With setTimeout</d></pre>
+<pre><d class='s4'>Creating shortcuts</d></pre>
+<pre><d class='s4'>    	var s = Function.prototype.apply.bind(Array.prototype.slice);</d></pre>
+<pre><d class='s4'>    	log(s(arr)); // </d><d class='s7'>slice.apply</d><d class='s4'>(arguments);</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>    	var log = console.log.bind(console);</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>如果用new,则thisArg被忽略</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>..,, Function.prototype.call() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call</a></d></pre>
+<pre><d class='s4'>..,, Function.prototype.isGenerator() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/isGenerator'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/isGenerator</a></d></pre>
+<pre><d class='s4'>..,, Function.prototype.toSource() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toSource'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toSource</a></d></pre>
+<pre><d class='s4'>..,, Function.prototype.toString() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString</a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_21'>Arrow functions</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</a></d><d class='s4'></d></pre>
+<pre><d class='s4'>An arrow function expression has a shorter syntax than a function expression and does </d><d class='s7'>not</d><d class='s4'> bind its own </d><d class='s7'>this, arguments, super, or new.target</d><d class='s4'>. These function expressions are best suited for </d><d class='s7'>non-method functions</d><d class='s4'>, and they </d><d class='s7'>cannot</d><d class='s4'> be used as constructors.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Basic Syntax</d></pre>
+<pre><d class='s4'>(param1, param2, …, paramN) =&gt; { statements }</d></pre>
+<pre><d class='s4'>(param1, param2, …, paramN) =&gt; expression</d></pre>
+<pre><d class='s4'>// equivalent to: (param1, param2, …, paramN) =&gt; { return expression; }</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>// Parentheses are optional when there's only one parameter name:</d></pre>
+<pre><d class='s4'>(singleParam) =&gt; { statements }</d></pre>
+<pre><d class='s4'>singleParam =&gt; { statements }</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>// A function with no parameters should be written with a pair of parentheses.</d></pre>
+<pre><d class='s4'>() =&gt; { statements }</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Advanced Syntax</d></pre>
+<pre><d class='s4'>// Parenthesize the body of function to return an object literal expression:</d></pre>
+<pre><d class='s4'>params =&gt; ({foo: bar})</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>// Rest parameters and default parameters are supported</d></pre>
+<pre><d class='s4'>(param1, param2, ...rest) =&gt; { statements }</d></pre>
+<pre><d class='s4'>(param1 = defaultValue1, param2, …, paramN = defaultValueN) =&gt; { statements }</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>// Destructuring within the parameter list is also supported</d></pre>
+<pre><d class='s4'>let f = ([a, b] = [1, 2], {x: c} = {x: a + b}) =&gt; a + b + c;</d></pre>
+<pre><d class='s4'>f();  </d></pre>
+<pre><d class='s4'>// 6</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Shorter functions</d></pre>
+<pre><d class='s4'>materials.map(material =&gt; material.length); </d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>No binding of this</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>strict mode,与this有关的被忽略:</d></pre>
+<pre><d class='s4'>var f = () =&gt; { 'use strict'; return this; };</d></pre>
+<pre><d class='s4'>f() === window; // or the global object</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Invoked through call or apply: this is ignored</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>用rest parameters 代替 arguments</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>没有prototype </d></pre>
+<pre><d class='s4'>不能用yield </d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Parsing order</d></pre>
+<pre><d class='s4'>callback = callback || (() =&gt; {});    // ok</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>More examples</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>var even = arr.filter(v =&gt; v % 2 == 0); </d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>// More concise promise chains</d></pre>
+<pre><d class='s4'>promise.then(a =&gt; {</d></pre>
+<pre><d class='s4'>  // ...</d></pre>
+<pre><d class='s4'>}).then(b =&gt; {</d></pre>
+<pre><d class='s4'>  // ...</d></pre>
+<pre><d class='s4'>});</d></pre>
+<pre><d class='s4'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<t id='fa66de75-adaa-4035-914a-1115db71b6ce'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h1 id='ol_22'>js string</h1>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr</a></d></pre>
+<pre><d class='s4'><a href='js_pro.html#4fa22678-885a-4d79-ba5c-a242afb2a6b8'>5.6　基本包装类型　　118 </a></d></pre>
+<pre><d class='s5'></d></pre>
+<pre><d class='s19'>String HTML 包装方法 fontcolor, sub, sup, link</d><d class='s4'></d></pre>
+<pre><d class='s4'>anchor()	创建 HTML 锚。</d></pre>
+<pre><d class='s4'>big()	用大号字体显示字符串。</d></pre>
+<pre><d class='s4'>blink()	显示闪动字符串。</d></pre>
+<pre><d class='s4'>bold()	使用粗体显示字符串。</d></pre>
+<pre><d class='s4'>fixed()	以打字机文本显示字符串。</d></pre>
+<pre><d class='s4'>fontcolor()	使用指定的颜色来显示字符串。</d></pre>
+<pre><d class='s4'>fontsize()	使用指定的尺寸来显示字符串。</d></pre>
+<pre><d class='s4'>italics()	使用斜体显示字符串。</d></pre>
+<pre><d class='s4'>link()	将字符串显示为链接。</d></pre>
+<pre><d class='s4'>small()	使用小字号来显示字符串。</d></pre>
+<pre><d class='s4'>strike()	使用小字号来显示字符串。</d></pre>
+<pre><d class='s4'>sub()	把字符串显示为下标。</d></pre>
+<pre><d class='s4'>sup()	把字符串显示为上标。</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_23'>String.prototype.substr()</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr</a></d><d class='s4'></d></pre>
+<pre><d class='s4'>The substr() method returns the characters in a string beginning at the specified location through the specified number of characters.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'>str.substr(start[, length]) -- </d><d class='s18'>str长度，string，slice stop</d><d class='s4'></d></pre>
+<pre><d class='s4'><a href='sqlite_locate_failed!'>negative index </a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>start</d></pre>
+<pre><d class='s4'>Location at which to begin extracting characters. If a negative number is given, it is treated as strLength + start where strLength is the length of the string (for example, if start is -3 it is treated as strLength - 3.)</d></pre>
+<pre><d class='s4'>length</d></pre>
+<pre><d class='s4'>Optional. The number of characters to extract.</d></pre>
+<pre><d class='s4'>DescriptionEDIT</d></pre>
+<pre><d class='s4'>start is a character index. The index of the first character is 0, and the index of the last character is 1 less than the length of the string. substr() begins extracting characters at start and collects length characters (unless it reaches the end of the string first, in which case it will return fewer).</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>If start is positive and is greater than or equal to the length of the string, substr() returns an empty string.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>If start is negative, substr() uses it as a character index from the end of the string. If start is negative and abs(start) is larger than the length of the string, substr() uses 0 as the start index. Note: the described handling of negative values of the start argument is not supported by Microsoft JScript.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>If length is 0 or negative, substr() returns an empty string. If length is omitted, substr() extracts characters to the end of the string.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_24'>String.prototype.slice()</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice</a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>The slice() method extracts a section of a string and returns a new string.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>str.slice(beginSlice[, endSlice])</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>beginSlice</d></pre>
+<pre><d class='s4'>The zero-based index at which to begin extraction. If negative, it is treated as sourceLength + beginSlice where sourceLength is the length of the string (for example, if beginSlice is -3 it is treated as sourceLength - 3).</d></pre>
+<pre><d class='s4'>endSlice</d></pre>
+<pre><d class='s4'>Optional. The zero-based index at which to end extraction. If omitted, slice() extracts to the end of the string. If negative, it is treated as </d><d class='s7'>sourceLength + endSlice </d><d class='s4'>where sourceLength is the length of the string (for example, if endSlice is -3 it is treated as sourceLength - 3).</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>slice() extracts the text from one string and returns a new string. Changes to the text in one string do not affect the other string.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>slice() extracts up to but not including endSlice. str.slice(1, 4) extracts the second character through the fourth character (characters indexed 1, 2, and 3).</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>As an example, str.slice(2, -1) extracts the third character through the second to last character in the string.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_25'>String.prototype.substring()</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring</a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>The substring() method returns a subset of a string between one index and another, or through the end of the string.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>str.substring(indexStart[, indexEnd])</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>indexStart</d></pre>
+<pre><d class='s4'>An integer between 0 and the length of the string, specifying the offset into the string of the first character to include in the returned substring.</d></pre>
+<pre><d class='s4'>indexEnd</d></pre>
+<pre><d class='s4'>Optional. An integer between 0 and the length of the string, which specifies the offset into the string of the first character not to include in the returned substring.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>substring() extracts characters from indexStart up to but not including indexEnd. In particular:</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>If indexStart equals indexEnd, substring() returns an empty string.</d></pre>
+<pre><d class='s4'>If indexEnd is omitted, substring() extracts characters to the end of the string.</d></pre>
+<pre><d class='s4'>If either argument is less than 0 or is NaN, it is treated as if it were 0.</d></pre>
+<pre><d class='s4'>If either argument is greater than stringName.length, it is treated as if it were stringName.length.</d></pre>
+<pre><d class='s19'>If indexStart is greater than indexEnd, then the effect of substring() is as if the two arguments were swapped;</d><d class='s4'> for example, str.substring(1, 0) == str.substring(0, 1).</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_26'>String.prototype.repeat()</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat</a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Polyfill</d></pre>
+<pre><d class='s4'>This method has been added to the ECMAScript 6 specification and may not be available in all JavaScript implementations yet. However, you can polyfill String.prototype.repeat() with the following snippet:</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>if (!String.prototype.repeat) {</d></pre>
+<pre><d class='s4'>  String.prototype.repeat = function(count) {</d></pre>
+<pre><d class='s4'>    'use strict';</d></pre>
+<pre><d class='s4'>    if (this == null) {</d></pre>
+<pre><d class='s4'>      throw new TypeError('can\'t convert ' + this + ' to object');</d></pre>
+<pre><d class='s4'>    }</d></pre>
+<pre><d class='s4'>    var str = '' + this;</d></pre>
+<pre><d class='s4'>    count = +count;</d></pre>
+<pre><d class='s4'>    if (count != count) {</d></pre>
+<pre><d class='s4'>      count = 0;</d></pre>
+<pre><d class='s4'>    }</d></pre>
+<pre><d class='s4'>    if (count &lt; 0) {</d></pre>
+<pre><d class='s4'>      throw new RangeError('repeat count must be non-negative');</d></pre>
+<pre><d class='s4'>    }</d></pre>
+<pre><d class='s4'>    if (count == Infinity) {</d></pre>
+<pre><d class='s4'>      throw new RangeError('repeat count must be less than infinity');</d></pre>
+<pre><d class='s4'>    }</d></pre>
+<pre><d class='s4'>    count = Math.floor(count);</d></pre>
+<pre><d class='s4'>    if (str.length == 0 || count == 0) {</d></pre>
+<pre><d class='s4'>      return '';</d></pre>
+<pre><d class='s4'>    }</d></pre>
+<pre><d class='s4'>    // Ensuring count is a 31-bit integer allows us to heavily optimize the</d></pre>
+<pre><d class='s4'>    // main part. But anyway, most current (August 2014) browsers can't handle</d></pre>
+<pre><d class='s4'>    // strings 1 &lt;&lt; 28 chars or longer, so:</d></pre>
+<pre><d class='s4'>    if (str.length * count &gt;= 1 &lt;&lt; 28) {</d></pre>
+<pre><d class='s4'>      throw new RangeError('repeat count must not overflow maximum string size');</d></pre>
+<pre><d class='s4'>    }</d></pre>
+<pre><d class='s4'>    var rpt = '';</d></pre>
+<pre><d class='s4'>    for (;;) {</d></pre>
+<pre><d class='s4'>      if ((count & 1) == 1) {</d></pre>
+<pre><d class='s4'>        rpt += str;</d></pre>
+<pre><d class='s4'>      }</d></pre>
+<pre><d class='s4'>      count &gt;&gt;&gt;= 1;</d></pre>
+<pre><d class='s4'>      if (count == 0) {</d></pre>
+<pre><d class='s4'>        break;</d></pre>
+<pre><d class='s4'>      }</d></pre>
+<pre><d class='s4'>      str += str;</d></pre>
+<pre><d class='s4'>    }</d></pre>
+<pre><d class='s4'>    return rpt;</d></pre>
+<pre><d class='s4'>  }</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s5'></d></pre>
+<pre><d class='s4'>..,, String.prototype <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/prototype'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/prototype</a></d></pre>
+<pre><d class='s4'>..,, String.</d><d class='s29'>fromCharCode</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode</a></d></pre>
+<pre><d class='s4'>..,, String.fromCodePoint() [experimental] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint</a></d></pre>
+<pre><d class='s4'>..,, String.raw() [experimental] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.length <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.charAt() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.charCodeAt() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.codePointAt() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.concat() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.includes() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.endsWith() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.indexOf() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.lastIndexOf() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.localeCompare() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.match() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.normalize() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.padEnd() [experimental] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.padStart() [experimental] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.quote() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/quote'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/quote</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.repeat() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.</d><d class='s7'>replace</d><d class='s4'>() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace</a></d></pre>
+<pre><d class='s4'><a href='http://a.fe.my/tests_w3c/string/replace.html'>http://a.fe.my/tests_w3c/string/replace.html</a></d></pre>
+<t id='9ab69270-6450-4e58-b516-dfb53c18709a'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s19'>replace 正则+function</d></pre>
+<pre><d class='s4'>            function doReplace(match, offset, string) {</d></pre>
+<pre><d class='s4'>                return match + "xx";</d></pre>
+<pre><d class='s4'>            }</d></pre>
+<pre><d class='s4'>            return src.replace(/第\d+章/g, doReplace);</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>function </d><d class='s7'>camelcase2underscore</d><d class='s4'>(s) {</d></pre>
+<pre><d class='s4'>    return s.replace(/[A-Z]/g, function(c) {</d></pre>
+<pre><d class='s4'>        var s = "_" + String.fromCharCode(c.charCodeAt(0) + 32);</d></pre>
+<pre><d class='s4'>        return s;</d></pre>
+<pre><d class='s4'>    });</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'>console.log(camelcase2underscore("onceUponATime"));</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>function </d><d class='s7'>underscore2camelcase</d><d class='s4'>(s) {</d></pre>
+<pre><d class='s4'>    return s.replace(/_[a-z]/g, function(c) {</d></pre>
+<pre><d class='s4'>        return String.fromCharCode(c.charCodeAt(1) - 32);</d></pre>
+<pre><d class='s4'>    });s</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'>console.log(underscore2camelcase("once_upon_a_time"));</d></pre>
+<pre><d class='s4'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<pre><d class='s4'>..,, String.prototype.search() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.slice() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.split() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split</a></d></pre>
+<pre><d class='s4'>使用捕获，捕获组会最终加入到结果数组中</d></pre>
+<pre><d class='s4'>var myString = 'Hello 1a1 word. Sentence number 2b2.';</d></pre>
+<pre><d class='s4'>var splits = myString.split(/(\d)\w(\d)/);</d></pre>
+<pre><d class='s4'>console.log(splits);</d></pre>
+<pre><d class='s4'>// ["Hello ", "1", "1", " word. Sentence number ", "2", "2", "."]</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>..,, String.prototype.startsWith() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.substr() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.substring() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.toLocaleLowerCase() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.toLocaleUpperCase() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.toLowerCase() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.toSource() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toSource'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toSource</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.toString() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toString'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toString</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.toUpperCase() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.trim() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.trimLeft() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimLeft'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimLeft</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.trimRight() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimRight'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimRight</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.valueOf() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf</a></d></pre>
+<pre><d class='s4'>..,, String.prototype[@@iterator]() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.anchor() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/anchor'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/anchor</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.big() [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/big'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/big</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.blink() [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/blink'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/blink</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.bold() [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/bold'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/bold</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.fixed() [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fixed'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fixed</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.fontcolor() [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fontcolor'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fontcolor</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.fontsize() [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fontsize'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fontsize</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.italics() [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/italics'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/italics</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.link() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/link'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/link</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.small() [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/small'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/small</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.strike() [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/strike'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/strike</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.sub() [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/sub'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/sub</a></d></pre>
+<pre><d class='s4'>..,, String.prototype.sup() [deprecated] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/sup'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/sup</a></d></pre>
+<pre><d class='s5'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<t id='20af47fa-2936-4514-9ef1-80fb0ee0939a'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s15'><h1 id='ol_27'>js RegExp</h1>
+</d><d class='s0'>x:\work\jskit\tools\</d><d class='s24'>RegExpTools.htm</d><d class='s0'></d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp</a></d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>〖mk:@MSITStore:X:\ebook\JavaScript\w3cschool.cc.chm::/jsref-obj-regexp.html〗</d><d class='s15'></d></pre>
+<pre><d class='s39'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions</a></d></pre>
+<pre><d class='s39'>Regular expressions are patterns used to match character combinations in strings. In JavaScript, regular expressions are also objects. </d><d class='s40'>These patterns are used with the </d><d class='s41'>exec </d><d class='s40'>and </d><d class='s41'>test </d><d class='s40'>methods of RegExp, and with the </d><d class='s41'>match, replace, search, and split methods of String</d><d class='s39'>. This chapter describes JavaScript regular expressions.</d></pre>
+<pre><d class='s39'></d></pre>
+<pre><d class='s39'><img src='..\pic\1b2b534513515569cc17b987c4c6b9e5.jpg' /></d><d class='s4'></d></pre>
+<pre><d class='s4'>lastIndex:在匹配完毕和时会重置为0</d></pre>
+<pre><d class='s39'></d></pre>
+<pre><d class='s3'>pattern</d></pre>
+<pre><d class='s3'>The text of the regular expression.</d></pre>
+<pre><d class='s3'>flags</d></pre>
+<pre><d class='s3'>If specified, flags can have any combination of the following values:</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>g</d></pre>
+<pre><d class='s3'>global match</d></pre>
+<pre><d class='s3'>i</d></pre>
+<pre><d class='s3'>ignore case</d></pre>
+<pre><d class='s3'>m</d></pre>
+<pre><d class='s3'>multiline; treat beginning and end characters (^ and $) as working over multiple lines (i.e., match the beginning or end of each line (delimited by \n or \r), not only the very beginning or end of the whole input string)</d></pre>
+<pre><d class='s3'>u</d></pre>
+<pre><d class='s3'>unicode; treat pattern as a sequence of unicode code points</d></pre>
+<pre><d class='s3'>y</d></pre>
+<pre><d class='s3'>sticky; matches only from the index indicated by the lastIndex property of this regular expression in the target string (and does not attempt to match from any later indexes).</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>same：</d></pre>
+<pre><d class='s3'>/ab+c/i;</d></pre>
+<pre><d class='s3'>new RegExp('ab+c', 'i');</d></pre>
+<pre><d class='s3'>new RegExp(/ab+c/, 'i');</d></pre>
+<pre><d class='s3'>转意：</d></pre>
+<pre><d class='s3'>var re = /\w+/;</d></pre>
+<pre><d class='s3'>var re = new RegExp('\\w+');</d></pre>
+<pre><d class='s2'></d></pre>
+<pre><d class='s39'></d></pre>
+<pre><d class='s40'>pattern.exec能够得到更多的信息。</d></pre>
+<pre><d class='s40'>[0]: 结果</d></pre>
+<pre><d class='s40'>[1]...:捕获组。</d><d class='s39'></d></pre>
+<pre><d class='s39'>eg:</d></pre>
+<pre><d class='s39'>p = /(a+)d/g</d></pre>
+<pre><d class='s39'>src = "sdfjefaaadsf"</d></pre>
+<pre><d class='s39'>r = p.exec(src)</d></pre>
+<pre><d class='s39'></d></pre>
+<pre><d class='s40'>(x) capturing parentheses</d></pre>
+<pre><d class='s40'>(?:x)  non-capturing parentheses -- 使用括号，但不捕获 /(?:foo){1,2}/</d></pre>
+<pre><d class='s40'>x(?=y) a lookahead: Matches 'x' only if 'x' is followed by 'y'. This is called a lookahead. -- 没有look back?</d></pre>
+<pre><d class='s40'>x(?!y) negated lookahead: Matches 'x' only if 'x' is not followed by 'y'. This is called a negated lookahead.</d></pre>
+<pre><d class='s39'></d></pre>
+<pre><d class='s19'>空格匹配,但考虑引号:</d><d class='s40'></d></pre>
+<pre><d class='s40'>(?:[^\s"]+|"[^"]*")+</d></pre>
+<pre><d class='s40'>不加?:的话，会将最后一个匹配结果captur 到arr[1]</d></pre>
+<pre><d class='s40'>=====pattern===:</d></pre>
+<pre><d class='s40'>([^\s"]+|"[^"]*")+</d></pre>
+<pre><d class='s40'></d></pre>
+<pre><d class='s40'>=====source====</d></pre>
+<pre><d class='s40'>aa"b c"dd</d></pre>
+<pre><d class='s40'></d></pre>
+<pre><d class='s40'>----one match----</d></pre>
+<pre><d class='s40'>0, aa"b c"dd</d></pre>
+<pre><d class='s40'>1, dd</d><d class='s39'></d></pre>
+<pre><d class='s39'></d></pre>
+<pre><d class='s41'>Calling the constructor function of the RegExp object, as follows:</d></pre>
+<pre><d class='s41'>/ab+c/i;</d></pre>
+<pre><d class='s41'>new RegExp('ab+c', 'i');</d></pre>
+<pre><d class='s39'></d></pre>
+<pre><d class='s39'>// 全局匹配全部</d></pre>
+<pre><d class='s39'>p = /a+/</d><d class='s42'>g</d><d class='s39'></d></pre>
+<pre><d class='s39'>src = "sdafjefaaadsf"</d></pre>
+<pre><d class='s39'>while(r = p.exec(src)) {</d></pre>
+<pre><d class='s39'>    console.log(r)</d></pre>
+<pre><d class='s39'>}</d><d class='s15'></d></pre>
+<pre><d class='s7'></d></pre>
+<pre><d class='s7'>diffTreePath = diffTreePath.replace(/\\/g, "/");</d></pre>
+<pre><d class='s7'></d></pre>
+<pre><d class='s4'><a href='js.html#9ab69270-6450-4e58-b516-dfb53c18709a'>replace 正则+function </a></d></pre>
+<pre><d class='s0'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<pre><d class='s5'><h1 id='ol_28'>js Math</h1>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math</a></d></pre>
+<pre><d class='s4'>Unlike the other global objects, Math is </d><d class='s7'>not</d><d class='s4'> a constructor. All properties and methods of Math are </d><d class='s7'>static</d><d class='s4'>. You refer to the constant pi as Math.PI and you call the sine function as Math.sin(x), where x is the method's argument. Constants are defined with the full precision of real numbers in JavaScript.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h1 id='ol_29'>use strict</h1>
+<a href='http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/'>http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/</a></d><d class='s4'></d></pre>
+<pre><d class='s4'>'use strict';</d></pre>
+<pre><d class='s4'></d></pre>
+<t id='20a63f01-9042-4ed4-b1a3-f92f1c2acf6a'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h1 id='ol_30'>js Date Time</h1>
+</d><d class='s29'>format:</d><d class='s5'></d></pre>
+<pre><d class='s5'><a href='http://a.fe.my/tests_w3c/DateFormat01.htm'>http://a.fe.my/tests_w3c/DateFormat01.htm</a></d></pre>
+<pre><d class='s5'><a href='http://a.fe.my/tests_w3c/DateFormat02.htm'>http://a.fe.my/tests_w3c/DateFormat02.htm</a></d><d class='s4'></d></pre>
+<pre><d class='s5'>DateFormat02.htm 有语法错误</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s19'>milli second; string; date object 三者间的转换</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date</a></d></pre>
+<pre><d class='s19'>静态方法</d></pre>
+<pre><d class='s19'>Date.now();</d></pre>
+<pre><d class='s16'>Date.parse()</d><d class='s3'></d></pre>
+<pre><d class='s3'> Note: Parsing of strings with Date.parse </d><d class='s36'>is strongly discouraged</d><d class='s3'> due to browser differences and inconsistencies.Support for RFC 2822 format strings is by convention only. </d><d class='s36'>Support for ISO 8601 formats differs in that date-only strings (e.g. "1970-01-01") are treated as UTC, not local.</d></pre>
+<pre><d class='s16'>Date.UTC()</d><d class='s3'></d></pre>
+<pre><d class='s3'> Accepts the same parameters as the longest form of the constructor (i.e. 2 to 7) and returns the number of milliseconds since 1 January, 1970, 00:00:00 UTC, with leap seconds ignored.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s19'>实例方法：</d></pre>
+<pre><d class='s19'>end.getTime() // ms since 1970</d></pre>
+<pre><d class='s19'>高精度</d></pre>
+<pre><d class='s19'>performance.now();</d><d class='s11'></d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s16'>Greenwich Mean Time (GMT),</d><d class='s3'></d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s16'>注意：</d></pre>
+<pre><d class='s16'>1、传入UTC还是local？</d></pre>
+<pre><d class='s16'>2、return Date object还是毫秒？</d></pre>
+<pre><d class='s16'>必须new：new Date() // Invoking JavaScript Date as a function (i.e., without the new operator) will return a string representing the current date and time.</d></pre>
+<pre><d class='s16'>month: 0-11</d><d class='s3'></d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>// eg:</d></pre>
+<pre><d class='s16'>var today = new Date();</d></pre>
+<pre><d class='s16'>var birthday = new Date('December 17, 1995 03:24:00');</d></pre>
+<pre><d class='s16'>var birthday = new Date('1995-12-17</d><d class='s29'>T</d><d class='s16'>03:24:00');</d></pre>
+<pre><d class='s16'>var birthday = new Date(1995, 11, 17);</d></pre>
+<pre><d class='s16'>var birthday = new Date(1995, 11, 17, 3, 24, 0);</d><d class='s3'></d></pre>
+<pre><d class='s15'></d></pre>
+<pre><d class='s3'>new Date();</d></pre>
+<pre><d class='s3'>new Date(value);</d></pre>
+<pre><d class='s3'>new Date(dateString);</d></pre>
+<pre><d class='s16'>new Date(year, month[, date[, hours[, minutes[, seconds[, milliseconds]]]]]);</d><d class='s3'></d></pre>
+<pre><d class='s15'></d></pre>
+<pre><d class='s16'>getTimezoneOffset()</d></pre>
+<pre><d class='s15'></d></pre>
+<pre><d class='s5'><h2 id='ol_31'>js实现日期的相加减</h2>
+<a href='http://blog.csdn.net/longvs/article/details/11761643'>http://blog.csdn.net/longvs/article/details/11761643</a></d><d class='s4'></d></pre>
+<pre><d class='s4'><a href='http://www.jb51.net/article/22657.htm'>http://www.jb51.net/article/22657.htm</a></d></pre>
+<pre><d class='s7'>注意：可以通过毫秒来计算，通过format来简化：</d><d class='s4'></d></pre>
+<pre><d class='s4'>	// eg: dateOperator("2014-10-01", 1, "-")</d></pre>
+<pre><d class='s4'>	// return "2014-09-3"</d></pre>
+<pre><d class='s4'>	function dateOperator(date, days, operator)	{</d></pre>
+<pre><d class='s4'>	  date = date.replace(/-/g, "/"); //更改日期格式  </d></pre>
+<pre><d class='s4'>	  var nd = new Date(date);</d></pre>
+<pre><d class='s4'>	  nd = nd.valueOf();</d></pre>
+<pre><d class='s4'>	  if (operator == "+") {</d></pre>
+<pre><d class='s4'>		nd = nd + days * 24 * 60 * 60 * 1000;</d></pre>
+<pre><d class='s4'>	  } else if (operator == "-") {</d></pre>
+<pre><d class='s4'>		nd = nd - days * 24 * 60 * 60 * 1000;</d></pre>
+<pre><d class='s4'>	  } else {</d></pre>
+<pre><d class='s4'>		return false;</d></pre>
+<pre><d class='s4'>	  }</d></pre>
+<pre><d class='s4'>	  nd = new Date(nd);</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>	  var y = nd.getFullYear();</d></pre>
+<pre><d class='s4'>	  var m = nd.getMonth() + 1;</d></pre>
+<pre><d class='s4'>	  var d = nd.getDate();</d></pre>
+<pre><d class='s4'>	  if (m &lt;= 9) m = "0" + m;</d></pre>
+<pre><d class='s4'>	  if (d &lt;= 9) d = "0" + d;</d></pre>
+<pre><d class='s4'>	  var cdate = y + "-" + m + "-" + d;</d></pre>
+<pre><d class='s4'>	  return cdate;</d></pre>
+<pre><d class='s4'>	}</d></pre>
+<pre><d class='s4'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<pre><d class='s5'><h1 id='ol_32'>js Number</h1>
+</d><d class='s8'>..,, Number <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number</a></d></pre>
+<pre><d class='s8'>..,, Number.EPSILON <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/EPSILON'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/EPSILON</a></d></pre>
+<pre><d class='s8'>..,, Number.MAX_SAFE_INTEGER <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER</a></d></pre>
+<pre><d class='s8'>..,, Number.MAX_VALUE <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE</a></d></pre>
+<pre><d class='s8'>..,, Number.MIN_SAFE_INTEGER <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_SAFE_INTEGER'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_SAFE_INTEGER</a></d></pre>
+<pre><d class='s8'>..,, Number.MIN_VALUE <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE</a></d></pre>
+<pre><d class='s8'>..,, Number.NaN <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NaN'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NaN</a></d></pre>
+<pre><d class='s8'>..,, Number.NEGATIVE_INFINITY <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NEGATIVE_INFINITY'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NEGATIVE_INFINITY</a></d></pre>
+<pre><d class='s8'>..,, Number.POSITIVE_INFINITY <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/POSITIVE_INFINITY'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/POSITIVE_INFINITY</a></d></pre>
+<pre><d class='s8'>..,, Number.prototype <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/prototype'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/prototype</a></d></pre>
+<pre><d class='s8'>..,, Number.isNaN() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN</a></d></pre>
+<pre><d class='s8'>..,, Number.isFinite() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite</a></d></pre>
+<pre><d class='s8'>..,, Number.isInteger() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger</a></d></pre>
+<pre><d class='s8'>..,, Number.isSafeInteger() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger</a></d></pre>
+<pre><d class='s8'>..,, Number.toInteger() [obsolete] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toInteger'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toInteger</a></d></pre>
+<pre><d class='s8'>..,, Number.parseFloat() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat</a></d></pre>
+<pre><d class='s8'>..,, Number.parseInt() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt</a></d></pre>
+<pre><d class='s8'>..,, Number.prototype.toExponential() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential</a></d></pre>
+<pre><d class='s8'>..,, Number.prototype.</d><d class='s24'>toFixed</d><d class='s8'>() 指定保留位数，return string <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed</a></d></pre>
+<pre><d class='s8'>..,, Number.prototype.toLocaleString() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString</a></d></pre>
+<pre><d class='s8'>..,, Number.prototype.toPrecision() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision</a></d></pre>
+<pre><d class='s8'>..,, Number.prototype.toSource() [no-std] <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toSource'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toSource</a></d></pre>
+<pre><d class='s8'>..,, Number.prototype.toString() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString</a></d></pre>
+<pre><d class='s8'>..,, Number.prototype.valueOf() <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/valueOf'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/valueOf</a></d></pre>
+<pre><d class='s4'></d></pre>
+<t id='0af565e6-47b7-444d-a3b2-b73a11f0314b'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h1 id='ol_33'>for in; keys; getOwnPropertyNames</h1>
+</d><d class='s3'></d></pre>
+<pre><d class='s16'>Object.keys(person): 所有的可枚举属性的string array（仅实例属性）</d></pre>
+<pre><d class='s16'>Object.</d><d class='s29'>getOwnPropertyNames</d><d class='s16'>(person): </d><d class='s29'>仅实例属性.但包含不可枚举的.</d></pre>
+<pre><d class='s16'>keys, for in(enumerates properties in the prototype chain as well), </d><d class='s3'>getOwnPropertyNames区别：</d></pre>
+<pre><d class='s3'>X:\fe\tests_w3c\Object_prototype_test2.html</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>Object.keys: property_a1,property_a3</d></pre>
+<pre><d class='s3'>for in: property_a1,property_a3,property_in_proto</d></pre>
+<pre><d class='s3'>Object.getOwnPropertyNames: property_a1,defined_prop,property_a3</d></pre>
+<pre><d class='s5'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<pre><d class='s5'><h1 id='ol_34'>Expressions and operators</h1>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators</a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_35'>Destructuring assignment</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a></d><d class='s4'></d></pre>
+<pre><d class='s4'>是一个匹配的过程.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>[a, b] = [10, 20];</d></pre>
+<pre><d class='s4'>[a, b, ...rest] = [10, 20, 30, 40, 50];</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Setting a function parameter's default value</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>function drawES2015Chart({size = 'big', cords = {x: 0, y: 0}, radius = 25} = {}, xx = 'x1') {</d></pre>
+<pre><d class='s4'>  console.log(size, cords, radius, xx);</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>// 全部用默认值 big Object {x: 0, y: 0} 25 x1</d></pre>
+<pre><d class='s4'>drawES2015Chart(); </d></pre>
+<pre><d class='s4'>// 部分默认 big Object {x: 18, y: 30} 30 x1</d></pre>
+<pre><d class='s4'>drawES2015Chart({</d></pre>
+<pre><d class='s4'>  cords: {x: 18, y: 30},</d></pre>
+<pre><d class='s4'>  radius: 30</d></pre>
+<pre><d class='s4'>});</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>同时指定new name and default value</d></pre>
+<pre><d class='s4'>var o = {q: true};</d></pre>
+<pre><d class='s4'>var {p: foo = 3, q: bar} = o;</d></pre>
+<pre><d class='s4'>console.log(foo); // 42 </d></pre>
+<pre><d class='s4'>console.log(bar); // true</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Nested object and array destructuring</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>var metadata = {</d></pre>
+<pre><d class='s4'>    title: 'Scratchpad',</d></pre>
+<pre><d class='s4'>    translations: [</d></pre>
+<pre><d class='s4'>       {</d></pre>
+<pre><d class='s4'>        locale: 'de',</d></pre>
+<pre><d class='s4'>        localization_tags: [],</d></pre>
+<pre><d class='s4'>        last_edit: '2014-04-14T08:43:37',</d></pre>
+<pre><d class='s4'>        url: '/de/docs/Tools/Scratchpad',</d></pre>
+<pre><d class='s4'>        title: 'JavaScript-Umgebung'</d></pre>
+<pre><d class='s4'>       }</d></pre>
+<pre><d class='s4'>    ],</d></pre>
+<pre><d class='s4'>    url: '/en-US/docs/Tools/Scratchpad'</d></pre>
+<pre><d class='s4'>};</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>var {title: englishTitle, translations: [{title: localeTitle}]} = metadata;</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>For of iteration and destructuring</d></pre>
+<pre><d class='s4'>for (var {name: n, family: {father: f}} of people) {</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>两次引用了fullName:</d></pre>
+<pre><d class='s4'>{displayName, fullName: {firstName: name}, fullName}) {</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Computed object property names and destructuring</d></pre>
+<pre><d class='s4'>let key = 'z';</d></pre>
+<pre><d class='s4'>let {</d><d class='s7'>[key]</d><d class='s4'>: foo} = {z: 'bar'};</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Invalid JavaScript identifier as a property name</d></pre>
+<pre><d class='s4'>用引号则必须new name</d></pre>
+<pre><d class='s4'>const foo = { 'fizz-buzz': true };</d></pre>
+<pre><d class='s4'>const { 'fizz-buzz': fizzBuzz } = foo;</d></pre>
+<pre><d class='s4'></d></pre>
+<t id='a36a5b71-f20a-4540-8e94-f1fbb4128023'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s0'><h2 id='ol_36'>typeof</h2>
+<a href='js.html#7ccc5d62-4e9d-42b6-969d-100a2b1573dd'>instanceof </a></d><d class='s4'></d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof</a></d></pre>
+<pre><d class='s43'>typeof判断的根据是内置的tag，而不是prototype chain。因此不能通过js(__proto__ = null)改变？</d><d class='s8'></d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>Type	Result</d></pre>
+<pre><d class='s8'>Undefined	"undefined"</d></pre>
+<pre><d class='s24'>Null	"object" (see below)</d><d class='s8'></d></pre>
+<pre><d class='s8'>Boolean	"boolean"</d></pre>
+<pre><d class='s8'>Number	"number"</d></pre>
+<pre><d class='s8'>String	"string"</d></pre>
+<pre><d class='s24'>Symbol (new in ECMAScript 2015)	"symbol"</d><d class='s8'></d></pre>
+<pre><d class='s24'>Host object (provided by the JS environment)	Implementation-dependent</d><d class='s8'></d></pre>
+<pre><d class='s8'>Function object (implements [[Call]] in ECMA-262 terms)	"</d><d class='s24'>function</d><d class='s8'>"</d></pre>
+<pre><d class='s8'>Any other object	"object"</d></pre>
+<pre><d class='s24'>注意，没有array</d></pre>
+<pre><d class='s24'></d></pre>
+<pre><d class='s8'>typeof document.all === 'undefined'; // ture, exception</d></pre>
+<pre><d class='s4'></d></pre>
+</t>
+<pre><d class='s0'></d><d class='s4'></d></pre>
+<pre><d class='s5'><h1 id='ol_37'>Statements and declarations</h1>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements</a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_38'>for...of</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of</a></d><d class='s4'></d></pre>
+<pre><d class='s4'>方便,不用再通过key获取value</d></pre>
+<pre><d class='s4'>仅针对collections</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>The for...of statement creates a loop iterating over iterable objects (including Array, Map, Set, String, TypedArray, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Iterating over a DOM collection</d></pre>
+<pre><d class='s4'>let articleParagraphs = document.querySelectorAll('article &gt; p');</d></pre>
+<pre><d class='s4'>for (let paragraph of articleParagraphs) {</d></pre>
+<pre><d class='s4'>  paragraph.classList.add('read');</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Iterating over generators</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s7'>function*</d><d class='s4'> fibonacci() { // a generator function</d></pre>
+<pre><d class='s4'>  let [prev, curr] = [0, 1];</d></pre>
+<pre><d class='s4'>  while (true) {</d></pre>
+<pre><d class='s4'>    [prev, curr] = [curr, prev + curr];</d></pre>
+<pre><d class='s4'>    </d><d class='s7'>yield</d><d class='s4'> curr;</d></pre>
+<pre><d class='s4'>  }</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'>for (let n of fibonacci()) {</d></pre>
+<pre><d class='s4'>  console.log(n);</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Do not reuse generators</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Difference between for...of and for...in</d></pre>
+<pre><d class='s4'>The for...of syntax </d><d class='s7'>is specific to collections</d><d class='s4'>, rather than all objects. It will iterate in this manner over the elements of any collection that has </d><d class='s7'>a [Symbol.iterator] property.</d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_39'>class</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class</a></d><d class='s4'></d></pre>
+<pre><d class='s4'>The class declaration creates a new class with a given name</d><d class='s7'> using prototype-based inheritance</d><d class='s4'>.</d></pre>
+<pre><d class='s4'>You can also define a class using a class expression. But unlike the class expression, the class declaration doesn't allow an existing class to be declared again and will throw a type error if attempted. </d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>不能重复declare</d></pre>
+<pre><d class='s4'>execute in strict mode</d></pre>
+<pre><d class='s4'>constructor 可选</d></pre>
+<pre><d class='s4'>not hoisted</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>class Polygon {</d></pre>
+<pre><d class='s4'>  constructor(height, width) {</d></pre>
+<pre><d class='s4'>  }</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>class Square extends Polygon {</d></pre>
+<pre><d class='s4'>  constructor(length) {</d></pre>
+<pre><d class='s4'>    super(length, length);</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_40'>let</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let</a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Cleaner code in inner functions</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>每次循环都会生成一个scope？</d></pre>
+<pre><d class='s4'>function test_let() {</d></pre>
+<pre><d class='s4'>	var arr = [];</d></pre>
+<pre><d class='s4'>	// 把这个let换成var,则输出5个5</d></pre>
+<pre><d class='s4'>	for(let i = 0; i&lt;5; i++) {</d></pre>
+<pre><d class='s4'>		arr[i] = function() {</d></pre>
+<pre><d class='s4'>			console.log(i);</d></pre>
+<pre><d class='s4'>		}</d></pre>
+<pre><d class='s4'>	}</d></pre>
+<pre><d class='s4'>	return arr;</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>var func_arr = test_let();</d></pre>
+<pre><d class='s4'>for(var func of func_arr) {</d></pre>
+<pre><d class='s4'>	func();</d></pre>
+<pre><d class='s4'>}</d></pre>
+<pre><d class='s4'>//output 0 1 2 3 4</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>At the top level of programs and functions, let, unlike var, does </d><d class='s7'>not</d><d class='s4'> create a property on the </d><d class='s7'>global object</d></pre>
+<pre><d class='s7'></d></pre>
+<pre><d class='s7'>Temporal Dead Zone</d><d class='s4'> and errors with let</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>if (x) {</d></pre>
+<pre><d class='s4'>  let foo;</d></pre>
+<pre><d class='s4'>  let foo; // SyntaxError thrown.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>not subject to Variable Hoisting</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Another example of temporal dead zone combined with lexical scoping</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>Due to lexical scoping, the identifier "foo" inside the expression (foo + 55) evaluates to the if block's foo, and not the overlying variable foo with the value of 33.</d></pre>
+<pre><d class='s4'>In that very line, the if block's "foo" has already been created in the lexical environment, but has not yet reached (and terminated) its initialization (which is part of the statement itself): it's still in the temporal dead zone.</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>function test(){</d></pre>
+<pre><d class='s4'>   var foo = 33;</d></pre>
+<pre><d class='s4'>   if (true) {</d></pre>
+<pre><d class='s4'>      let foo = (foo + 55); // ReferenceError</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>// ReferenceError, too</d></pre>
+<pre><d class='s4'>let n = {a: 1};</d></pre>
+<pre><d class='s4'>(function(){</d></pre>
+<pre><d class='s4'>	let n = n.a;</d></pre>
+<pre><d class='s4'>})();</d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_41'>import</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import</a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_42'>export</h2>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export</a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s5'><h1 id='ol_43'>misc</h1>
+</d><d class='s4'></d></pre>
+<pre><d class='s5'><h2 id='ol_44'>Template literals</h2>
+<a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals'>https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals</a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<t id='53a8c062-b0db-4036-a5eb-d065608ec97f'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s5'><h1 id='ol_45'>js fqt</h1>
+</d><d class='s4'>GlobalEventHandlers <a href='event.html#fa9ae8cd-80a7-4d59-814f-79c6c778d5a1'>js event 事件 sum </a></d></pre>
+<pre><d class='s4'><a href='https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers'>https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers</a></d></pre>
+<pre><d class='s5'></d></pre>
+<pre><d class='s5'>Event reference(all) <a href='events.html#71037ed2-669d-4f79-9515-1359806c55ed'>js events </a></d><d class='s4'></d></pre>
+<pre><d class='s5'><a href='https://developer.mozilla.org/en-US/docs/Web/Events'>https://developer.mozilla.org/en-US/docs/Web/Events</a></d></pre>
+<pre><d class='s5'></d></pre>
+<pre><d class='s5'>html h5 elements tags <a href='DOM.html#59f1dcc6-e840-47f3-939e-c0f73685a82e'>html tags; elements </a></d><d class='s4'></d></pre>
+<pre><d class='s0'><a href='https://developer.mozilla.org/en-US/docs/Web/HTML'>https://developer.mozilla.org/en-US/docs/Web/HTML</a></d></pre>
+<pre><d class='s0'><a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element'>https://developer.mozilla.org/en-US/docs/Web/HTML/Element</a></d><d class='s5'></d></pre>
+<pre><d class='s5'></d></pre>
+<pre><d class='s0'>Standard built-in objects</d><d class='s8'></d></pre>
+<pre><d class='s8'> <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects</a></d><d class='s0'></d></pre>
+<pre><d class='s5'></d></pre>
+<pre><d class='s44'>〖html tmpl basic〗</d></pre>
+<pre><d class='s44'></d></pre>
+<pre><d class='s44'>api:</d></pre>
+<pre><d class='s45'>api/element api/HtmlElement</d></pre>
+<pre><d class='s45'>api/Html*Element(anchor, textarea...)</d></pre>
+<pre><d class='s45'>api/</d><d class='s5'></d></pre>
+</t>
+<pre><d class='s0'></d></pre>
+<t id='da367b47-4c2e-4898-bb30-1eb8998dc077'>
+<pre><d class='s0'></d><d class='s0'></d></pre>
+<pre><d class='s0'><h1 id='ol_46'>js unit test</h1>
+<a href='sqlite_locate_failed!'>单元测试 unit test </a></d><d class='s4'></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s4'>JavaScript unit test tools for TDD</d></pre>
+<pre><d class='s4'><a href='https://stackoverflow.com/questions/300855/javascript-unit-test-tools-for-tdd'>https://stackoverflow.com/questions/300855/javascript-unit-test-tools-for-tdd</a></d></pre>
+<pre><d class='s4'> js unit test 比较表格</d></pre>
+<pre><d class='s4'> <a href='https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript'>https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript</a></d></pre>
+<pre><d class='s4'></d></pre>
+<pre><d class='s7'>很重要的一点：且具有</d><d class='s29'>异步测试的功能</d><d class='s4'></d></pre>
+<pre><d class='s0'></d></pre>
+</t>
+<pre><d class='s0'></body></html>

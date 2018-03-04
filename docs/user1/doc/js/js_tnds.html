@@ -1,0 +1,653 @@
+﻿<!DOCTYPE html>
+<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf8'><title>js code; tnds</title><script src='../res/util.js'></script><link rel='stylesheet' type='text/css' href='../res/common.css'><style>.s0{color:#0000ff;}
+.s1{color:#0000ff;}
+.s2{color:#0000ff;}
+.s3{color:#0000ff;}
+.s4{color:#000000;}
+.s5{color:#000000;}
+.s6{color:#000000;}
+.s7{color:#000000;}
+.s8{color:#000000;}
+.s9{color:#000000;}
+.s10{color:#000000;}
+.s11{color:#0000ff;}
+.s12{color:#0000ff;}
+.s13{color:#000000;}
+.s14{color:#000000;}
+.s15{color:#100010;}
+.s16{color:#100010;}
+.s17{color:#000000;}
+.s18{color:#000000;}
+.s19{color:#100010;}
+.s20{color:#100010;}
+.s21{color:#110011;}
+.s22{color:#c80000;}
+.s23{color:#c80000;}
+.s24{color:#000000;}
+.s25{color:#0000ff;}
+.s26{color:#0000ff;}
+.s27{color:#000000;}
+.s28{color:#000000;}
+.s29{color:#458383;}
+.s30{color:#000000;}
+.s31{color:#660e7a;}
+.s32{color:#008000;}
+.s33{color:#660e7a;}
+.s34{color:#000080;}
+.s35{color:#7a7a43;}
+.s36{color:#0000ff;}
+.s37{color:#808080;}
+.s38{color:#808080;}
+.s39{color:#000080;}
+.s40{color:#000000;}
+.s41{color:#0000ff;}
+.s42{color:#458383;}
+.s43{color:#008000;}
+.s44{color:#7a7a43;}
+</style></head><body>
+<div id='outline'>
+<li><a href='#ol_0' style='font-weight:bold; font-size:22px'>js code; tnds</a></li>
+</div>
+
+<pre><d class='s0'><br/><font size=8>js code; tnds</font>
+</d></pre>
+<pre><d class='s1'></d></pre>
+<pre><d class='s1'><a href='sqlite_locate_failed!'>fh util.js </a></d></pre>
+<pre><d class='s2'></d></pre>
+<t id='tna122'>
+<pre><d class='s3'></d><d class='s4'></d></pre>
+<pre><d class='s5'>SwitchOpenInBlank</d><d class='s4'></d></pre>
+<pre><d class='s6'>file:///X:/sh/htm/index_index.htm</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s7'>如果在</d><d class='s5'>frame</d><d class='s7'>中则</d><d class='s5'>target</d><d class='s7'>="</d><d class='s5'>right</d><d class='s7'>"</d><d class='s6'></d></pre>
+<pre><d class='s6'>X:\sh\htm\index.htm</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna280'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s3'>I:\work\jskit\tests\dom_traverse_test.js</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s8'>var sk = []; // for traversal</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>// enum all property in |obj|, and push them in the stack</d></pre>
+<pre><d class='s8'>function traverse_one(obj) {</d></pre>
+<pre><d class='s8'>	var s, p, funs = "",</d></pre>
+<pre><d class='s8'>		prop = "";</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>	//pi.log("=======================\nobj=" + obj);</d></pre>
+<pre><d class='s8'>	pi.log("-- handle=" + pi.vcall.getHandle(obj));</d></pre>
+<pre><d class='s8'>	pi.log("sk size=" + sk.length);</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>	for (p in obj) {</d></pre>
+<pre><d class='s8'>		var cur = obj[p];</d></pre>
+<pre><d class='s8'>		var t = typeof cur;</d></pre>
+<pre><d class='s8'>		// null is "object"</d></pre>
+<pre><d class='s8'>		if(cur !== null && (t === "object" || t === "function"))</d></pre>
+<pre><d class='s8'>		{</d></pre>
+<pre><d class='s8'>			if(cur.__visited__ !== true){</d></pre>
+<pre><d class='s8'>				sk.push(cur);</d></pre>
+<pre><d class='s8'>				cur.__visited__ = true;</d></pre>
+<pre><d class='s8'>			}</d></pre>
+<pre><d class='s8'>		}</d></pre>
+<pre><d class='s8'>	}</d></pre>
+<pre><d class='s8'>};</d></pre>
+<pre><d class='s8'></d></pre>
+<pre><d class='s8'>// traverse from |root|</d></pre>
+<pre><d class='s8'>function traverse_root(root) {</d></pre>
+<pre><d class='s8'>	root.__visited__  = true;</d></pre>
+<pre><d class='s8'>	sk.push(root);</d></pre>
+<pre><d class='s8'>	var cur;</d></pre>
+<pre><d class='s8'>	while (true) {</d></pre>
+<pre><d class='s8'>		if(sk.length === 0)</d></pre>
+<pre><d class='s8'>			break;</d></pre>
+<pre><d class='s8'>		cur = sk.shift();</d></pre>
+<pre><d class='s8'>		if(cur){</d></pre>
+<pre><d class='s8'>			traverse_one(cur);</d></pre>
+<pre><d class='s8'>		}</d></pre>
+<pre><d class='s8'>	}</d></pre>
+<pre><d class='s8'>}</d></pre>
+</t>
+<pre><d class='s9'></d><d class='s3'></d></pre>
+<t id='tna1127'>
+<pre><d class='s3'></d><d class='s10'></d></pre>
+<pre><d class='s10'>	function tryTest(fun, shouldHaveErr){</d></pre>
+<pre><d class='s10'>		var r;</d></pre>
+<pre><d class='s10'>		var err = false;</d></pre>
+<pre><d class='s10'>		try{</d></pre>
+<pre><d class='s10'>			pi.log("\n----- one test,");</d></pre>
+<pre><d class='s10'>			var params = Array.prototype.slice.call(arguments);</d></pre>
+<pre><d class='s10'>			params.shift();</d></pre>
+<pre><d class='s10'>			params.shift();</d></pre>
+<pre><d class='s10'>			r = fun.apply(undefined, params);</d></pre>
+<pre><d class='s10'>		}</d></pre>
+<pre><d class='s10'>		catch(e){</d></pre>
+<pre><d class='s10'>			err = true;</d></pre>
+<pre><d class='s10'>			pi.log(e);</d></pre>
+<pre><d class='s10'>		}</d></pre>
+<pre><d class='s10'>		log("r=" + r);</d></pre>
+<pre><d class='s10'>		assert(shouldHaveErr == err);</d></pre>
+<pre><d class='s10'>	}</d></pre>
+<pre><d class='s10'>	tryTest(errModule.TestInt, true);</d></pre>
+<pre><d class='s10'>	tryTest(errModule.TestInt, false, 1, 2);</d></pre>
+<pre><d class='s6'></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='tna1599'>
+<pre><d class='s3'></d><d class='s6'></d></pre>
+<pre><d class='s6'>这样写有问题:</d></pre>
+<pre><d class='s6'>&lt;script src="objects.js" /&gt;</d></pre>
+<pre><d class='s6'>&lt;script type="text/javascript"&gt;</d></pre>
+<pre><d class='s6'>&lt;/script&gt;</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s11'>chrome</d><d class='s1'>:</d><d class='s12'></d></pre>
+<pre><d class='s6'>if(typeof pi !== "undefined") </d><d class='s13'>ok</d><d class='s6'></d></pre>
+<pre><d class='s6'>if(pi !== undefined) </d><d class='s13'>error</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>强制执行一次垃圾回收（IE使用window.CollectGarbage()；Opera使用window.opera.collect();）</d><d class='s13'>chrome</d><d class='s6'>,</d><d class='s13'>firofox</d><d class='s6'>没有?</d></pre>
+<pre><d class='s14'></d></pre>
+</t>
+<pre><d class='s2'></d></pre>
+<t id='tna1893'>
+<pre><d class='s3'></d><d class='s15'></d></pre>
+<pre><d class='s15'>console.assert(condition); // this won't break(</d><d class='s16'>pause)</d><d class='s15'> the inspector</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>操作ArrayBuffer不能影响</d><d class='s4'>UInt</d><d class='s6'>8</d><d class='s4'>Array</d><d class='s6'>,反之可以.</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna2056'>
+<pre><d class='s3'></d><d class='s6'></d></pre>
+<pre><d class='s4'>json </d><d class='s6'>格式化</d></pre>
+<pre><d class='s6'><a href='http://www.jb51.net/article/29893.htm'>http://www.jb51.net/article/29893.htm</a></d></pre>
+<pre><d class='s6'>var str = JSON.stringify(obj); // 将JSON对象转化为JSON字符</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna2214'>
+<pre><d class='s3'></d><d class='s6'></d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s4'>pad left/right:</d><d class='s6'></d></pre>
+<pre><d class='s6'>var arr = new Array(10);</d></pre>
+<pre><d class='s6'>pi.log(arr.join("-+"));</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna2338'>
+<pre><d class='s3'></d><d class='s14'></d></pre>
+<pre><d class='s14'>如果异常了,就再也不会回调了?</d></pre>
+<pre><d class='s6'>pi.lang.setInterval(module.collate, 200); </d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>			for (var key in table) {</d></pre>
+<pre><d class='s6'>				// pi.log("--key=" + key);</d></pre>
+<pre><d class='s6'>				// pi.log("table[key]=" + table[key]);</d></pre>
+<pre><d class='s6'>				//pi.log("table.key=" + table.key); -- </d><d class='s4'>don't use this!</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna2618'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s3'>数组的</d><d class='s0'>key</d><d class='s3'>其实都是</d><d class='s0'>string</d><d class='s3'>:</d><d class='s14'></d></pre>
+<pre><d class='s14'>			var nKey = Number(key); // 没有使用parseInt(),因为键值是纯数字</d></pre>
+<pre><d class='s14'>			if (!isNaN(nKey)) {</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna2771'>
+<pre><d class='s3'></d><d class='s6'></d></pre>
+<pre><d class='s4'>ajax</d><d class='s6'>下载超时问题,因为不如</d><d class='s4'>chrome</d><d class='s6'>快速.</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna2856'>
+<pre><d class='s3'></d><d class='s6'></d></pre>
+<pre><d class='s6'>全面理解面向对象的 JavaScript</d></pre>
+<pre><d class='s6'><a href='http://www.ibm.com/developerworks/cn/web/1304_zengyz_jsoo/index.html'>http://www.ibm.com/developerworks/cn/web/1304_zengyz_jsoo/index.html</a></d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='4cdc2bf2-a5d7-4d56-bd10-2c49e783e744'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s0'>mod.js:</d><d class='s3'></d></pre>
+<pre><d class='s6'>	// 模块定义方法</d></pre>
+<pre><d class='s6'>	module.define = function (name, factory) {</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>	// 模块初始化方法</d></pre>
+<pre><d class='s6'>	modInit = function (pi, mod, factory) {</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>不支持同一个模块名写两次,如:</d></pre>
+<pre><d class='s6'>pi.mod.define('pi.native.browser', function (pi) {</d></pre>
+<pre><d class='s6'>这样同一个模块就不能分开在两个文件中定义,也不能定义在一个文件的两处.</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>加载完成时调用:</d></pre>
+<pre><d class='s6'>pi.mod.define('pi.jsByteBuffer', function (pi) {...})</d></pre>
+<pre><d class='s6'>在modInit中逐层构造对象.完成后再调用匿名</d><d class='s4'>function</d><d class='s17'>:</d><d class='s6'></d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>pi.wrap.vfs.readFile(</d><d class='s4'>path</d><d class='s6'>, </d><d class='s4'>encoding): </d><d class='s6'>需要</d><d class='s4'>pi</d><d class='s6'>.</d><d class='s4'>vcall.TYPE_STRING,</d></pre>
+<pre><d class='s6'>pi.file.read 需要"</d><d class='s4'>utf8"</d><d class='s6'>这样的参数.</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>pi.os.util.setCwd(cwd);</d></pre>
+<pre><d class='s18'></d></pre>
+<pre><d class='s18'>res.js: pi.lang.setInterval()</d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s15'>pi.native.browser.invokeCmd(pi.vcall.webViewHandle, pi.native.browser.TYPE_SET_MSG_PROC, msgProc, {});</d></pre>
+<pre><d class='s15'>pi.native.browser.hasInspector</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna3726'>
+<pre><d class='s3'></d><d class='s6'></d></pre>
+<pre><d class='s18'>empty string can be key: a[""] = 1;</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna3820'>
+<pre><d class='s3'></d><d class='s19'></d></pre>
+<pre><d class='s19'>JavaScript的类型错误：Illegal invocation</d></pre>
+<pre><d class='s19'><a href='http://www.cnblogs.com/meteoric_cry/archive/2011/04/24/2026582.html'>http://www.cnblogs.com/meteoric_cry/archive/2011/04/24/2026582.html</a></d></pre>
+<pre><d class='s19'>var l = console.log;</d></pre>
+<pre><d class='s19'>l(console, 123); -- </d><d class='s20'>illegal invocation</d></pre>
+<pre><d class='s19'>l.call(console, 123); -- </d><d class='s20'>ok</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna4071'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s0'>__proto__ </d><d class='s3'>循环 </d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna4144'>
+<pre><d class='s3'></d><d class='s4'></d></pre>
+<pre><d class='s4'>v8</d><d class='s6'>有堆栈,但</d><d class='s4'>jsc</d><d class='s6'>仅有</d><d class='s4'>toplevel</d><d class='s6'>'</d><d class='s4'>s</d><d class='s6'> </d><d class='s4'>file</d><d class='s6'>/</d><d class='s4'>line</d><d class='s6'>#</d><d class='s4'></d></pre>
+<pre><d class='s14'>        </d><d class='s2'>try</d><d class='s14'> {</d></pre>
+<pre><d class='s14'>                ({})();</d></pre>
+<pre><d class='s14'>        } </d><d class='s2'>catch</d><d class='s14'>(</d><d class='s21'>ex</d><d class='s14'>) {</d></pre>
+<pre><d class='s14'>                </d><d class='s2'>this</d><d class='s14'>.</d><d class='s21'>stack</d><d class='s14'> = </d><d class='s21'>ex</d><d class='s14'>.</d><d class='s21'>stack</d><d class='s14'>;</d></pre>
+<pre><d class='s14'>        };</d></pre>
+<pre><d class='s14'></d></pre>
+<pre><d class='s2'>function</d><d class='s14'> </d><d class='s21'>parse_js_number</d><d class='s14'>(</d><d class='s21'>num</d><d class='s14'>) {</d></pre>
+<pre><d class='s14'>        </d><d class='s2'>if</d><d class='s14'> (</d><d class='s21'>RE_HEX_NUMBER</d><d class='s14'>.</d><d class='s21'>test</d><d class='s14'>(</d><d class='s21'>num</d><d class='s14'>)) {</d></pre>
+<pre><d class='s14'>                </d><d class='s2'>return</d><d class='s14'> </d><d class='s21'>parseInt</d><d class='s14'>(</d><d class='s21'>num</d><d class='s14'>.</d><d class='s21'>substr</d><d class='s14'>(2), 16);</d></pre>
+<pre><d class='s14'>        } </d><d class='s2'>else</d><d class='s14'> </d><d class='s2'>if</d><d class='s14'> (</d><d class='s21'>RE_OCT_NUMBER</d><d class='s14'>.</d><d class='s21'>test</d><d class='s14'>(</d><d class='s21'>num</d><d class='s14'>)) {</d></pre>
+<pre><d class='s14'>                </d><d class='s2'>return</d><d class='s14'> </d><d class='s21'>parseInt</d><d class='s14'>(</d><d class='s21'>num</d><d class='s14'>.</d><d class='s21'>substr</d><d class='s14'>(1), 8);</d></pre>
+<pre><d class='s14'>        } </d><d class='s2'>else</d><d class='s14'> </d><d class='s2'>if</d><d class='s14'> (</d><d class='s21'>RE_DEC_NUMBER</d><d class='s14'>.</d><d class='s21'>test</d><d class='s14'>(</d><d class='s21'>num</d><d class='s14'>)) {</d></pre>
+<pre><d class='s14'>                </d><d class='s2'>return</d><d class='s14'> </d><d class='s21'>parseFloat</d><d class='s14'>(</d><d class='s21'>num</d><d class='s14'>);</d></pre>
+<pre><d class='s14'>        }</d></pre>
+<pre><d class='s14'>};</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna4668'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s3'>格式化:</d><d class='s6'></d></pre>
+<pre><d class='s6'>function string_template(text, props) {</d></pre>
+<pre><d class='s6'>    return text.</d><d class='s22'>replace</d><d class='s6'>(/\{(.+?)\}/g, </d><d class='s22'>function</d><d class='s6'>(str, p){</d></pre>
+<pre><d class='s6'>        return props[p];</d></pre>
+<pre><d class='s6'>    });</d></pre>
+<pre><d class='s6'>};</d></pre>
+<pre><d class='s6'>var str = string_template("Undefined label {name} [{line},{col}]", {</d></pre>
+<pre><d class='s6'>                name: node.name,</d></pre>
+<pre><d class='s6'>                line: node.start.line,</d></pre>
+<pre><d class='s6'>                col: node.start.col</d></pre>
+<pre><d class='s6'>            });</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna5058'>
+<pre><d class='s3'></d><d class='s18'></d></pre>
+<pre><d class='s18'>dst.x = xVal || 0.0;</d></pre>
+<pre><d class='s18'></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='tna5137'>
+<pre><d class='s3'></d><d class='s6'></d></pre>
+<pre><d class='s6'>file:///E:/ebook_decompile/W3C/js/jsref_replace.asp.htm</d></pre>
+<pre><d class='s6'>字符串 stringObject 的 replace() 方法执行的是查找并替换的操作。它将在 stringObject 中查找与 regexp 相匹配的子字符串，然后用 replacement 来替换这些子串。如果 regexp 具有全局标志 g，那么 replace() 方法将替换所有匹配的子串。</d><d class='s22'>否则，它只替换第一个匹配子串。</d></pre>
+<pre><d class='s4'>string</d><d class='s6'>.replace(/\r/g, "");</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s4'>a = "dk"</d><d class='s6'></d></pre>
+<pre><d class='s6'>pi.vcall.getHandle(a)</d></pre>
+<pre><d class='s6'>113125104</d></pre>
+<pre><d class='s6'>pi.vcall.getHandle("dk")</d></pre>
+<pre><d class='s6'>113312560</d></pre>
+<pre><d class='s6'>pi.vcall.getHandle("dk")</d></pre>
+<pre><d class='s6'>113981008</d></pre>
+<pre><d class='s6'>pi.vcall.getHandle(a)</d></pre>
+<pre><d class='s6'>113125104</d></pre>
+<pre><d class='s6'>每次"</d><d class='s4'>dk</d><d class='s6'>"</d><d class='s4'>handle</d><d class='s6'>都不一样. </d><d class='s4'>primitive string--temp var?</d><d class='s6'></d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna5640'>
+<pre><d class='s3'></d><d class='s4'></d></pre>
+<pre><d class='s6'>2.8.4 Transferable objects</d></pre>
+<pre><d class='s6'><a href='http://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm'>http://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm</a></d></pre>
+<pre><d class='s6'>Some objects support being copied and closed in one operation. This is called transferring the object,</d><d class='s22'> and is used in particular to transfer ownership of unsharable or expensive resources across worker boundaries.</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>[NoInterfaceObject]</d></pre>
+<pre><d class='s6'>interface Transferable { };</d></pre>
+<pre><d class='s6'>To transfer a Transferable object to a new owner, the user agent must run the steps defined for the type of object in question. The steps will return a new object of the same type, and will permanently neuter the original object. (This is an irreversible and non-idempotent operation; once an object has been transferred, it cannot be transferred, or indeed used, again.)</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>The following Transferable types exist:</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>MessagePort</d></pre>
+<pre><d class='s22'>ArrayBuffer</d><d class='s6'> [TYPEDARRAY]</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna6548'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s3'>不必使用</d><d class='s0'>array</d><d class='s3'>.</d><d class='s0'>join</d><d class='s3'>来拼接字符串,</d><d class='s0'>jsc</d><d class='s3'>效率似乎足够高.</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d><d class='s1'></d></pre>
+<t id='tna6658'>
+<pre><d class='s3'></d><d class='s6'></d></pre>
+<pre><d class='s6'>The Number.MIN_VALUE property belongs to the static Number object. This represents constants for the smallest possible positive numbers that JavaScript can work with.</d></pre>
+<pre><d class='s6'>This constant has actual value 5 x 10-324</d></pre>
+<pre><d class='s6'></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='tna6945'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s3'>RunJS - 在线编辑、展示、分享、交流你的 JavaScript 代码</d></pre>
+<pre><d class='s3'><a href='http://runjs.cn/'>http://runjs.cn/</a></d></pre>
+<pre><d class='s0'>cmd</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='35ecae07-f09a-461a-b637-a57c5da205ff'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>String.fromCharCode</d></pre>
+<pre><d class='s6'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode</a></d></pre>
+<pre><d class='s6'>String.fromCharCode(num1, ..., numN) </d></pre>
+<pre><d class='s6'>A sequence of numbers that are </d><d class='s22'>Unicode</d><d class='s6'> values.</d></pre>
+<pre><d class='s6'>This method returns a string and not a String object.</d></pre>
+<pre><d class='s6'>Because fromCharCode is a static method of String, you always use it as String.fromCharCode(), rather than as a method of a String object you created.</d></pre>
+<pre><d class='s18'></d></pre>
+<pre><d class='s23'>arr.splice(i, 1);</d></pre>
+<pre><d class='s6'>splice() 方法用于插入、删除或替换数组的元素。</d></pre>
+<pre><d class='s6'>JavaScript splice() 方法</d></pre>
+<pre><d class='s14'></d></pre>
+<pre><d class='s3'>id=setTimeout(callback, t * 1000);</d></pre>
+<pre><d class='s3'>clearTimeout(id)</d></pre>
+<pre><d class='s3'></d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='tna7728'>
+<pre><d class='s3'></d><d class='s6'></d></pre>
+<pre><d class='s6'>js: 简单的对象用数组代替,能够加速(v8自然优化...)</d></pre>
+<pre><d class='s6'></d></pre>
+</t>
+<pre><d class='s1'></d><d class='s6'></d></pre>
+<t id='5d110d6e-df96-41e8-9d4f-b215006bd9d9'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s18'>Array.join("-")</d></pre>
+<pre><d class='s18'>"".join() 这个不行?</d><d class='s6'></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='bc0740cd-6b69-486a-9503-dd9a469bd6bd'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>agent.connectDevice 多出调用,避免所有的地方加断点,在最开始将其置为null,或者hook.运行异常,就能找到需要的位置.</d></pre>
+<pre><d class='s6'><a href='js.html#dd12e9b6-37a1-43be-a1ce-ee95e676c25e'>js function call apply, hook </a></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='4805c541-0c1f-415b-a5d7-ff1d9ec321dd'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>一见倾心的5个JavaScript调试技巧</d></pre>
+<pre><d class='s6'><a href='http://www.lembed.com/5-javascript-debugging-tips-youll-start-using-today/'>http://www.lembed.com/5-javascript-debugging-tips-youll-start-using-today/</a></d></pre>
+<pre><d class='s6'>1，调试器</d></pre>
+<pre><d class='s6'>if (somethingHappens) {</d></pre>
+<pre><d class='s6'> debugger;</d></pre>
+<pre><d class='s6'> }</d></pre>
+<pre><d class='s6'>2，当node变化时中断</d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='de86ba22-7403-4da3-ad23-5f537b14d04e'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s24'>郁盛杰(aoto111) (13:08:54): </d></pre>
+<pre><d class='s24'>扩展一下刚才浩子的话题，JS处理不断触发的事件（mousemove, scroll, resize等）常用的场景除了throttle节流阀模式，还有一种debounce去反弹模式，可以理解为反弹簧。假定时间是100MS, 用户函数为handler。</d></pre>
+<pre><d class='s24'>节流阀，就是100MS内最多只触发一次handler;</d></pre>
+<pre><d class='s24'>反弹簧，就是不断触发的事件的最后一次事件执行时间点，再往后100MS内如果没有事件再次触发（scroll等）。则执行需要的函数handler。</d></pre>
+<pre><d class='s24'></d></pre>
+<pre><d class='s24'>详细的模型可以google： JS  throttle debounce</d></pre>
+<pre><d class='s24'>郁盛杰(aoto111) (13:18:47): </d></pre>
+<pre><d class='s24'>100MS内，弹簧是有去有回，反弹簧就是有去无回。（理解为不断的攒着），等到最后一次执行之后的timeout到了，用户函数才执行（回来了）。</d></pre>
+<pre><d class='s24'>郁盛杰(aoto111) (13:22:13): </d></pre>
+<pre><d class='s24'>理解为不断的攒着，这句表达有问题，因为最后执行用户函数只执行一次。</d></pre>
+<pre><d class='s24'></d></pre>
+<pre><d class='s24'>神浩子 (13:49:54): </d></pre>
+<pre><d class='s24'>反弹簧是不是说100ms就要判断一次是否需要执行</d></pre>
+<pre><d class='s24'>节流阀是不是就是我分享的那种方式。触发后100ms内不做重复触发。</d></pre>
+<pre><d class='s24'>郁盛杰(aoto111) (13:53:04): </d></pre>
+<pre><d class='s24'>对，你刚说的是节流阀方式。反弹簧方式举个例子，</d></pre>
+<pre><d class='s24'>var lazyLayout = debounce(lazyLayout, 300);</d></pre>
+<pre><d class='s24'>window.onresize = lazyLayout</d></pre>
+<pre><d class='s24'>不断的resize浏览器窗口，这个lazyLayout始终都不会执行，只有resize操作停下来，再过300ms，这个lazyLayout就执行一次。如果一直不停的resize，则lazyLayout永远不会执行。</d></pre>
+<pre><d class='s24'>debounce方式对于scroll和resize比较有用。</d></pre>
+<pre><d class='s24'></d></pre>
+<pre><d class='s24'>没有处理同时在remote、local rename的情况。</d></pre>
+</t>
+<pre><d class='s25'></d></pre>
+<t id='70f80ad8-6213-423e-b5b1-3068e425b91e'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s24'>Javascript Madness: Introduction</d></pre>
+<pre><d class='s24'><a href='http://unixpapa.com/js/'>http://unixpapa.com/js/</a></d></pre>
+<pre><d class='s6'></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='24ebe17a-6056-44e7-a6cd-38e7267c120a'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s24'>神浩子 (13:49:57): </d></pre>
+<pre><d class='s24'><a href='http://www.html5rocks.com/zh/tutorials/webcomponents/shadowdom/'>http://www.html5rocks.com/zh/tutorials/webcomponents/shadowdom/</a></d></pre>
+<pre><d class='s24'>这个是关于shadow dom的介绍</d></pre>
+<pre><d class='s24'>神浩子 (13:54:53): </d></pre>
+<pre><d class='s24'><a href='http://www.html5rocks.com/zh/tutorials/webcomponents/shadowdom-201/'>http://www.html5rocks.com/zh/tutorials/webcomponents/shadowdom-201/</a></d></pre>
+<pre><d class='s24'>这个是关于shadow dom 修改样式的介绍</d></pre>
+<pre><d class='s24'>神浩子 (13:56:56): </d></pre>
+<pre><d class='s24'>有兴趣可以去了解。 我有时间会去熟悉， 并在晨会中做分享。</d></pre>
+<pre><d class='s24'>神浩子 (14:00:10): </d></pre>
+<pre><d class='s24'><a href='http://www.html5rocks.com/zh/tutorials/webcomponents/shadowdom-301/'>http://www.html5rocks.com/zh/tutorials/webcomponents/shadowdom-301/</a></d></pre>
+<pre><d class='s24'>这个是事件</d></pre>
+</t>
+<pre><d class='s25'></d></pre>
+<t id='f0e9fb06-98f3-4909-97c5-64ffa3ee8f97'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s3'><img src='..\pic\8c79616abdc9086fafc632978d2b1815.jpg' /></d><d class='s24'></d></pre>
+<pre><d class='s24'><a href='http://codepen.io/edankwan/pen/emqgpr'>http://codepen.io/edankwan/pen/emqgpr</a></d><d class='s6'></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='307ad420-efe9-4b8f-a4d6-67bf89c7d901'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s24'>现代JavaScript开发者的工具箱</d></pre>
+<pre><d class='s24'><a href='http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=205863827&idx=1&sn=59ee34e12e82f066b1905bc07734b378&3rd=MzA3MDU4NTYzMw==&scene=6#rd'>http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=205863827&idx=1&sn=59ee34e12e82f066b1905bc07734b378&3rd=MzA3MDU4NTYzMw==&scene=6#rd</a></d></pre>
+<pre><d class='s6'></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='57f81d3d-aa81-4f8a-93ff-3d057693f2ae'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s3'>Learn To Code：Web开发初学者的学习之旅</d></pre>
+<pre><d class='s3'><a href='http://hao.jobbole.com/learn-to-code/'>http://hao.jobbole.com/learn-to-code/</a></d><d class='s6'></d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s3'>Building Your First Web Page</d></pre>
+<pre><d class='s3'><a href='http://learn.shayhowe.com/html-css/building-your-first-web-page/#using-css-resets'>http://learn.shayhowe.com/html-css/building-your-first-web-page/#using-css-resets</a></d></pre>
+<pre><d class='s3'>Using CSS Resets</d></pre>
+<pre><d class='s26'>Every web browser has its own default styles for different elements</d><d class='s3'>. How Google Chrome renders headings, paragraphs, lists, and so forth may be different from how Internet Explorer does. To ensure cross-browser compatibility, CSS resets have become widely used.</d></pre>
+</t>
+<pre><d class='s3'></d></pre>
+<t id='35a17222-d804-460b-977f-e57f8443df98'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>HTML DOM Document 对象</d></pre>
+<pre><d class='s6'><a href='http://www.runoob.com/jsref/dom-obj-document.html'>http://www.runoob.com/jsref/dom-obj-document.html</a></d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s7'>addEventListener() 方法允许向同个元素添加多个事件，且不会覆盖已存在的事件</d><d class='s6'>：</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>window.addEventListener("resize", function(){</d></pre>
+<pre><d class='s6'>    document.getElementById("demo").innerHTML = sometext;</d></pre>
+<pre><d class='s6'>});</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>事件传递有两种方式：冒泡与捕获。</d></pre>
+<pre><d class='s6'>addEventListener(event, function, useCapture);</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>注意"\\"</d></pre>
+<pre><d class='s6'>new RegExp("\\{" + i + "\\}", "g");</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>js debugger:前提需要打开调试器</d></pre>
+<pre><d class='s6'></d></pre>
+</t>
+<pre><d class='s1'></d><d class='s6'></d></pre>
+<t id='4f8f0b7e-402d-44d9-b28c-73d1745e95f3'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s27'>Onunload与Onbeforeunload</d></pre>
+<pre><d class='s27'>Onunload，onbeforeunload都是在刷新或关闭时调用，可以在&lt;script&gt;脚本中通过 window.onunload来指定或者在&lt;body&gt;里指定。区别在于onbeforeunload在onunload之前执行，它还可 以阻止onunload的执行。</d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='efa3c23e-94d5-4f16-b0b1-4f3e2956edce'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>select标签动作传值时可用this.value来传当前选取的值。 </d></pre>
+<pre><d class='s6'>&lt;select name="sample" id="sample" onchange="change(</d><d class='s22'>this.value</d><d class='s6'>)"&gt;  </d></pre>
+<pre><d class='s6'><a href='http://blog.csdn.net/sanfran_qi/article/details/8221488'>http://blog.csdn.net/sanfran_qi/article/details/8221488</a></d></pre>
+<pre><d class='s6'>onchange	该事件在表单元素的内容改变时触发( &lt;input&gt;, &lt;keygen&gt;, &lt;select&gt;, 和 &lt;textarea&gt;)</d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='35c38789-c0d2-4cc1-8cbb-4083e9bedc56'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>Default parameters？？</d></pre>
+<pre><d class='s6'>Default function parameters allow formal parameters to be initialized with default values if no value or undefined is passed.</d></pre>
+<pre><d class='s6'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters</a></d></pre>
+<pre><d class='s3'></d></pre>
+<pre><d class='s6'>javascript:void(0)</d></pre>
+<pre><d class='s28'></d></pre>
+<pre><d class='s28'>scrollTo</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>这个hidden有是什么？</d></pre>
+<pre><d class='s29'>div</d><d class='s30'>.</d><d class='s31'>hidden </d><d class='s30'>= !</d><d class='s31'>is_paging</d><d class='s30'>;</d></pre>
+<pre><d class='s29'>div</d><d class='s30'>.</d><d class='s31'>style</d><d class='s30'>.</d><d class='s31'>visibility </d><d class='s30'>= </d><d class='s32'>"visible"</d><d class='s30'>;</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>JS 获取浏览器窗口大小</d></pre>
+<pre><d class='s6'><a href='http://www.cnblogs.com/henw/archive/2011/12/19/2293585.html'>http://www.cnblogs.com/henw/archive/2011/12/19/2293585.html</a></d></pre>
+<pre><d class='s6'><a href='http://blog.csdn.net/jajavaja/article/details/9015931'>http://blog.csdn.net/jajavaja/article/details/9015931</a></d></pre>
+<pre><d class='s6'><a href='http://www.cnblogs.com/top5/archive/2009/05/07/1452135.html'>http://www.cnblogs.com/top5/archive/2009/05/07/1452135.html</a></d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>document.firstChild.outerHTML 这个可以输出当前的html </d><d class='s33'> 无法设置</d><d class='s6'></d></pre>
+<pre><d class='s6'></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='ff59a17a-333a-441e-95f5-8b5fb2e4f8e5'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s7'>html标签，原生的属性可以常规获取，但自定义属性只能通过getAttribute获取，eg：</d><d class='s6'></d></pre>
+<pre><d class='s6'>a.href, a.getAttribute("origin_url")</d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='5e19fa3f-71ee-4666-8eea-a75d41847a82'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>iframe单独拎出来调试：</d></pre>
+<pre><d class='s6'><img src='..\pic\f7f79610f9ca772ac5f7a9af89355b22.jpg' /></d><d class='s6'></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='beb5b30f-32ea-4d14-a74f-fde5d7b30ac7'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>使用Javascript将相对路径地址转换为绝对路径</d></pre>
+<pre><d class='s6'><a href='http://www.admin10000.com/document/4022.html'>http://www.admin10000.com/document/4022.html</a></d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>Web开发人员不能错过的 jQuery 教程和案例</d></pre>
+<pre><d class='s6'><a href='http://www.admin10000.com/document/3480.html'>http://www.admin10000.com/document/3480.html</a></d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>jQuery对象与dom对象的转换</d></pre>
+<pre><d class='s6'><a href='http://www.ccvita.com/192.html'>http://www.ccvita.com/192.html</a></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='7db12e8f-02bb-4313-975e-4684c209555b'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s27'>Node.js背后的V8引擎优化技术 </d></pre>
+<pre><d class='s27'><a href='http://geek.csdn.net/news/detail/52207'>http://geek.csdn.net/news/detail/52207</a></d><d class='s6'></d></pre>
+</t>
+<pre><d class='s1'></d><d class='s6'></d></pre>
+<t id='6383a897-bc02-480a-8efc-5885c8164717'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>Spread operator</d></pre>
+<pre><d class='s6'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator</a></d></pre>
+<pre><d class='s6'>myFunction(...iterableObj);</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>[...iterableObj, 4, 5, 6]</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>function myFunction(v, w, x, y, z) { }</d></pre>
+<pre><d class='s6'>var args = [0, 1];</d></pre>
+<pre><d class='s6'>myFunction(-1, ...args, 2, ...[3]);</d></pre>
+<pre><d class='s6'></d></pre>
+<pre><d class='s6'>arr1.push(...arr2);</d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='cfbed66c-8eef-4a19-9608-34c28dd38ffe'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>firefox: event 必须要写在这里：onclick="test(event)"</d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='286754cd-5f88-4b21-817f-6b6666d23537'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>未使用：</d></pre>
+<pre><d class='s34'>function </d><d class='s30'>set_value_by_multi_path(obj, path, value) {</d></pre>
+<pre><d class='s30'>    </d><d class='s34'>var </d><d class='s29'>arr </d><d class='s30'>= path.</d><d class='s35'>split</d><d class='s30'>(</d><d class='s32'>"."</d><d class='s30'>);</d></pre>
+<pre><d class='s30'>    </d><d class='s34'>var </d><d class='s29'>cur </d><d class='s30'>= obj;</d></pre>
+<pre><d class='s30'>    </d><d class='s34'>for </d><d class='s30'>(</d><d class='s34'>var </d><d class='s29'>i </d><d class='s30'>= </d><d class='s36'>0</d><d class='s30'>; </d><d class='s29'>i </d><d class='s30'>&lt; </d><d class='s29'>arr</d><d class='s30'>.</d><d class='s31'>length </d><d class='s30'>- </d><d class='s36'>1</d><d class='s30'>; </d><d class='s29'>i</d><d class='s30'>++) {</d></pre>
+<pre><d class='s30'>        </d><d class='s34'>var </d><d class='s29'>key </d><d class='s30'>= </d><d class='s29'>arr</d><d class='s30'>[</d><d class='s29'>i</d><d class='s30'>];</d></pre>
+<pre><d class='s30'>        </d><d class='s34'>var </d><d class='s29'>next </d><d class='s30'>= </d><d class='s29'>cur</d><d class='s30'>[</d><d class='s29'>key</d><d class='s30'>];</d></pre>
+<pre><d class='s30'>        </d><d class='s34'>if </d><d class='s30'>(!</d><d class='s29'>next</d><d class='s30'>) {</d></pre>
+<pre><d class='s30'>            </d><d class='s29'>cur</d><d class='s30'>[</d><d class='s29'>key</d><d class='s30'>] = {};</d></pre>
+<pre><d class='s30'>        }</d></pre>
+<pre><d class='s30'>        </d><d class='s29'>cur </d><d class='s30'>= </d><d class='s29'>next</d><d class='s30'>;</d></pre>
+<pre><d class='s30'>    }</d></pre>
+<pre><d class='s30'>    </d><d class='s29'>cur</d><d class='s30'>[</d><d class='s29'>arr</d><d class='s30'>[</d><d class='s29'>arr</d><d class='s30'>.</d><d class='s31'>length </d><d class='s30'>- </d><d class='s36'>1</d><d class='s30'>]] = value;</d></pre>
+<pre><d class='s30'>}</d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='86508ab9-beee-434c-b4e7-6a80e9d4e4c9'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>用NodeJS实现一个简单的聊天室</d></pre>
+<pre><d class='s6'><a href='http://cnodejs.org/topic/53787247cbcc396349fe3f5a'>http://cnodejs.org/topic/53787247cbcc396349fe3f5a</a></d></pre>
+</t>
+<pre><d class='s1'></d></pre>
+<t id='9a400c90-9e3f-4333-b7c2-801b1c8a590b'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s37'>/**</d></pre>
+<pre><d class='s38'> * [binarySearch 二分查找]</d></pre>
+<pre><d class='s38'> * @param  {[type]} value      [查找元素]</d></pre>
+<pre><d class='s38'> * @param  {[type]} arr        [数组]</d></pre>
+<pre><d class='s38'> * @param  {[type]} startIndex [开始索引]</d></pre>
+<pre><d class='s38'> * @param  {[type]} endIndex   [结束索引]</d></pre>
+<pre><d class='s38'> * @return {[type]}            [返回查找元素的索引]</d></pre>
+<pre><d class='s38'> *</d></pre>
+<pre><d class='s38'> * from <a href='http://www.zuojj.com/archives/322.html'>http://www.zuojj.com/archives/322.html</a></d></pre>
+<pre><d class='s38'> */</d></pre>
+<pre><d class='s39'>function </d><d class='s40'>binarySearch(value, arr, startIndex, endIndex) {</d></pre>
+<pre><d class='s40'>    </d><d class='s39'>if </d><d class='s40'>(!value || !(arr </d><d class='s39'>instanceof </d><d class='s40'>Array)) </d><d class='s39'>return </d><d class='s40'>-</d><d class='s41'>1</d><d class='s40'>;</d></pre>
+<pre><d class='s40'></d></pre>
+<pre><d class='s40'>    </d><d class='s39'>var </d><d class='s42'>len </d><d class='s40'>= arr.</d><d class='s33'>length</d><d class='s40'>,</d></pre>
+<pre><d class='s40'>        </d><d class='s42'>startIndex </d><d class='s40'>= </d><d class='s39'>typeof </d><d class='s40'>startIndex === </d><d class='s43'>"number" </d><d class='s40'>? startIndex : </d><d class='s41'>0</d><d class='s40'>,</d></pre>
+<pre><d class='s40'>        </d><d class='s42'>endIndex </d><d class='s40'>= </d><d class='s39'>typeof </d><d class='s40'>endIndex === </d><d class='s43'>"number" </d><d class='s40'>? endIndex : </d><d class='s42'>len </d><d class='s40'>- </d><d class='s41'>1</d><d class='s40'>,</d></pre>
+<pre><d class='s40'>        </d><d class='s42'>midIndex </d><d class='s40'>= </d><d class='s33'>Math</d><d class='s40'>.</d><d class='s44'>floor</d><d class='s40'>((</d><d class='s42'>startIndex </d><d class='s40'>+ </d><d class='s42'>endIndex</d><d class='s40'>) / </d><d class='s41'>2</d><d class='s40'>),</d></pre>
+<pre><d class='s40'>        </d><d class='s42'>midval </d><d class='s40'>= arr[</d><d class='s42'>midIndex</d><d class='s40'>];</d></pre>
+<pre><d class='s40'></d></pre>
+<pre><d class='s40'>    </d><d class='s39'>if </d><d class='s40'>(</d><d class='s42'>startIndex </d><d class='s40'>&gt; </d><d class='s42'>endIndex</d><d class='s40'>) </d><d class='s39'>return </d><d class='s40'>-</d><d class='s41'>1</d><d class='s40'>;</d></pre>
+<pre><d class='s40'></d></pre>
+<pre><d class='s40'>    </d><d class='s39'>if </d><d class='s40'>(</d><d class='s42'>midval </d><d class='s40'>=== value) {</d></pre>
+<pre><d class='s40'>        </d><d class='s39'>return </d><d class='s42'>midIndex</d><d class='s40'>;</d></pre>
+<pre><d class='s40'>    } </d><d class='s39'>else if </d><d class='s40'>(</d><d class='s42'>midval </d><d class='s40'>&gt; value) {</d></pre>
+<pre><d class='s40'>        </d><d class='s39'>return </d><d class='s40'>binarySearch(value, arr, </d><d class='s42'>startIndex</d><d class='s40'>, </d><d class='s42'>midIndex </d><d class='s40'>- </d><d class='s41'>1</d><d class='s40'>);</d></pre>
+<pre><d class='s40'>    } </d><d class='s39'>else </d><d class='s40'>{</d></pre>
+<pre><d class='s40'>        </d><d class='s39'>return </d><d class='s40'>binarySearch(value, arr, </d><d class='s42'>midIndex </d><d class='s40'>+ </d><d class='s41'>1</d><d class='s40'>, </d><d class='s42'>endIndex</d><d class='s40'>);</d></pre>
+<pre><d class='s40'>    }</d></pre>
+<pre><d class='s40'>}</d></pre>
+<pre><d class='s18'></d></pre>
+<pre><d class='s18'>这句ok: 因为scrollMaxX确实是undefined,</d><d class='s23'>undefined可以用于比较,但不能直接引用一个undefined的var</d><d class='s18'></d></pre>
+<pre><d class='s18'>newX = newX &gt; </d><d class='s23'>window</d><d class='s18'>.scrollMaxX ? scrollMaxX : newX;</d></pre>
+<pre><d class='s18'>这句报错:Uncaught ReferenceError</d></pre>
+<pre><d class='s18'>newX = newX &gt; scrollMaxX ? scrollMaxX : newX;</d></pre>
+</t>
+<pre><d class='s1'></d><d class='s6'></d></pre>
+<t id='da930194-7641-46a2-bb41-9566c1c16c48'>
+<pre><d class='s3'></d><d class='s3'></d></pre>
+<pre><d class='s6'>document.defaultView === window</d></pre>
+</t>
+<pre><d class='s1'></body></html>
