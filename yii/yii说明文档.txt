@@ -1,0 +1,32 @@
+Yii框架使用说明
+运行
+　　解压basic目录到网站目录。
+　　编辑basic/config/web.php，查找cookieValidationKey，为它的键值赋任意值作为cookie密钥。
+　　服务器访问basic/web。
+
+设置默认控制器
+　　编辑basic/config/web.php，在$config数组中添加键值对：
+'defaultRoute'=>'home'//home即控制器名
+
+取消默认模板
+　　为控制器类添加字段：
+public $layout = false;
+
+跳转页面
+　　<a href="index.php?r=home/login">跳转</a>
+　　解释：index.php?r=控制器名/动作名
+
+　　<a href="/home/login">跳转</a>
+　　解释：/控制器名/动作名
+　　使用此模式，需编辑basic/config/web.php，去掉此段代码的注释：
+'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+            ],
+        ],
+　　然后在basic/web/目录下新建文件.htaccess，编辑内容：
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteRule ^(.*)$ index.php/$1 [L] 
