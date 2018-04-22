@@ -1,7 +1,7 @@
 ## 安装包下载地址全介绍  
 https://download.pydio.com/pub/core/archives/  
 
-## 中文翻译未完成
+## 中文翻译完成 请替换`./zh.php`文件
 ./plugins/core.ajaxplorer/i18n/zh.php  
 
 ## Pydio Core
