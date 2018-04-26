@@ -52,7 +52,7 @@ $(function () {
                 var text = $(this).html();//链接
                 urls[now_page].push(text);//新增链接
                 if (text.indexOf(target_str) != -1) {//查看是否包含目标字符串
-                    console.log('在第 ' + localStorage['now_page'] + ' 页找到目标。');
+                    console.log('在第 ' + localStorage['now_page'] + ' 页找到目标：' + target_str);
                     finished = true;//标记为已找到目标
                 }
             });
