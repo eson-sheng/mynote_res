@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button onclick="test();">test</button>
+
+</body>
+<script>
+    var target_window=window.open('http://www.domain2.com');
+
+    function receiveMessage(event)
+    {
+        // Do we trust the sender of this message?  (might be
+        // different from what we originally opened, for example).
+        if (event.origin !== "http://www.domain2.com")
+            return;
+        console.log(event);
+        // event.source is popup
+        // event.data is "hi there yourself!  the secret response is: rheeeeet!"
+    }
+
+    window.addEventListener("message", receiveMessage, false);
+
+    function test() {
+        target_window.postMessage('do it','http://www.domain2.com');
+    }
+</script>
+</html>

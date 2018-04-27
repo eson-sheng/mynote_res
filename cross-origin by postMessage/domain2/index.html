@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    function receiveMessage(event)
+    {
+        // For Chrome, the origin property is in the event.originalEvent object.
+        var origin = event.origin || event.originalEvent.origin;
+        if (origin !== "http://www.domain1.com")
+            return;
+        console.log(event);
+        event.source.postMessage("copy that", event.origin);
+    }
+    window.addEventListener("message", receiveMessage, false);
+</script>
+</html>
