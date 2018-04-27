@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button onclick="test();">test</button>
+</body>
+<script>
+    function jsonpCallback(result) {
+        console.log(result);
+    }
+    function test() {
+        var jsonp = document.createElement("script");
+        jsonp.type = "text/javascript";
+        jsonp.src = "http://www.domain2.com/services.php?callback=jsonpCallback&data={a:11,b:22}";
+        document.getElementsByTagName("head")[0].appendChild(jsonp);
+    }
+    //法二：在jsonpCallback后加一段script标签：（JavaScript的链接，必须在function的下面）
+    //<script type="text/javascript" src="http://www.domain2.com/services.php?callback=jsonpCallback&data={a:11,b:22}"></scrip
+</script>
+</html>
