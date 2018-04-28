@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>爬虫</title>
+    <script src="jquery-3.0.0.min.js"></script>
+</head>
+<body>
+<dl>
+    <dt>要百度的词</dt>
+    <dd>
+        <input type="text" value="harrypotter" id="keyword"/>
+    </dd>
+    <dt>起始页数</dt>
+    <dd>
+        <input type="number" value="1" id="start"/>
+    </dd>
+    <dt>终止页数</dt>
+    <dd>
+        <input type="number" value="5" id="end"/>
+    </dd>
+</dl>
+<input type="submit"/>
+
+</body>
+<script>
+    $('[type=submit]').on('click', function () {
+        var keyword = $('#keyword').val();
+        var start_page = $('#start').val();
+        var end_page = $('#end').val();
+
+        open('https://www.baidu.com/s?wd=' + keyword
+            + '&pn=' + (start_page - 1) + '0'
+            + '&init=1'
+            + '&start_page=' + start_page
+            + '&now_page=' + start_page
+            + '&end_page=' + end_page);
+    });
+</script>
+</html>
