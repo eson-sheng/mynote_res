@@ -82,7 +82,7 @@ $(function () {
 			urls[now_page].push(text);
 		});
 		localStorage['urls'] = JSON.stringify(urls);//转化JSON对象为字符串
-		location.href = "https://www.baidu.com" + $("#page > a.n").last().attr("href");//跳下一页
+		location.href = $("#page > a.n").last().attr("href");//跳下一页
 		localStorage['now_page']++;
     }
 
