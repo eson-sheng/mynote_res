@@ -1,8 +1,17 @@
 <?php
 ob_start();
 //========================================
+$__db_host = "localhost";
+$__db_uname = "root";
+$__db_pwd = "root";
+
+if (file_exists("invoke.my.php")) {
+	require_once("invoke.my.php");
+}
+
 function createDB(){
-	$conn=mysql_connect("localhost","root","root");
+	global $__db_host,$__db_uname,$__db_pwd;
+	$conn=mysql_connect($__db_host,$__db_uname,$__db_pwd);
 	mysql_query("set names 'utf8'");
 	mysql_select_db("plusoft_test",$conn);
 	return $conn;
