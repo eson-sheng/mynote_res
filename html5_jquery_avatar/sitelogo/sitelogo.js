@@ -31,7 +31,7 @@
 
     this.$avatarWrapper = this.$avatarModal.find('.avatar-wrapper');
     this.$avatarPreview = this.$avatarModal.find('.avatar-preview');
-
+    this.avatarPreviewSelector = "body #avatar-modal .avatar-preview";
     this.init();
   }
 
@@ -196,7 +196,7 @@
         this.$avatarWrapper.empty().html(this.$img);
         this.$img.cropper({
           aspectRatio: 1,
-          preview: this.$avatarPreview.selector,
+          preview: this.avatarPreviewSelector,
           strict: false,
           crop: function (data) {
             var json = [
