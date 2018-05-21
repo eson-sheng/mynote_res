@@ -15,19 +15,27 @@ if (isset($_GET['show_num'])) $show_num = $_GET['show_num'];
 <body>
 <form action="" method="get">
     <dl>
-        <dt>IP地址出现次数最小值（统计结果将将入filter.txt）</dt>
-        <dd>
-            <input type="number" name="min" min="0" value="2000"/>
-        </dd>
         <dt>是否显示IP地址出现次数</dt>
         <dd>
             <input type="checkbox" name="show_num" checked="checked"/>
+        </dd>
+        <dt>IP地址出现次数最小值（统计结果将将入filter.txt）</dt>
+        <dd>
+            <input type="number" name="min" min="0" value="2000"/>
         </dd>
     </dl>
     <input type="submit" value="开始统计"/>
 </form>
 <hr/>
 <?php
+
+// 获取当前系统时间，返回float格式，单位：秒
+function get_time() {
+    date_default_timezone_set('Asia/Shanghai');
+    list($usec, $sec) = explode(" ", microtime());
+    return ((float)$usec + (float)$sec);
+}
+
 $filter = [];
 $res = fopen('./filter.txt', 'r');
 while (!feof($res)) {
@@ -40,6 +48,9 @@ $filter0 = $filter;
 $IPs = [];
 $res = fopen('./www_access.log', 'r');
 $line_num = 1;
+$begin = get_time();
+$content = file_get_contents('./www_access.log');
+/**/
 while (!feof($res)) {
     $line = fgets($res);
     $index1 = strpos($line, '[') + 1;
@@ -61,9 +72,12 @@ while (!feof($res)) {
                 file_put_contents('./filter.txt', $target . "\r\n", FILE_APPEND);
             }
         }
-
     }
+
 }
+
+echo "耗时：".(get_time() - $begin) . " s<br/>";
+
 fclose($res);
 arsort($IPs);
 $count = 0;
@@ -81,6 +95,7 @@ foreach ($IPs as $ip => $num) {
     }
 }
 echo '总数：', $count, '<br/>';
+
 ?>
 </body>
 </html>
