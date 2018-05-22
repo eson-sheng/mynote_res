@@ -1,11 +1,16 @@
 <?php
+require_once "../common.php";
+
+CT_log($_SERVER["REQUEST_URI"]);
+CT_log($_FILES);
+
 header("Content-Type: text/html; charset=utf-8");
 // 允许上传的图片后缀
 $allowedExts = array("gif", "jpeg", "jpg", "png", 'txt');
 $temp = explode(".", $_FILES["file"]["name"]);
 echo $_FILES["file"]["size"];
 $extension = end($temp);     // 获取文件后缀名
-if ($_FILES["file"]["size"] < 204800) {
+if ($_FILES["file"]["size"] < 20480000) {
     if ($_FILES["file"]["error"] > 0) {
         echo "错误：: " . $_FILES["file"]["error"] . "<br>";
     } else {
