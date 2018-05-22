@@ -30,4 +30,8 @@ if ($_FILES["file"]["size"] < 204800) {
 } else {
     echo "非法的文件格式";
 }
+echo "\n";
+print_r($_POST);
+print_r($_FILES);
 ?>
+
