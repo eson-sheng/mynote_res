@@ -27,28 +27,30 @@
 
 <fieldset>
     <legend>日志内容</legend>
-        <!--<div class="box">
-            <p>
-                11
-            </p>
-            <p>
-                22
-            </p>
-            <p>
-                33
-            </p>
-            <p>
-                44
-            </p>
-            <p>
-                55
-            </p>
-        </div>-->
+    <!--<div class="box">
+        <p>
+            11
+        </p>
+        <p>
+            22
+        </p>
+        <p>
+            33
+        </p>
+        <p>
+            44
+        </p>
+        <p>
+            55
+        </p>
+    </div>-->
 </fieldset>
 </body>
 <script>
+    var dir = location.pathname;
+
     //进入页面自动运行：获取日志列表
-    $.get('/server.php', {
+    $.get(dir + 'server.php', {
         op: 'get_logs_list'
     }, function (result) {
         result.data.forEach(function (log) {
@@ -72,7 +74,7 @@
     //按钮：获取日志内容
     $('#submit').on('click', function () {
         $.ajax({
-            url: '/server.php?op=get_logs_content',
+            url: dir + 'server.php?op=get_logs_content',
             type: 'post',
             async: true,
             data: new FormData($('#form1')[0]),
@@ -118,7 +120,7 @@
 
     //按钮：重置读取历史
     $('#reset_history').on('click', function () {
-        $.get('/server.php', {
+        $.get(dir + 'server.php', {
             op: 'reset_history'
         }, function (result) {
             if (result.result == 'success') {
@@ -128,7 +130,7 @@
     });
 
     //按钮：清空显示内容
-    $('#clear').on('click',function () {
+    $('#clear').on('click', function () {
         $('.box').remove();
     });
 </script>
