@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日志查看器</title>
+    <link type="text/css" href="index.css" rel="stylesheet"/>
+    <script src="jquery-3.0.0.min.js"></script>
+    <script src="layer/layer.js"></script>
+</head>
+<body>
+<form id="form1">
+    <table cellpadding="0" cellspacing="0" border="1">
+        <caption>日志列表 <input type="reset" value="重新设置"/></caption>
+        <tr>
+            <th width="60%">日志</th>
+            <th width="10%">查看</th>
+            <th>起始部分</th>
+            <th>起始索引</th>
+        </tr>
+    </table>
+</form>
+<p>
+    <button id="reset_history">重置读取历史(Ctrl+D)</button>
+    <button id="clear">清空显示内容(Ctrl+C)</button>
+    <button id="submit">读取内容(Ctrl+A)</button>
+</p>
+
+<fieldset>
+    <legend>日志内容</legend>
+        <!--<div class="box">
+            <p>
+                11
+            </p>
+            <p>
+                22
+            </p>
+            <p>
+                33
+            </p>
+            <p>
+                44
+            </p>
+            <p>
+                55
+            </p>
+        </div>-->
+</fieldset>
+</body>
+<script>
+    //进入页面自动运行：获取日志列表
+    $.get('/server.php', {
+        op: 'get_logs_list'
+    }, function (result) {
+        result.data.forEach(function (log) {
+            var $tr = $('<tr></tr>');
+            var $td1 = $('<td></td>');
+            var $td2 = $('<td></td>');
+            var $td3 = $('<td></td>');
+            var $td4 = $('<td></td>');
+            $td1.text(log);
+            $("<input type='checkbox' name='show[" + log + "]'/>").appendTo($td2);
+            $("<input type='text' name='from[" + log + "]'/>").appendTo($td3);
+            $("<input type='number' name='index[" + log + "]'/>").appendTo($td4);
+            $tr.append($td1);
+            $tr.append($td2);
+            $tr.append($td3);
+            $tr.append($td4);
+            $("#form1 table").append($tr);
+        });
+    }, 'json');
+
+    //按钮：获取日志内容
+    $('#submit').on('click', function () {
+        $.ajax({
+            url: '/server.php?op=get_logs_content',
+            type: 'post',
+            async: true,
+            data: new FormData($('#form1')[0]),
+            dataType: 'json',
+            success: function (result) {
+                if (result.result == 'success') {
+                    var $box = $('<div class="box"></div>');
+                    for (var log in result.data) {
+                        var content = result.data[log];
+                        var $p = $('<p></p>');
+                        $p.html(content);
+                        $box.append($p);
+                    }
+                    $('fieldset').append($box);
+                } else {
+                    layer.msg(result.message);
+                }
+            },
+            error: function (xhr, status, message) {
+                console.log('ajax error : ' + status + ' --> ' + message);
+            },
+            // cache:true,
+            contentType: false,
+            processData: false
+        });
+    });
+
+    //绑定热键
+    $("body").delegate("", "keydown", function () {
+        if (event.key == 'a' && event.ctrlKey) {//获取日志内容
+            $('#submit').trigger('click');
+            event.preventDefault();//防止触发默认的热键
+        }
+        if (event.key == 'd' && event.ctrlKey) {//重置读取历史
+            $('#reset_history').trigger('click');
+            event.preventDefault();//防止触发默认的热键
+        }
+        if (event.key == 'c' && event.ctrlKey) {//清空显示内容
+            $('#clear').trigger('click');
+            event.preventDefault();//防止触发默认的热键
+        }
+    });
+
+    //按钮：重置读取历史
+    $('#reset_history').on('click', function () {
+        $.get('/server.php', {
+            op: 'reset_history'
+        }, function (result) {
+            if (result.result == 'success') {
+                layer.msg(result.message);
+            }
+        }, 'json');
+    });
+
+    //按钮：清空显示内容
+    $('#clear').on('click',function () {
+        $('.box').remove();
+    });
+</script>
+</html>
