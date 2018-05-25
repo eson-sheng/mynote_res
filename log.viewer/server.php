@@ -12,7 +12,7 @@ function get_logs_content()
     $data = [];
     if (isset($_SESSION['last_end_index'])) {//非第一次读取，接着上次读完的地方开始读取
         foreach ($_SESSION['last_end_index'] as $path => $index) {
-            $content = file_get_contents($path, false, null, $index + 1);
+            $content = file_get_contents($path, false, null, $index);
             $content = htmlentities($content);#转html标签为实体
             $content = "$path<br/>" . $content;
             $data[$path] = $content;
@@ -22,14 +22,16 @@ function get_logs_content()
     } else {//第一次读取，根据表单设置
         if (isset($_POST['show'])) {
             foreach ($_POST['show'] as $path => $value) {
-                $content = file_get_contents($path);#日志全部内容
-                $_SESSION['last_end_index'][$path] = strlen($content);#本次读取结束处
+                $_SESSION['last_end_index'][$path] = filesize($path);#本次读取结束处
                 if ($from = $_POST['from'][$path]) {//从指定部分开始读取
+                    $content = file_get_contents($path);#日志全部内容
                     $start_index = strpos($content, $from);#本次读取开始处
                     $content = file_get_contents($path, false, null, $start_index);
                 } elseif ($start_index = $_POST['index'][$path]) {//从指定索引开始读取
                     $content = file_get_contents($path, false, null, $start_index);
                     $content = mb_substr($content, 2, strlen($content));
+                } else {//未设置起始读取，默认读取全部
+                    $content = file_get_contents($path);
                 }
                 $content = htmlentities($content);#转html标签为实体
                 $content = "$path<br/>" . $content;
