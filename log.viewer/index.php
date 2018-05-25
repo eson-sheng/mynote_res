@@ -20,13 +20,7 @@
             <th>起始索引</th>
         </tr>
         <?php
-        $logs = [
-            './aa/a.log',
-            './b.log',
-            './c.log',
-            './d.log',
-            './e.log'
-        ];
+        require_once __DIR__.'/logs.php';
         $count=1;
         foreach($logs as $log){ ?>
             <tr>
