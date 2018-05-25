@@ -1,6 +1,6 @@
 /*表单样式*/
 #form1 {
-    width: 600px;
+    width: 900px;
     text-align: center;
 }
 
@@ -8,12 +8,20 @@
     padding: 5px 0;
 }
 
-[type=number]{
-    width: 80px;
+table tr td:first-child{
+    text-align: left;
 }
 
-button {
-    width: 200px;
+[type=text],[type=number]{
+    margin: auto 3px;
+}
+
+[type=number]{
+    width: 90px;
+}
+
+p button {
+    width: 170px;
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++*/
