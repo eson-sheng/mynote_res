@@ -5,21 +5,6 @@ session_start();
 $_GET['op']();
 
 /*
- * @describe 接口：获取所有日志文件路径
- * */
-function get_logs_list()
-{
-    $logs = [
-        './aa/a.log',
-        './b.log',
-        './c.log',
-        './d.log',
-        './e.log'
-    ];
-    json(true, '日志文件', $logs);
-}
-
-/*
  * @describe 接口：获取指定日志的内容
  * */
 function get_logs_content()

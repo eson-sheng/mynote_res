@@ -19,6 +19,31 @@
             <th>起始部分</th>
             <th>起始索引</th>
         </tr>
+        <?php
+        $logs = [
+            './aa/a.log',
+            './b.log',
+            './c.log',
+            './d.log',
+            './e.log'
+        ];
+        $count=1;
+        foreach($logs as $log){ ?>
+            <tr>
+                <td><?=$log?></td>
+                <td>
+                    <input id='che_<?=$count?>' type='checkbox' name='show[<?=$log?>]'/>
+                </td>
+                <td>
+                    <input id='txt_<?=$count?>' type='text' name='from[<?=$log?>]'/>
+                </td>
+                <td>
+                    <input id='num_<?=$count?>' type='number' name='index[<?=$log?>]'/>
+                </td>
+            </tr>
+        <?php
+        $count++;
+        } ?>
     </table>
 </form>
 <p>
@@ -53,30 +78,6 @@
     var dir_path = location.pathname;
     dir_path = dir_path.substring(0, dir_path.lastIndexOf('/') + 1);
     var server_path = dir_path + 'server.php';
-
-    //进入页面自动运行：获取日志列表
-    $.get(server_path, {
-        op: 'get_logs_list'
-    }, function (result) {
-        var id = 1;//用于生成id，id用于保存表单
-        result.data.forEach(function (log) {
-            var $tr = $('<tr></tr>');
-            var $td1 = $('<td></td>');
-            var $td2 = $('<td></td>');
-            var $td3 = $('<td></td>');
-            var $td4 = $('<td></td>');
-            $td1.text(log);
-            $("<input id='che_" + id + "' type='checkbox' name='show[" + log + "]'/>").appendTo($td2);
-            $("<input id='txt_" + id + "' type='text' name='from[" + log + "]'/>").appendTo($td3);
-            $("<input id='num_" + id + "' type='number' name='index[" + log + "]'/>").appendTo($td4);
-            id++;
-            $tr.append($td1);
-            $tr.append($td2);
-            $tr.append($td3);
-            $tr.append($td4);
-            $("#form1 table").append($tr);
-        });
-    }, 'json');
 
     //按钮：获取日志内容
     $('#submit').on('click', function () {
@@ -142,17 +143,14 @@
     });
 
     //还原表单内容
-    var config = null;
-    setTimeout(function () {//延迟载入，因为要等待ajax载入数据后才能还原数据
-        var num = $('tr').length - 1;
-        var ids = [];
-        for (var i = 1; i <= num; i++) {
-            ids.push('che_' + i);
-            ids.push('txt_' + i);
-            ids.push('num_' + i);
-        }
-        config = createConfig("myform", ids);
-    },500);
+    var num = $('tr').length - 1;
+    var ids = [];
+    for (var i = 1; i <= num; i++) {
+        ids.push('che_' + i);
+        ids.push('txt_' + i);
+        ids.push('num_' + i);
+    }
+    config = createConfig("myform", ids);
 
     //保存表单内容
     $('#save_form').on('click', function () {
