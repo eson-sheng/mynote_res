@@ -20,23 +20,23 @@
             <th>起始索引</th>
         </tr>
         <?php
-        require_once __DIR__.'/logs.php';
-        $count=1;
-        foreach($logs as $log){ ?>
+        require_once __DIR__ . '/logs.php';
+        $count = 1;
+        foreach ($logs as $log) { ?>
             <tr>
-                <td><?=$log?></td>
+                <td><?= $log ?></td>
                 <td>
-                    <input id='che_<?=$count?>' type='checkbox' name='show[<?=$log?>]'/>
+                    <input id='che_<?= $count ?>' type='checkbox' name='show[<?= $log ?>]'/>
                 </td>
                 <td>
-                    <input id='txt_<?=$count?>' type='text' name='from[<?=$log?>]'/>
+                    <input id='txt_<?= $count ?>' type='text' name='from[<?= $log ?>]'/>
                 </td>
                 <td>
-                    <input id='num_<?=$count?>' type='number' name='index[<?=$log?>]'/>
+                    <input id='num_<?= $count ?>' type='number' name='index[<?= $log ?>]'/>
                 </td>
             </tr>
-        <?php
-        $count++;
+            <?php
+            $count++;
         } ?>
     </table>
 </form>
@@ -44,7 +44,9 @@
     <button id="reset_history">重置读取历史(Alt+D)</button>
     <button id="clear">清空显示内容(Alt+C)</button>
     <button id="submit">读取内容(Alt+F)</button>
+    <button id="toggle1">切换换行模式(Alt+W)</button>
     <button id="save_form">保存表单内容</button>
+
 </p>
 
 <fieldset>
@@ -118,6 +120,10 @@
             $('#clear').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
+        if (event.key == 'w' && event.altKey) {//切换换行样式
+            $('#toggle1').trigger('click');
+            event.preventDefault();//防止触发默认的热键
+        }
     });
 
     //按钮：重置读取历史
@@ -150,6 +156,18 @@
     $('#save_form').on('click', function () {
         config.saveCtrls();
         layer.msg('表单内容已保存');
+    });
+
+    //按钮：切换换行样式
+    $('#toggle1').on('click', function () {
+        var $paragraphs = $('.box > p');
+        if ($paragraphs.css('white-space') == 'pre-line') {
+            $paragraphs.css('white-space', 'pre');//保留行缩进，单行不允许自动折行
+            layer.msg('内容样式已切换为 white-space : pre');
+        } else {
+            $paragraphs.css('white-space', 'pre-line');//消除行缩进，单行自动折行
+            layer.msg('内容样式已切换为 white-space : pre-line');
+        }
     });
 </script>
 </html>
