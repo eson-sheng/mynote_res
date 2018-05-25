@@ -13,7 +13,7 @@ function get_logs_content()
     if (isset($_SESSION['last_end_index'])) {//非第一次读取，接着上次读完的地方开始读取
         foreach ($_SESSION['last_end_index'] as $path => $index) {
             $content = file_get_contents($path, false, null, $index + 1);
-            $content = str_replace("\r\n", "<br/>", $content);#换行符
+            $content = htmlentities($content);#转html标签为实体
             $content = "$path<br/>" . $content;
             $data[$path] = $content;
             $content = file_get_contents($path);#日志全部内容
@@ -31,7 +31,7 @@ function get_logs_content()
                     $content = file_get_contents($path, false, null, $start_index);
                     $content = mb_substr($content, 2, strlen($content));
                 }
-                $content = str_replace("\r\n", "<br/>", $content);#换行符
+                $content = htmlentities($content);#转html标签为实体
                 $content = "$path<br/>" . $content;
                 $data[$path] = $content;
             }
