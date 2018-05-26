@@ -10,9 +10,17 @@
     <script src="config.js"></script>
 </head>
 <body>
+<?php
+$path = './logs.php';
+if (is_file($path)) {
+    require_once $path;
+} else {
+    die("<h3>没有找到配置文件 “$path ”。请参考文件 “./logs_tmpl.php”。</h3>");
+}
+?>
 <form id="form1">
     <table cellpadding="0" cellspacing="0" border="1">
-        <caption>日志列表 <input type="reset" value="重新设置"/></caption>
+        <caption>日志列表<input type="reset" value="重新设置"/></caption>
         <tr>
             <th width="60%">日志</th>
             <th width="10%">查看</th>
@@ -20,7 +28,6 @@
             <th>起始索引</th>
         </tr>
         <?php
-        require_once __DIR__ . '/logs.php';
         $count = 1;
         foreach ($logs as $log) { ?>
             <tr>
