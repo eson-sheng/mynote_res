@@ -44,9 +44,11 @@
     <button id="reset_history">重置读取历史(Alt+D)</button>
     <button id="clear">清空显示内容(Alt+C)</button>
     <button id="submit">读取内容(Alt+F)</button>
-    <button id="toggle1">切换换行模式(Alt+W)</button>
     <button id="save_form">保存表单内容</button>
-
+    <label>
+        <input type="checkbox" id="toggle1" checked="checked"/>
+        自动换行(Alt+W)
+    </label>
 </p>
 
 <fieldset>
@@ -161,12 +163,17 @@
     //按钮：切换换行样式
     $('#toggle1').on('click', function () {
         var $paragraphs = $('.box > p');
+        if ($paragraphs.length === 0) {
+            layer.msg('日志内容不存在');
+            $('#toggle1').prop('checked', true);
+            return;
+        }
         if ($paragraphs.css('white-space') == 'pre-line') {
             $paragraphs.css('white-space', 'pre');//保留行缩进，单行不允许自动折行
-            layer.msg('内容样式已切换为 white-space : pre');
+            layer.msg('已取消自动换行');
         } else {
             $paragraphs.css('white-space', 'pre-line');//消除行缩进，单行自动折行
-            layer.msg('内容样式已切换为 white-space : pre-line');
+            layer.msg('已设置自动换行');
         }
     });
 </script>
