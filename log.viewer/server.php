@@ -29,11 +29,16 @@ function get_logs_content()
                     $content = file_get_contents($path, false, null, $start_index);
                 } elseif ($start_index = $_POST['index'][$path]) {//从指定索引开始读取
                     $content = file_get_contents($path, false, null, $start_index);
+                    #$content = mb_substr($content, 2, strlen($content));
                 } else {//未设置起始读取，默认读取全部
                     $content = file_get_contents($path);
                 }
                 $content = htmlentities($content);#转html标签为实体
                 $content = "$path<br/>" . $content;
+                $encoding = mb_detect_encoding($content, "gb2312, utf-8", true);#转编码格式
+                if ($encoding == 'EUC-CN') {#gbk
+                    $content = iconv("gbk", "utf-8", $content);#转为utf-8
+                }
                 $data[$path] = $content;
             }
         }
