@@ -29,7 +29,6 @@ function get_logs_content()
                     $content = file_get_contents($path, false, null, $start_index);
                 } elseif ($start_index = $_POST['index'][$path]) {//从指定索引开始读取
                     $content = file_get_contents($path, false, null, $start_index);
-                    $content = mb_substr($content, 2, strlen($content));
                 } else {//未设置起始读取，默认读取全部
                     $content = file_get_contents($path);
                 }
