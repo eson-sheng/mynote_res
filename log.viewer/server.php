@@ -12,6 +12,9 @@ $_GET['op']();
 function get_logs_content()
 {
     global $read_size;
+    if (empty($read_size)) {
+        $read_size = 500000;//默认配置：每次读取的长度
+    }
     $data = [];
     if (isset($_SESSION['last_end_index'])) {//非第一次读取，接着上次读完的地方开始读取
         foreach ($_SESSION['last_end_index'] as $path => $index) {
