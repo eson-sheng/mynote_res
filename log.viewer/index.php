@@ -48,7 +48,7 @@ if (is_file($path)) {
     </table>
 </form>
 <p>
-    <button id="reset_history">重置读取历史(Alt+D)</button>
+    <button id="do_config">重置读取历史(Alt+D)</button>
     <button id="clear">清空显示内容(Alt+C)</button>
     <button id="submit">读取内容(Alt+F)</button>
     <label>
@@ -135,14 +135,23 @@ if (is_file($path)) {
     });
 
     //按钮：重置读取历史
-    $('#reset_history').on('click', function () {
-        $.get(server_path, {
-            op: 'reset_history'
-        }, function (result) {
-            if (result.result == 'success') {
+    $('#do_config').on('click', function () {
+        $.ajax({
+            url: server_path + '?op=do_config',
+            type: 'post',
+            async: true,
+            data: new FormData($('#form1')[0]),
+            dataType: 'json',
+            success: function (result) {
                 layer.msg(result.message);
-            }
-        }, 'json');
+            },
+            error: function (xhr, status, message) {
+                console.log('ajax error : ' + status + ' --> ' + message);
+            },
+            // cache:true,
+            contentType: false,
+            processData: false
+        });
 
         //保存表单内容
         config.saveCtrls();
