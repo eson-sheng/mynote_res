@@ -24,7 +24,7 @@ function get_logs_content()
                 $content = iconv("gbk", "utf-8", $content);
             }
             $content = htmlentities($content);#转html标签为实体
-            $content = "$path<br/>" . $content;
+            $content = "$path\n" . $content;
             $data[$path] = $content;
             $content = file_get_contents($path);#日志全部内容
             $_SESSION['last_end_index'][$path] = $index + $read_size;//保存本次读取完结处
@@ -49,7 +49,7 @@ function get_logs_content()
                     $content = iconv("gbk", "utf-8", $content);
                 }
                 $content = htmlentities($content);#转html标签为实体
-                $content = "$path<br/>" . $content;
+                $content = "$path\n" . $content;
                 $data[$path] = $content;
             }
         }
