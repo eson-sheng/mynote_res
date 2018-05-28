@@ -175,11 +175,11 @@ if (is_file($path)) {
             $('#toggle1').prop('checked', true);
             return;
         }
-        if ($paragraphs.css('white-space') == 'pre-line') {
+        if ($paragraphs.css('white-space') == 'pre-wrap') {
             $paragraphs.css('white-space', 'pre');//保留行缩进，单行不允许自动折行
             layer.msg('已取消自动换行');
         } else {
-            $paragraphs.css('white-space', 'pre-line');//消除行缩进，单行自动折行
+            $paragraphs.css('white-space', 'pre-wrap');//消除行缩进，单行自动折行
             layer.msg('已设置自动换行');
         }
     });

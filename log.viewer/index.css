@@ -34,7 +34,7 @@ p button {
 .box > p{
     border: 1px solid;
     padding: 2px;
-    white-space: pre-line;
+    white-space: pre-wrap;
 }
 
 .box > p:first-child {
