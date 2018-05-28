@@ -51,7 +51,6 @@ if (is_file($path)) {
     <button id="reset_history">重置读取历史(Alt+D)</button>
     <button id="clear">清空显示内容(Alt+C)</button>
     <button id="submit">读取内容(Alt+F)</button>
-    <button id="save_form">保存表单内容</button>
     <label>
         <input type="checkbox" id="toggle1" checked="checked"/>
         自动换行(Alt+W)
@@ -144,6 +143,9 @@ if (is_file($path)) {
                 layer.msg(result.message);
             }
         }, 'json');
+
+        //保存表单内容
+        config.saveCtrls();
     });
 
     //按钮：清空显示内容
@@ -160,12 +162,6 @@ if (is_file($path)) {
         ids.push('num_' + i);
     }
     config = createConfig("myform", ids);
-
-    //保存表单内容
-    $('#save_form').on('click', function () {
-        config.saveCtrls();
-        layer.msg('表单内容已保存');
-    });
 
     //按钮：切换换行样式
     $('#toggle1').on('click', function () {
