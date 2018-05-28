@@ -2,6 +2,8 @@
 ini_set('session.name', 'logviewer');
 session_start();
 
+require_once './logs.php';
+
 $_GET['op']();
 
 /*
@@ -9,10 +11,11 @@ $_GET['op']();
  * */
 function get_logs_content()
 {
+    global $read_size;
     $data = [];
     if (isset($_SESSION['last_end_index'])) {//非第一次读取，接着上次读完的地方开始读取
         foreach ($_SESSION['last_end_index'] as $path => $index) {
-            $content = file_get_contents($path, false, null, $index);
+            $content = file_get_contents($path, false, null, $index, $read_size);
             $encoding = mb_detect_encoding($content, "gb2312, utf-8", true);#转编码格式
             if ($encoding == 'EUC-CN') {#是gbk则转为utf-8
                 $content = iconv("gbk", "utf-8", $content);
@@ -21,21 +24,23 @@ function get_logs_content()
             $content = "$path<br/>" . $content;
             $data[$path] = $content;
             $content = file_get_contents($path);#日志全部内容
-            $_SESSION['last_end_index'][$path] = strlen($content);#本次读取结束处
+            $_SESSION['last_end_index'][$path] = $index + $read_size;//保存本次读取完结处
         }
     } else {//第一次读取，根据表单设置
         if (isset($_POST['show'])) {
             foreach ($_POST['show'] as $path => $value) {
-                $_SESSION['last_end_index'][$path] = filesize($path);#本次读取结束处
+                $start_index = 0;
                 if ($from = $_POST['from'][$path]) {//从指定部分开始读取
                     $content = file_get_contents($path);#日志全部内容
                     $start_index = strpos($content, $from);#本次读取开始处
-                    $content = file_get_contents($path, false, null, $start_index);
-                } elseif ($start_index = $_POST['index'][$path]) {//从指定索引开始读取
-                    $content = file_get_contents($path, false, null, $start_index);
-                } else {//未设置起始读取，默认读取全部
-                    $content = file_get_contents($path);
+                    $content = file_get_contents($path, false, null, $start_index, $read_size);
+                } elseif ($_POST['index'][$path]) {//从指定索引开始读取
+                    $start_index = $_POST['index'][$path];
+                    $content = file_get_contents($path, false, null, $start_index, $read_size);
+                } else {//未设置起始读取，默认从头开始读取
+                    $content = file_get_contents($path, false, null, 0, $read_size);
                 }
+                $_SESSION['last_end_index'][$path] = $start_index + $read_size;//保存本次读取完结处
                 $encoding = mb_detect_encoding($content, "gb2312, utf-8", true);#转编码格式
                 if ($encoding == 'EUC-CN') {#是gbk则转为utf-8
                     $content = iconv("gbk", "utf-8", $content);
