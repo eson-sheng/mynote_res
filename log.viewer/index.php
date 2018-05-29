@@ -221,6 +221,7 @@ if (is_file($path)) {
                     this.innerHTML = replaced;
                 })
             }
+            $('.match'+class_id).css('background-color',color_code);
             class_id++;
         });
     }
