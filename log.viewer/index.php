@@ -88,7 +88,6 @@ if (is_file($path)) {
 
     //按钮：获取日志内容
     $('#submit').on('click', function () {
-        config.saveCtrls();
         $.ajax({
             url: server_path + '?op=get_logs_content',
             type: 'post',
@@ -117,6 +116,9 @@ if (is_file($path)) {
             contentType: false,
             processData: false
         });
+
+        //保存表单内容
+        config.saveCtrls();
     });
 
     //绑定热键
@@ -126,7 +128,7 @@ if (is_file($path)) {
             event.preventDefault();//防止触发默认的热键
         }
         if (event.key == 'd' && event.altKey) {//重置读取历史
-            $('#reset_history').trigger('click');
+            $('#do_config').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
         if (event.key == 'c' && event.altKey) {//清空显示内容
@@ -205,24 +207,21 @@ if (is_file($path)) {
         var text = $('#keywords').val();
         var index = text.indexOf(',');
         var lines = text.split('\n');
-        var i = 0;
+        var class_id = 1;
         lines.forEach(function (line) {
-            i++;
             if (line !== '') {
                 var split_index = line.indexOf(',');
                 var color_code = line.substring(0, split_index);
                 var keyword = line.substring(split_index + 1, line.length);
                 $(".box p").each(function () {
-                    //var p_line = $(this).html().split('\n');
-                    console.log($(this).contents());
                     var pattern = new RegExp(keyword, "g");
-                    var r = this.innerHTML.replace(pattern, function (a, b, c, d) {
-                        console.log(a);
-                        return "<span class='match" + i + "'>" + a + "</span>";
+                    var replaced = this.innerHTML.replace(pattern, function (a, b, c, d) {
+                        return "<span class='match" + class_id + "'>" + a + "</span>";
                     });
-                    this.innerHTML = r;
+                    this.innerHTML = replaced;
                 })
             }
+            class_id++;
         });
     }
 </script>
