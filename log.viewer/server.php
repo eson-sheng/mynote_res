@@ -21,7 +21,7 @@ function get_logs_content()
         foreach ($_POST['show'] as $path => $on) {
             $start_index = $_SESSION['last_end_index'][$path];
             $content = file_get_contents($path, false, null, $start_index, $read_size);
-            $_SESSION['last_end_index'][$path] = $start_index + $read_size;
+            $_SESSION['last_end_index'][$path] = $start_index + strlen($content);
 
             $encoding = mb_detect_encoding($content, "gb2312, utf-8", true);#转编码格式
             if ($encoding == 'EUC-CN') {#是gbk则转为utf-8
