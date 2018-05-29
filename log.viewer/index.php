@@ -55,8 +55,11 @@ if (is_file($path)) {
         <input type="checkbox" id="toggle1" checked="checked"/>
         自动换行(Alt+W)
     </label>
+    <input id="colors" type="color"/>
+    <input id="color_code" type="text" value="#000000"/>
 </p>
-
+<textarea id="keywords">
+</textarea>
 <fieldset>
     <legend>日志内容</legend>
     <!--<div class="box">
@@ -85,6 +88,7 @@ if (is_file($path)) {
 
     //按钮：获取日志内容
     $('#submit').on('click', function () {
+        config.saveCtrls();
         $.ajax({
             url: server_path + '?op=get_logs_content',
             type: 'post',
@@ -101,6 +105,7 @@ if (is_file($path)) {
                         $box.append($p);
                     }
                     $('fieldset').append($box);
+                    highlight();
                 } else {
                     layer.msg(result.message);
                 }
@@ -170,6 +175,7 @@ if (is_file($path)) {
         ids.push('txt_' + i);
         ids.push('num_' + i);
     }
+    ids.push("keywords");
     config = createConfig("myform", ids);
 
     //按钮：切换换行样式
@@ -188,5 +194,36 @@ if (is_file($path)) {
             layer.msg('已设置自动换行');
         }
     });
+
+    //获取颜色代码
+    $('#colors').on('change', function () {
+        $('#color_code').val($(this).val());
+    });
+
+    //高亮关键字
+    function highlight() {
+        var text = $('#keywords').val();
+        var index = text.indexOf(',');
+        var lines = text.split('\n');
+        var i = 0;
+        lines.forEach(function (line) {
+            i++;
+            if (line !== '') {
+                var split_index = line.indexOf(',');
+                var color_code = line.substring(0, split_index);
+                var keyword = line.substring(split_index + 1, line.length);
+                $(".box p").each(function () {
+                    //var p_line = $(this).html().split('\n');
+                    console.log($(this).contents());
+                    var pattern = new RegExp(keyword, "g");
+                    var r = this.innerHTML.replace(pattern, function (a, b, c, d) {
+                        console.log(a);
+                        return "<span class='match" + i + "'>" + a + "</span>";
+                    });
+                    this.innerHTML = r;
+                })
+            }
+        });
+    }
 </script>
 </html>

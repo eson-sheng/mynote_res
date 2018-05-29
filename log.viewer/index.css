@@ -24,6 +24,12 @@ p button {
     width: 170px;
 }
 
+textarea{
+    width: 900px;
+    height: 130px;
+    font-size: 20px;
+}
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++*/
 .box {
     border: 5px solid gray;
@@ -60,4 +66,16 @@ p button {
 .box > p:last-child {
     color: black;
     border-color: black;
+}
+
+.match1 {
+    background-color: #1E9FFF;
+}
+
+.match2 {
+    background-color: #009f95;
+}
+
+.match3 {
+    background-color: #FD482C;
 }
