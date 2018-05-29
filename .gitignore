@@ -3,3 +3,7 @@
 *.rar
 *.my.php
 *.lnk
+/log.viewer/logs.php
+/log.viewer/*.log
+/log.viewer/**/*.log
+.idea
