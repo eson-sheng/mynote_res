@@ -213,15 +213,20 @@ if (is_file($path)) {
                 var split_index = line.indexOf(',');
                 var color_code = line.substring(0, split_index);
                 var keyword = line.substring(split_index + 1, line.length);
+                var replaced;
                 $(".box p").each(function () {
-                    var pattern = new RegExp(keyword, "g");
-                    var replaced = this.innerHTML.replace(pattern, function (a, b, c, d) {
-                        return "<span class='match" + class_id + "'>" + a + "</span>";
+                    if (keyword.match(/^\/{1}.*\/{1}$/)) {//是正则表达式，取掉首尾的/
+                        keyword = keyword.substr(1, keyword.length);
+                        keyword = keyword.substr(0, keyword.length - 1);
+                    }
+                    var pattern = new RegExp(keyword,'gm');
+                    replaced = this.innerHTML.replace(pattern, function (target) {
+                        return "<span class='match" + class_id + "'>" + target + "</span>";
                     });
                     this.innerHTML = replaced;
                 })
             }
-            $('.match'+class_id).css('background-color',color_code);
+            $('.match' + class_id).css('background-color', color_code);
             class_id++;
         });
     }
