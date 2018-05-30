@@ -48,7 +48,7 @@ if (is_file($path)) {
     </table>
 </form>
 <p>
-    <button id="do_config">重置读取历史(Alt+D)</button>
+    <button id="do_config">提交读取设置(Alt+D)</button>
     <button id="clear">清空显示内容(Alt+C)</button>
     <button id="submit">读取内容(Alt+F)</button>
     <label>
@@ -62,7 +62,8 @@ if (is_file($path)) {
 </textarea>
 <fieldset>
     <legend>日志内容</legend>
-    <!--<div class="box">
+    <div class="box">
+        <div class="toggle2">Toggle</div>
         <p>
             11
         </p>
@@ -78,7 +79,25 @@ if (is_file($path)) {
         <p>
             55
         </p>
-    </div>-->
+    </div>
+    <div class="box">
+        <div class="toggle2">Toggle</div>
+        <p>
+            11
+        </p>
+        <p>
+            22
+        </p>
+        <p>
+            33
+        </p>
+        <p>
+            44
+        </p>
+        <p>
+            55
+        </p>
+    </div>
 </fieldset>
 </body>
 <script>
@@ -97,12 +116,19 @@ if (is_file($path)) {
             success: function (result) {
                 if (result.result == 'success') {
                     var $box = $('<div class="box"></div>');
+                    var $main = $('<div class="main"></div>');
+                    var $toggle = $('<div class="toggle2">Toggle</div>');
+                    $toggle.on('click', function () {
+                        $main.slideToggle(100);
+                    });
                     for (var log in result.data) {
                         var content = result.data[log];
                         var $p = $('<p></p>');
                         $p.html(content);
-                        $box.append($p);
+                        $main.append($p);
                     }
+                    $box.append($toggle);
+                    $box.append($main);
                     $('fieldset').append($box);
                     highlight();
                 } else {
@@ -219,7 +245,7 @@ if (is_file($path)) {
                         keyword = keyword.substr(1, keyword.length);
                         keyword = keyword.substr(0, keyword.length - 1);
                     }
-                    var pattern = new RegExp(keyword,'gm');
+                    var pattern = new RegExp(keyword, 'gm');
                     replaced = this.innerHTML.replace(pattern, function (target) {
                         return "<span class='match" + class_id + "'>" + target + "</span>";
                     });
