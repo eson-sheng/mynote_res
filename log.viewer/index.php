@@ -62,7 +62,7 @@ if (is_file($path)) {
 </textarea>
 <fieldset>
     <legend>日志内容</legend>
-    <div class="box">
+    <!--<div class="box">
         <div class="toggle2">Toggle</div>
         <p>
             11
@@ -79,25 +79,7 @@ if (is_file($path)) {
         <p>
             55
         </p>
-    </div>
-    <div class="box">
-        <div class="toggle2">Toggle</div>
-        <p>
-            11
-        </p>
-        <p>
-            22
-        </p>
-        <p>
-            33
-        </p>
-        <p>
-            44
-        </p>
-        <p>
-            55
-        </p>
-    </div>
+    </div>-->
 </fieldset>
 </body>
 <script>
@@ -106,6 +88,7 @@ if (is_file($path)) {
     var server_path = dir_path + 'server.php';
 
     //按钮：获取日志内容
+    var main_id = 1;
     $('#submit').on('click', function () {
         $.ajax({
             url: server_path + '?op=get_logs_content',
@@ -116,7 +99,9 @@ if (is_file($path)) {
             success: function (result) {
                 if (result.result == 'success') {
                     var $box = $('<div class="box"></div>');
-                    var $main = $('<div class="main"></div>');
+                    var $main = $('<div id="' + main_id + '" class="main"></div>');
+                    $('#' + (main_id - 1)).slideToggle(100);
+                    main_id++;
                     var $toggle = $('<div class="toggle2">Toggle</div>');
                     $toggle.on('click', function () {
                         $main.slideToggle(100);
