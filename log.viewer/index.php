@@ -63,7 +63,7 @@ if (is_file($path)) {
 <fieldset>
     <legend>日志内容</legend>
     <!--<div class="box">
-        <div class="toggle2">Toggle</div>
+        <div class="toggle2">折叠</div>
         <p>
             11
         </p>
@@ -88,7 +88,7 @@ if (is_file($path)) {
     var server_path = dir_path + 'server.php';
 
     //按钮：获取日志内容
-    var main_id = 1;
+    var id = 1;
     $('#submit').on('click', function () {
         $.ajax({
             url: server_path + '?op=get_logs_content',
@@ -99,12 +99,18 @@ if (is_file($path)) {
             success: function (result) {
                 if (result.result == 'success') {
                     var $box = $('<div class="box"></div>');
-                    var $main = $('<div id="' + main_id + '" class="main"></div>');
-                    $('#' + (main_id - 1)).slideToggle(100);
-                    main_id++;
-                    var $toggle = $('<div class="toggle2">Toggle</div>');
+                    var $main = $('<div class="main"></div>');
+                    $('#' + id).trigger('click');
+                    event.preventDefault();//防止触发默认的热键
+                    id++;
+                    var $toggle = $('<div id="'+id+'" class="toggle2">折叠</div>');
                     $toggle.on('click', function () {
                         $main.slideToggle(100);
+                        if($(this).text()=='折叠'){
+                            $(this).text('展开');
+                        }else{
+                            $(this).text('折叠');
+                        }
                     });
                     for (var log in result.data) {
                         var content = result.data[log];

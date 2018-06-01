@@ -73,6 +73,14 @@ textarea{
     border: 1px solid;
     cursor: pointer;
     position: absolute;
-    top:-8px;
+    top:-12px;
     font-weight: bolder;
+    background-color: white;
+    color:black;
+    padding: 2px 5px;
+}
+
+.toggle2:hover{
+    background-color: black;
+    color:white;
 }
