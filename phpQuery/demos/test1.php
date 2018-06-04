@@ -13,3 +13,12 @@ foreach($ps as $p) {
     $r[] = $one;
 }
 print_r($r);
+
+echo "-----------------each:<br>\n";
+
+// $node is DOMElement
+function test_each($node) {
+    print_r(pq($node));
+}
+
+$ps->each("test_each");
