@@ -21,7 +21,11 @@ table tr td:first-child{
 }
 
 p button {
-    width: 170px;
+    width: 150px;
+}
+
+#color_code{
+    width: 55px;
 }
 
 textarea{

@@ -43,23 +43,40 @@ function get_logs_content()
 }
 
 /*
- * @describe 重置读取设置
+ * @describe 将从日志文件末尾开始所有设置
+ * */
+function from_tail()
+{
+    $_SESSION['from_tail'] = $_POST['from_tail'];
+    json(true, $_POST['from_tail'] ? '忽略设置从末尾开始读' : '按设置从开头开始读', '');
+}
+
+/*
+ * @describe 提交读取设置
  * */
 function do_config()
 {
+    $from_tail = false;//是否从日志末尾开始所有设置
+    if (isset($_SESSION['from_tail']) && $_SESSION['from_tail']) {
+        $from_tail = true;
+    }
     if (isset($_POST['show'])) {
         foreach ($_POST['from'] as $path => $from) {
             $index = $_POST['index'][$path];
-            if ($from) {//设置了起始部分
-                $content = file_get_contents($path);
-                $_SESSION['last_end_index'][$path] = strpos($content, $from);
-            } elseif ($index) {//设置了起始索引
-                if ($index < 0) {//索引为负值
-                    $index = filesize($path) + $index;
+            if(!$from_tail){
+                if ($from) {//设置了起始部分
+                    $content = file_get_contents($path);
+                    $_SESSION['last_end_index'][$path] = strpos($content, $from);
+                } elseif ($index) {//设置了起始索引
+                    if ($index < 0) {//索引为负值
+                        $index = filesize($path) + $index;
+                    }
+                    $_SESSION['last_end_index'][$path] = $index ? $index : 0;
+                } else {//都没有设置，默认从头开始读
+                    $_SESSION['last_end_index'][$path] = 0;
                 }
-                $_SESSION['last_end_index'][$path] = $index ? $index : 0;
-            } else {//都没有设置，默认从头开始读
-                $_SESSION['last_end_index'][$path] = 0;
+            }else{
+                $_SESSION['last_end_index'][$path] = filesize($path);
             }
         }
     }

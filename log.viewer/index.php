@@ -48,6 +48,10 @@ if (is_file($path)) {
     </table>
 </form>
 <p>
+    <label>
+        <input type="checkbox" id="from_tail"/>
+        从末尾开始
+    </label>
     <button id="do_config">提交读取设置(Alt+D)</button>
     <button id="clear">清空显示内容(Alt+C)</button>
     <button id="submit">读取内容(Alt+F)</button>
@@ -158,7 +162,23 @@ if (is_file($path)) {
         }
     });
 
-    //按钮：重置读取历史
+    $('#from_tail').on('change',function () {
+        if($(this).prop('checked')){//选中状态
+            $.post(server_path+'?op=from_tail',{
+                'from_tail':1
+            },function (result) {
+                layer.msg(result.message);
+            },'json');
+        }else{//未选中状态
+            $.post(server_path+'?op=from_tail',{
+                'from_tail':0
+            },function (result) {
+                layer.msg(result.message);
+            },'json');
+        }
+    });
+
+    //按钮：提交读取设置
     $('#do_config').on('click', function () {
         $.ajax({
             url: server_path + '?op=do_config',
