@@ -48,12 +48,9 @@ if (is_file($path)) {
     </table>
 </form>
 <p>
-    <label>
-        <input type="checkbox" id="from_tail"/>
-        从末尾开始
-    </label>
-    <button id="do_config">提交读取设置(Alt+D)</button>
     <button id="clear">清空显示内容(Alt+C)</button>
+    <button id="set_to_end">从末尾开始读(Alt+E)</button>
+    <button id="do_config">提交读取设置(Alt+D)</button>
     <button id="submit">读取内容(Alt+F)</button>
     <label>
         <input type="checkbox" id="toggle1" checked="checked"/>
@@ -144,12 +141,16 @@ if (is_file($path)) {
 
     //绑定热键
     $("body").delegate("", "keydown", function () {
-        if (event.key == 'f' && event.altKey) {//获取日志内容
-            $('#submit').trigger('click');
+        if (event.key == 'e' && event.altKey) {//提交读取设置
+            $('#set_to_end').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
-        if (event.key == 'd' && event.altKey) {//重置读取历史
+        if (event.key == 'd' && event.altKey) {//提交读取设置
             $('#do_config').trigger('click');
+            event.preventDefault();//防止触发默认的热键
+        }
+        if (event.key == 'f' && event.altKey) {//获取日志内容
+            $('#submit').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
         if (event.key == 'c' && event.altKey) {//清空显示内容
@@ -162,20 +163,12 @@ if (is_file($path)) {
         }
     });
 
-    $('#from_tail').on('change',function () {
-        if($(this).prop('checked')){//选中状态
-            $.post(server_path+'?op=from_tail',{
-                'from_tail':1
-            },function (result) {
-                layer.msg(result.message);
-            },'json');
-        }else{//未选中状态
-            $.post(server_path+'?op=from_tail',{
-                'from_tail':0
-            },function (result) {
-                layer.msg(result.message);
-            },'json');
-        }
+    $('#set_to_end').on('click',function () {
+        $.get(server_path+'?op=set_to_end',{
+
+        },function (result) {
+            layer.msg(result.message);
+        },'json');
     });
 
     //按钮：提交读取设置
@@ -219,7 +212,7 @@ if (is_file($path)) {
 
     //按钮：切换换行样式
     $('#toggle1').on('click', function () {
-        var $paragraphs = $('.box > p');
+        var $paragraphs = $('.main > p');
         if ($paragraphs.length === 0) {
             layer.msg('日志内容不存在');
             $('#toggle1').prop('checked', true);
