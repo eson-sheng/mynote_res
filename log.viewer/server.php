@@ -28,16 +28,24 @@ function get_logs_content()
                 $content = iconv("gbk", "utf-8", $content);
             }
 
+            $record_length1 = strlen($content);//记录内容的长度，用于检查
             $content = htmlentities($content);#转html标签为实体
+            $record_length2 = strlen($content);//第二次记录内容的长度，用于检查
+            $err_info = '';
+            if ($record_length2 === 0 && $record_length1 !== 0) {//截断了汉字出现乱码情况
+                $err_info = '索引值截断了汉字，请调整索引值后再试';
+            }
             $content = "$path\n" . $content;#首行插入日志路径
 
             $data[$path] = $content;
         }
     }
 
-    if ($data) {
+    if ($data && !$err_info) {
         json(true, '指定日志的内容', $data);
-    } else {
+    } elseif($err_info) {
+        json(false, $err_info, '');
+    }else{
         json(false, '尚未设置', '');
     }
 }
