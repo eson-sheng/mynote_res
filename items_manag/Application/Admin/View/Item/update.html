@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>物品信息</title>
+</head>
+<body>
+<h2>物品信息</h2>
+<form action="" method="post">
+    <dl>
+        <dt>物品名称</dt>
+        <dd>
+            <input type="text" name="name" value="{$item.name}" required="required"/>
+        </dd>
+        <dt>物品类型</dt>
+        <dd>
+            <select name="typeid">
+                {foreach $types as $type}
+                {if $item.item_types.id eq $type.id}
+                <option value="{$type.id}" selected="selected">{$type.name}</option>
+                {else}
+                <option value="{$type.id}">{$type.name}</option>
+                {/if}
+                {/foreach}
+            </select>
+        </dd>
+        <dt>所属子公司</dt>
+        <dd>
+            <select name="companyid">
+                {foreach $companies as $company}
+                {if $item.subcompanies.id eq $company.id}
+                <option value="{$company.id}" selected="selected">{$company.name}</option>
+                {else}
+                <option value="{$company.id}">{$company.name}</option>
+                {/if}
+                {/foreach}
+            </select>
+        </dd>
+    </dl>
+    <input type="button" value="返回" id="back"/>
+    <input type="submit"/>
+</form>
+</body>
+<script>
+    document.getElementById('back').addEventListener('click',function () {
+        location.href="{U("Admin/Item/index")}";
+    });
+</script>
+</html>

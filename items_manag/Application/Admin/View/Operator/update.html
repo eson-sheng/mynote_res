@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作员信息</title>
+</head>
+<body>
+<h2>操作员信息</h2>
+<form action="" method="post">
+    <dl>
+        <dt>登录名</dt>
+        <dd>
+            <input name="name" type="text" value="{$operator.name}" required="required"/>
+        </dd>
+        <dt>操作员类型</dt>
+        <dd>
+            <select name="type">
+                <option value="normal" {if $operator.type eq 'normal'}selected='selected'{/if}>普通人员</option>
+                <option value="admin" {if $operator.type eq 'admin'}selected='selected'{/if}>管理员</option>
+            </select>
+        </dd>
+        {if !$operator}
+        <dt>密码</dt>
+        <dd>
+            <input name="pwd" type="password" placeholder="设置密码" required="required"/>
+        </dd>
+        {/if}
+        <dt>所属子公司</dt>
+        <dd>
+            <select name="companyid">
+                {foreach $companies as $company}
+                    {if $operator.companyid eq $company.id}
+                    <option value="{$company.id}" selected="selected">{$company.name}</option>
+                    {else}
+                    <option value="{$company.id}">{$company.name}</option>
+                    {/if}
+                {/foreach}
+            </select>
+        </dd>
+    </dl>
+    <input id="back" type="button" value="返回"/>
+    <input type="submit"/>
+</form>
+</body>
+<script>
+    document.getElementById('back').addEventListener('click',function () {
+        location.href="{U("Admin/Operator/index")}";
+    });
+</script>
+</html>

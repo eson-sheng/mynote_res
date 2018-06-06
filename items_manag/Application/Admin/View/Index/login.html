@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作员登录</title>
+</head>
+<body>
+<h2>操作员登录</h2>
+<form action="" method="post">
+    <dl>
+        <dt>登录名</dt>
+        <dd>
+            <input name="name" type="text"/>
+        </dd>
+        <dt>登录密码</dt>
+        <dd>
+            <input name="pwd" type="password"/>
+        </dd>
+    </dl>
+    <input type="submit"/>
+    {if isset($err_info)} {$err_info} {/if}
+</form>
+</body>
+</html>

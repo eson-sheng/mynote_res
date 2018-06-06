@@ -1,0 +1,28 @@
+{$operator=session('operator')}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作员选项</title>
+</head>
+<body>
+<h2>操作员选项</h2>
+<p>{if $operator.type eq 'admin'}管理员{else}普通人员{/if}：{$operator.name}</p>
+<ul>
+    <li>
+        <a href="{U("Admin/Item/index")}">物品查看</a>
+    </li>
+    {if $operator.type eq 'admin'}
+    <li>
+        <a href="{U("Admin/Company/index")}">子公司管理</a>
+    </li>
+    <li>
+        <a href="{U("Admin/Operator/index")}">操作员管理</a>
+    </li>
+    {/if}
+    <li>
+        <a href="{U("Admin/Index/logout")}">注销</a>
+    </li>
+</ul>
+</body>
+</html>
