@@ -5,7 +5,7 @@ return array(
     'DB_HOST'=>'127.0.0.1',
     'DB_NAME'=>'items_manag',
     'DB_USER'=>'root',
-    'DB_PWD'=>'',
+    'DB_PWD'=>'root123.',
     'DB_PORT'=>3306,
     'DB_PREFIX'=>'',//数据库表前缀
     'DB_CHARSET'=>'utf8',

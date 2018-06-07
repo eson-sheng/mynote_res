@@ -42,7 +42,7 @@ class CompanyController extends Controller
                 'company' => $this->companies->where(['deleted' => 0, 'id' => I('get.update_id')])->select()[0]
             ]);
         } elseif (I('get.delete_id')) {#删除
-            $a=$this->companies->where(['deleted' => 0, 'id' => I('get.delete_id')])->save([
+            $this->companies->where(['deleted' => 0, 'id' => I('get.delete_id')])->save([
                 'deleted'=>1
             ]);
             $this->redirect('Admin/Company/index');
