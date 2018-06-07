@@ -16,8 +16,37 @@ class ItemController extends Controller
 
     public function index()
     {
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $search_name = I('post.search_name');
+            $search_company = I('post.search_company');
+            $search_type = I('post.search_type');
+
+            $name = I('post.name');
+            $companyid = I('post.companyid');
+            $typeid = I('post.typeid');
+
+            $conditions = ['deleted' => 0];
+            if ($search_name) {
+                $conditions['name'] = ['like','%'.$name.'%'];
+            }
+            if ($search_company) {
+                $conditions['companyid'] = $companyid;
+            }
+            if ($search_type) {
+                $conditions['typeid'] = $typeid;
+            }
+
+            $this->assign([
+                'items' => $this->items->Relation(true)->where($conditions)->select()
+            ]);
+        } else {
+            $this->assign([
+                'items' => $this->items->Relation(true)->where(['deleted' => 0])->select(),
+            ]);
+        }
         $this->assign([
-            'items' => $this->items->Relation(true)->where(['deleted' => 0])->select()
+            'companies' => $this->companies->where(['deleted' => 0])->select(),
+            'types' => $this->types->where(['deleted' => 0])->select()
         ]);
         $this->display();
     }
@@ -56,7 +85,7 @@ class ItemController extends Controller
         } #else 准备新增
         $this->assign([
             'types' => $this->types->where(['deleted' => 0])->select(),
-            'companies'=>$this->companies->where(['deleted'=>0])->select()
+            'companies' => $this->companies->where(['deleted' => 0])->select()
         ]);
         $this->display();
     }

@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>物品管理</title>
+    <script src="{PUB}pi.js"></script>
+    <script src="{PUB}config.js"></script>
+    <script src="{PUB}jquery-3.0.0.min.js"></script>
     <style>
         table {
             width: 900px;
@@ -12,7 +15,8 @@
         th:nth-last-child(1), th:nth-last-child(2) {
             width: 60px;
         }
-        a{
+
+        a {
             text-decoration: underline;
             color: #0000ee;
             cursor: pointer;
@@ -29,6 +33,39 @@
         <a href="{U("Admin/Item/update")}">新增物品</a>
     </li>
 </ul>
+<form action="" method="post">
+    <ul>
+        <li>
+            <label>
+                <input type="checkbox" name="search_name" id="i11"/>
+                物品名称：<input type="text" name="name" id="i12"/>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" name="search_company" id="i21"/>
+                所属公司：
+                <select name="companyid" id="i22">
+                    {foreach $companies as $company}
+                    <option value="{$company.id}">{$company.name}</option>
+                    {/foreach}
+                </select>　
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" name="search_type" id="i31"/>
+                物品类型：
+                <select name="typeid" id="i32">
+                    {foreach $types as $type}
+                    <option value="{$type.id}">{$type.name}</option>
+                    {/foreach}
+                </select>　
+            </label>
+        </li>
+    </ul>
+    <input id="submit" type="submit" value="执行搜索"/>
+</form>
 <table cellspacing="0" cellpadding="0" border="1">
     <caption>物品列表</caption>
     <tr>
@@ -72,5 +109,15 @@
 
         });
     }
+
+    //以下代码是为保存表单内容
+    {literal}//literal是为避免与smarty模板引擎发生冲突
+    var ids = ['i11', 'i12', 'i21', 'i22', 'i31', 'i32'];//目标控件的id
+    var config = createConfig("search_form", ids);//还原表单
+    //若表单控件是通过ajax生成，则用settimeout等待一会儿执行此句
+    $('#submit').on('click', function () {//保存表单
+        config.saveCtrls();
+    });
+    {/literal}
 </script>
 </html>
