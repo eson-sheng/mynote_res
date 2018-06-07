@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>物品管理</title>
+    <title>借还记录</title>
     <style>
         table {
-            width: 900px;
+            width: 1100px;
             text-align: center;
         }
 
@@ -20,38 +20,40 @@
     </style>
 </head>
 <body>
-<h2>物品管理</h2>
+<h2>借还记录</h2>
 <ul>
     <li>
-        <a href="{U("Admin/Index/index")}">返回</a>
+        <a href="{U("Admin/Item/index")}">返回</a>
     </li>
     <li>
-        <a href="{U("Admin/Item/update")}">新增物品</a>
+        <a href="{U("Admin/Record/update",['itemid'=>I('get.itemid')])}">新增记录</a>
     </li>
 </ul>
 <table cellspacing="0" cellpadding="0" border="1">
-    <caption>物品列表</caption>
+    <caption>记录列表</caption>
     <tr>
-        <th>物品名称</th>
-        <th>所属公司</th>
-        <th>类型</th>
-        <th>记录</th>
+        <th>人物</th>
+        <th>物品</th>
+        <th>状态</th>
+        <th>操作员</th>
+        <th>操作时间</th>
+        <th>备注</th>
         <th>编辑</th>
         <th>删除</th>
     </tr>
-    {foreach $items as $item}
+    {foreach $records as $record}
     <tr>
-        <td>{$item.name}</td>
-        <td>{$item.subcompanies.name}</td>
-        <td>{$item.item_types.name}</td>
+        <td>{$record.person}</td>
+        <td>{$record.items.name}</td>
+        <td>{if $record.status eq 'out'}借出{else}归还{/if}</td>
+        <td>{$record.operators.name}</td>
+        <td>{$record.time}</td>
+        <td>{mb_substr($record.comment,0,20)|cat:'......'}</td>
         <td>
-            <a href="{U("Admin/Record/index/itemid/{$item.id}")}">记录</a>
+            <a href="{U("Admin/Record/update/itemid/{I('get.itemid')}/update_id/{$record.id}")}">编辑</a>
         </td>
         <td>
-            <a href="{U("Admin/Item/update/update_id/{$item.id}")}">编辑</a>
-        </td>
-        <td>
-            <a id="{$item.id}" class="del">删除</a>
+            <a id="{$record.id}" class="del">删除</a>
         </td>
     </tr>
     {/foreach}
@@ -64,7 +66,7 @@
         each.addEventListener('click', function () {
             if (confirm('确认删除？')) {
                 var id = this.getAttribute('id');
-                var base = "{U("Admin/Item/update/delete_id/")}";
+                var base = "{U("Admin/Record/update/itemid/{I('get.itemid')}/delete_id/")}";
                 base = base.substr(0, base.lastIndexOf('.')) + '/';
                 var href = base + id + '.html';
                 location.href = href;

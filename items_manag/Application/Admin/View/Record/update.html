@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>记录信息</title>
+    <style>
+        textarea{
+            width: 400px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<h2>记录信息</h2>
+<form action="" method="post">
+    <dl>
+        <dt>关联人物</dt>
+        <dd>
+            <input type="text" name="person" value="{$record.person}"/>
+        </dd>
+        <dt>物品状态</dt>
+        <dd>
+            <select name="status">
+                <option value="out" {if $record.status eq 'out'}selected='selected'{/if}>借出</option>
+                <option value="back" {if $record.status eq 'back'}selected='selected'{/if}>归还</option>
+            </select>
+        </dd>
+        <dt>备注</dt>
+        <dd>
+            <textarea name="comment">{$record.comment}</textarea>
+        </dd>
+    </dl>
+    <input type="button" value="返回" id="back"/>
+    <input type="submit"/>
+    {$itemid}
+</form>
+</body>
+<script>
+    document.getElementById('back').addEventListener('click',function () {
+        location.href="{U("Admin/Record/index/itemid/{I('get.itemid')}")}";
+    });
+</script>
+</html>
