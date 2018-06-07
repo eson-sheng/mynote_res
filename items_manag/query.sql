@@ -2,6 +2,7 @@ use `items_manag`;
 select * from `subcompanies`;
 select * from `item_types`;
 select * from `items`;
+select * from `records`;
 select * from `operators`;
 #==========================================
 
