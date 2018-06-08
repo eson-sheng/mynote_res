@@ -59,8 +59,8 @@
     var dels = document.getElementsByClassName('del');
     for (var i = 0; i < dels.length; i++) {
         var each = dels[i];
-        each.addEventListener('click', function () {//提示：literal标签是smarty模板引擎避免冲突的机制
-            /*{literal}*/
+        each.addEventListener('click', function () {
+            /*{literal}*//*提示：literal标签是smarty模板引擎避免冲突的机制*/
             layer.confirm('你确定要删除此条数据吗？', {btn:['确定', '取消']}, function () {/*{/literal}*/
                 var id = this.getAttribute('id');
                 var base = "{U("Admin/Company/update/delete_id/")}";
