@@ -33,6 +33,7 @@ class OperatorController extends Controller
                     $this->operators->where(['id' => I('get.update_id')])->save([
                         'name' => I('post.name'),
                         'type' => I('post.type'),
+                        'pwd' => md5(I('post.pwd')),
                         'companyid' => I('post.companyid')
                     ]);
                 }
