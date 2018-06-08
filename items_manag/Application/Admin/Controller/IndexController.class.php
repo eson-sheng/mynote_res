@@ -35,4 +35,11 @@ class IndexController extends Controller
         session('operator',null);
         $this->redirect('Admin/Index/login');
     }
+
+    public function index(){
+        if(empty(session('operator'))){#登录检查
+            $this->Redirect('Admin/Index/login');
+        }
+        $this->display();
+    }
 }

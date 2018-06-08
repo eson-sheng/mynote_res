@@ -9,6 +9,9 @@ class CompanyController extends Controller
     public function __construct()
     {
         parent::__construct();
+        if(empty(session('operator'))){#登录检查
+            $this->Redirect('Admin/Index/login');
+        }
         $this->companies = M('subcompanies');
     }
 
