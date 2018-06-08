@@ -4,25 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <title>操作员选项</title>
+    <link rel="stylesheet" href="{PUB}dist/css/bootstrap.min.css" />
+    <style>
+        .container{
+            background-color: rgba(0,0,0,0.03);
+        }
+        #login{
+            text-indent: 2em;
+        }
+        .row:last-child{
+            height: 150px;
+        }
+    </style>
 </head>
 <body>
-<h2>操作员选项</h2>
-<p>{if $operator.type eq 'admin'}管理员{else}普通人员{/if}：{$operator.name}</p>
-<ul>
-    <li>
-        <a href="{U("Admin/Item/index")}">物品查看</a>
-    </li>
-    {if $operator.type eq 'admin'}
-    <li>
-        <a href="{U("Admin/Company/index")}">子公司管理</a>
-    </li>
-    <li>
-        <a href="{U("Admin/Operator/index")}">操作员管理</a>
-    </li>
-    {/if}
-    <li>
-        <a href="{U("Admin/Index/logout")}">注销</a>
-    </li>
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-5">
+            <h2>操作员选项</h2>
+            <p id="login">
+                {if $operator.type eq 'admin'} 管理员 {else} 普通人员 {/if} [{$operator.name}] 已登录。
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="list-group col-sm-5">
+            <a href="{U("Admin/Item/index")}" class="list-group-item">物品管理</a>
+            {if $operator.type eq 'admin'}
+            <a href="{U("Admin/Company/index")}" class="list-group-item">子公司管理</a>
+            <a href="{U("Admin/Operator/index")}" class="list-group-item">操作员管理</a>
+            {/if}
+            <a href="{U("Admin/Index/logout")}" class="list-group-item">注销</a>
+        </div>
+    </div>
+    <div class="row"></div>
+</div>
 </body>
 </html>
