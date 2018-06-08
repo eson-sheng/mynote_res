@@ -9,8 +9,10 @@ class OperatorController extends Controller
     public function __construct()
     {
         parent::__construct();
-        if(empty(session('operator'))){#登录检查
+        if (empty(session('operator'))) {#登录检查
             $this->Redirect('Admin/Index/login');
+        } elseif (session('operator')['type'] != 'admin') {#非管理员误入
+            $this->Redirect('Admin/Index/index');
         }
         $this->companies = M('subcompanies');
         $this->operators = D('operators');
@@ -55,7 +57,7 @@ class OperatorController extends Controller
             ]);
         } elseif (I('get.delete_id')) {#删除
             $this->operators->where(['deleted' => 0, 'id' => I('get.delete_id')])->save([
-                'deleted'=>1
+                'deleted' => 1
             ]);
             $this->redirect('Admin/Operator/index');
         } #else 准备新增
