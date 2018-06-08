@@ -3,22 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>操作员登录</title>
+    <script src="{PUB}jquery-3.0.0.min.js"></script>
+    <script src="{PUB}layer/layer.js"></script>
+    <link rel="stylesheet" href="{PUB}dist/css/bootstrap.min.css" />
+    <style>
+        .container{
+            background-color: rgba(0,0,0,0.03);
+        }
+        #btn-line{
+            padding-bottom: 150px;
+        }
+        dt,dd{
+            padding: 4px 0;
+        }
+    </style>
 </head>
 <body>
-<h2>操作员登录</h2>
-<form action="" method="post">
-    <dl>
-        <dt>登录名</dt>
-        <dd>
-            <input name="name" type="text"/>
-        </dd>
-        <dt>登录密码</dt>
-        <dd>
-            <input name="pwd" type="password"/>
-        </dd>
-    </dl>
-    <input type="submit"/>
-    {if isset($err_info)} {$err_info} {/if}
-</form>
+<div class="container">
+    <div class="jumbotron">
+        <h1>资产管理系统</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-3">
+            <h2>操作员登录</h2>
+            <form action="" method="post">
+                <dl>
+                    <dt>登录名</dt>
+                    <dd>
+                        <input name="name" type="text" class="form-control">
+                    </dd>
+                    <dt>登录密码</dt>
+                    <dd>
+                        <input name="pwd" type="password" class="form-control">
+                    </dd>
+                </dl>
+                <p id="btn-line">
+                    <button type="reset" class="btn btn-default col-sm-5">重置</button>
+                    <button type="submit" class="btn btn-default col-sm-5" style="float: right;">登录</button>
+                </p>
+            </form>
+        </div>
+        <div class="col-sm-5"></div>
+    </div>
+</div>
 </body>
+<script>
+    {if isset($err_info)}
+        layer.msg('{$err_info}');
+    {/if}
+</script>
 </html>
