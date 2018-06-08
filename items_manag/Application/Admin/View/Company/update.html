@@ -3,19 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>子公司信息</title>
+    <link rel="stylesheet" href="{PUB}dist/css/bootstrap.min.css" />
+    <style>
+        .container{
+            background-color: rgba(0,0,0,0.03);
+        }
+        h2{
+            margin-bottom: 30px;
+        }
+        .row:last-child{
+            height: 150px;
+        }
+    </style>
 </head>
 <body>
-<h2>子公司信息</h2>
-<form action="" method="post">
-    <dl>
-        <dt>名称</dt>
-        <dd>
-            <input type="text" name="name" value="{$company.name}"/>
-        </dd>
-    </dl>
-    <input type="button" value="返回" id="back"/>
-    <input type="submit"/>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-5">
+            <h2>子公司信息</h2>
+            <form action="" method="post">
+                <dl>
+                    <dt>公司名称</dt>
+                    <dd>
+                        <input name="name" type="text" class="form-control" value="{$company.name}">
+                    </dd>
+                </dl>
+                <p>
+                    <a class="btn btn-default col-sm-4" id="back">返回</a>
+                    <button type="submit" class="btn btn-default col-sm-4 pull-right">确定</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="row"></div>
+</div>
 </body>
 <script>
     document.getElementById('back').addEventListener('click',function () {
