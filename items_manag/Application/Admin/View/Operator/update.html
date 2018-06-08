@@ -3,42 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>操作员信息</title>
+    <link rel="stylesheet" href="{PUB}dist/css/bootstrap.min.css" />
+    <style>
+        .container{
+            background-color: rgba(0,0,0,0.03);
+        }
+        h2{
+            margin-bottom: 30px;
+        }
+        .row:last-child{
+            height: 150px;
+        }
+    </style>
 </head>
 <body>
-<h2>操作员信息</h2>
-<form action="" method="post">
-    <dl>
-        <dt>登录名</dt>
-        <dd>
-            <input name="name" type="text" value="{$operator.name}" required="required"/>
-        </dd>
-        <dt>操作员类型</dt>
-        <dd>
-            <select name="type">
-                <option value="normal" {if $operator.type eq 'normal'}selected='selected'{/if}>普通人员</option>
-                <option value="admin" {if $operator.type eq 'admin'}selected='selected'{/if}>管理员</option>
-            </select>
-        </dd>
-        <dt>密码</dt>
-        <dd>
-            <input name="pwd" type="password" placeholder="设置密码" required="required"/>
-        </dd>
-        <dt>所属子公司</dt>
-        <dd>
-            <select name="companyid">
-                {foreach $companies as $company}
-                    {if $operator.companyid eq $company.id}
-                    <option value="{$company.id}" selected="selected">{$company.name}</option>
-                    {else}
-                    <option value="{$company.id}">{$company.name}</option>
-                    {/if}
-                {/foreach}
-            </select>
-        </dd>
-    </dl>
-    <input id="back" type="button" value="返回"/>
-    <input type="submit"/>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <h2>操作员信息</h2>
+            <form action="" method="post">
+                <dl>
+                    <dt>登录名</dt>
+                    <dd>
+                        <input name="name" type="text" class="form-control" value="{$operator.name}" required="required">
+                    </dd>
+                    <dt>操作员类型</dt>
+                    <dd>
+                        <select name="type" class="form-control">
+                            <option value="normal" {if $operator.type eq 'normal'}selected='selected'{/if}>普通人员</option>
+                            <option value="admin" {if $operator.type eq 'admin'}selected='selected'{/if}>管理员</option>
+                        </select>
+                    </dd>
+                    <dt>设置密码</dt>
+                    <dd>
+                        <input name="pwd" type="password" class="form-control" placeholder="可重设" {if empty(I('get.update_id'))}required='required'{/if}>
+                    </dd>
+                    <dt>所属子公司</dt>
+                    <dd>
+                        <select name="companyid" class="form-control">
+                            {foreach $companies as $company}
+                            {if $operator.companyid eq $company.id}
+                            <option value="{$company.id}" selected="selected">{$company.name}</option>
+                            {else}
+                            <option value="{$company.id}">{$company.name}</option>
+                            {/if}
+                            {/foreach}
+                        </select>
+                    </dd>
+                </dl>
+                <p>
+                    <a class="btn btn-default col-sm-4" id="back">返回</a>
+                    <button type="submit" class="btn btn-default col-sm-4 pull-right">确定</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="row"></div>
+</div>
+
 </body>
 <script>
     document.getElementById('back').addEventListener('click',function () {
