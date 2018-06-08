@@ -1,5 +1,5 @@
 <?php
-return array(
+$arr = array(
 	//'配置项'=>'配置值'
     'DB_TYPE'=>'mysql',
     'DB_HOST'=>'127.0.0.1',
@@ -14,3 +14,9 @@ return array(
     //Smarty目录：/ThinkPHP/Library/Vendor/Smarty，可使用新版Smarty的libs内容将其覆盖。默认旧版本Smarty不能使用入口文件定义的常量。
     //Smarty配置：/ThinkPHP/Library/Think/Template/Driver/Smarty.class.php
 );
+
+$path = __DIR__ . "/config.my.php";//自定义配置文件
+if(is_file($path)) {#若有自定义配置文件，则用自定义的配置项覆盖过来（没有的配置不变）
+    $arr = array_merge($arr,require $path);
+}
+return $arr;
