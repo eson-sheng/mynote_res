@@ -8,11 +8,17 @@
         .container{
             background-color: rgba(0,0,0,0.01);
         }
+        h2{
+            margin-bottom: 30px;
+        }
         th:nth-last-child(1), th:nth-last-child(2) {
             width: 60px;
         }
         td a{
             cursor: pointer;
+        }
+        .row:last-child{
+            height: 150px;
         }
     </style>
 </head>
@@ -43,8 +49,8 @@
                 {/foreach}
             </table>
         </div>
-
     </div>
+    <div class="row"></div>
 </div>
 </body>
 <script>
