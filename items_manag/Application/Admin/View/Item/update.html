@@ -3,43 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>物品信息</title>
+    <link rel="stylesheet" href="{PUB}dist/css/bootstrap.min.css" />
+    <style>
+        .container{
+            background-color: rgba(0,0,0,0.03);
+        }
+        h2{
+            margin-bottom: 30px;
+        }
+        .row:last-child{
+            height: 150px;
+        }
+        dt,dd{
+            padding: 4px 0;
+        }
+    </style>
 </head>
 <body>
-<h2>物品信息</h2>
-<form action="" method="post">
-    <dl>
-        <dt>物品名称</dt>
-        <dd>
-            <input type="text" name="name" value="{$item.name}" required="required"/>
-        </dd>
-        <dt>物品类型</dt>
-        <dd>
-            <select name="typeid">
-                {foreach $types as $type}
-                {if $item.item_types.id eq $type.id}
-                <option value="{$type.id}" selected="selected">{$type.name}</option>
-                {else}
-                <option value="{$type.id}">{$type.name}</option>
-                {/if}
-                {/foreach}
-            </select>
-        </dd>
-        <dt>所属子公司</dt>
-        <dd>
-            <select name="companyid">
-                {foreach $companies as $company}
-                {if $item.subcompanies.id eq $company.id}
-                <option value="{$company.id}" selected="selected">{$company.name}</option>
-                {else}
-                <option value="{$company.id}">{$company.name}</option>
-                {/if}
-                {/foreach}
-            </select>
-        </dd>
-    </dl>
-    <input type="button" value="返回" id="back"/>
-    <input type="submit"/>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <h2>物品信息</h2>
+            <form action="" method="post">
+                <dl>
+                    <dt>物品名称</dt>
+                    <dd>
+                        <input type="text" class="form-control" name="name" value="{$item.name}" required="required"/>
+                    </dd>
+                    <dt>物品类型</dt>
+                    <dd>
+                        <select name="typeid" class="form-control">
+                            {foreach $types as $type}
+                            {if $item.item_types.id eq $type.id}
+                            <option value="{$type.id}" selected="selected">{$type.name}</option>
+                            {else}
+                            <option value="{$type.id}">{$type.name}</option>
+                            {/if}
+                            {/foreach}
+                        </select>
+                    </dd>
+                    <dt>所属子公司</dt>
+                    <dd>
+                        <select name="companyid" class="form-control">
+                            {foreach $companies as $company}
+                            {if $item.subcompanies.id eq $company.id}
+                            <option value="{$company.id}" selected="selected">{$company.name}</option>
+                            {else}
+                            <option value="{$company.id}">{$company.name}</option>
+                            {/if}
+                            {/foreach}
+                        </select>
+                    </dd>
+                </dl>
+                <p>
+                    <a class="btn btn-default col-sm-4" id="back">返回</a>
+                    <button type="submit" class="btn btn-default col-sm-4 pull-right">确定</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="row"></div>
+</div>
 </body>
 <script>
     document.getElementById('back').addEventListener('click',function () {
