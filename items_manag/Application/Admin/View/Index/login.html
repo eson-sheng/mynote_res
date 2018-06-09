@@ -50,6 +50,12 @@
 </div>
 </body>
 <script>
+    $('[name=name]').focus();
+    document.onkeydown=function (e) {
+        if(e.key=='Enter'){
+            $('[type=submit]').trigger('click');
+        }
+    }
     {if isset($err_info)}
         layer.msg('{$err_info}');
     {/if}
