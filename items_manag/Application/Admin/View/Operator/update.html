@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>操作员信息</title>
+    <script src="{PUB}jquery-3.0.0.min.js"></script>
+    <script src="{PUB}layer/layer.js"></script>
     <link rel="stylesheet" href="{PUB}dist/css/bootstrap.min.css" />
     <style>
         .container{
@@ -29,7 +31,7 @@
                 <dl>
                     <dt>登录名</dt>
                     <dd>
-                        <input name="name" type="text" class="form-control" value="{$operator.name}" required="required">
+                        <input id="asdf3" name="name" type="text" class="form-control" value="{$operator.name}" required="required">
                     </dd>
                     <dt>操作员类型</dt>
                     <dd>
@@ -40,7 +42,11 @@
                     </dd>
                     <dt>设置密码</dt>
                     <dd>
-                        <input name="pwd" type="password" class="form-control" placeholder="可重设" {if empty(I('get.update_id'))}required='required'{/if}>
+                        <input name="pwd" type="password" class="form-control" {if empty(I('get.update_id'))}required='required'{/if}>
+                    </dd>
+                    <dt>确认密码</dt>
+                    <dd>
+                        <input name="pwd2" type="password" class="form-control" {if empty(I('get.update_id'))}required='required'{/if}>
                     </dd>
                     <dt>所属子公司</dt>
                     <dd>
@@ -57,7 +63,7 @@
                 </dl>
                 <p>
                     <a class="btn btn-default col-sm-4" id="back">返回</a>
-                    <button type="submit" class="btn btn-default col-sm-4 pull-right">确定</button>
+                    <button id="submit" type="submit" class="btn btn-default col-sm-4 pull-right">确定</button>
                 </p>
             </form>
         </div>
@@ -70,5 +76,15 @@
     document.getElementById('back').addEventListener('click',function () {
         location.href="{U("Admin/Operator/index")}";
     });
+
+    //检查密码是否一致
+    $('#submit').on('click',function () {
+        var pwd=$('[name=pwd]').val();
+        var pwd2=$('[name=pwd2]').val();
+        if(pwd!==pwd2){
+            layer.msg('两次输入的密码不一致');
+            event.preventDefault();//阻止默认事件：提交
+        }
+    })
 </script>
 </html>
