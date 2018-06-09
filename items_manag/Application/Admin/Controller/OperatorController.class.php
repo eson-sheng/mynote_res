@@ -32,12 +32,15 @@ class OperatorController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (I('get.update_id')) {//修改数据
                 if (I('post.name')) {//数据不为空
-                    $this->operators->where(['id' => I('get.update_id')])->save([
+                    $data = [
                         'name' => I('post.name'),
                         'type' => I('post.type'),
-                        'pwd' => md5(I('post.pwd')),
                         'companyid' => I('post.companyid')
-                    ]);
+                    ];
+                    if (I('post.pwd')) {#如果填写了密码则重置
+                        $data['pwd'] = md5(I('post.pwd'));
+                    }
+                    $this->operators->where(['id' => I('get.update_id')])->save($data);
                 }
             } else {//新增数据
                 if (I('post.name') && I('post.pwd')) {//数据不为空
