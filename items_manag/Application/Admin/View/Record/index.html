@@ -19,6 +19,10 @@
         .row:last-child{
             height: 150px;
         }
+        caption>span{
+            font-weight: bold;
+            color: #cf8a50;
+        }
     </style>
 </head>
 <body>
@@ -31,10 +35,9 @@
             <a href="{U("Admin/Record/update",['itemid'=>I('get.itemid')])}" class="btn btn-default">新增记录</a>
 
             <table class="table table-striped table-bordered table-hover">
-                <caption>记录列表</caption>
+                <caption>物品 <span>{$item.name}</span> 的记录列表</caption>
                 <tr>
                     <th width="80">人物</th>
-                    <th>物品</th>
                     <th width="60">状态</th>
                     <th width="80">操作员</th>
                     <th width="150">操作时间</th>
@@ -45,11 +48,10 @@
                 {foreach $records as $record}
                 <tr>
                     <td>{$record.person}</td>
-                    <td>{$record.items.name}</td>
                     <td>{if $record.status eq 'out'}借出{else}归还{/if}</td>
                     <td>{$record.operators.name}</td>
                     <td>{$record.time}</td>
-                    <td>{mb_substr($record.comment,0,20)|cat:'......'}</td>
+                    <td>{mb_substr($record.comment,0,22)|cat:'...'}</td>
                     <td>
                         <a href="{U("Admin/Record/update/itemid/{I('get.itemid')}/update_id/{$record.id}")}">编辑</a>
                     </td>

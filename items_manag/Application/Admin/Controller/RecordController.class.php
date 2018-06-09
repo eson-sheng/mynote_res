@@ -9,15 +9,17 @@ class RecordController extends Controller
     public function __construct()
     {
         parent::__construct();
-        if(empty(session('operator'))){#登录检查
+        if (empty(session('operator'))) {#登录检查
             $this->Redirect('Admin/Index/login');
         }
         $this->records = D('records');
+        $this->items = M('items');
     }
 
     public function index()
     {
         $this->assign([
+            'item' => $this->items->where(['id' => I('get.itemid')])->select()[0],
             'records' => $this->records->Relation(true)->where(['deleted' => 0, 'itemid' => I('get.itemid')])->select()
         ]);
         $this->display();
@@ -40,7 +42,7 @@ class RecordController extends Controller
                     $this->records->add([
                         'itemid' => I('get.itemid'),
                         'operatorid' => session('operator')['id'],
-                        'time' => date('Y-m-d h:i:s',time()),
+                        'time' => date('Y-m-d H:i:s', time()),
                         'person' => I('post.person'),
                         'status' => I('post.status'),
                         'comment' => I('post.comment')
