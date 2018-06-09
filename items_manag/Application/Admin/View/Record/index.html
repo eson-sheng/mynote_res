@@ -3,75 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>借还记录</title>
+    <script src="{PUB}jquery-3.0.0.min.js"></script>
+    <script src="{PUB}layer/layer.js"></script>
+    <link rel="stylesheet" href="{PUB}dist/css/bootstrap.min.css" />
     <style>
-        table {
-            width: 1100px;
-            text-align: center;
+        .container{
+            background-color: rgba(0,0,0,0.01);
         }
-
-        th:nth-last-child(1), th:nth-last-child(2) {
-            width: 60px;
+        h2{
+            margin-bottom: 30px;
         }
-        a{
-            text-decoration: underline;
-            color: #0000ee;
+        td a{
             cursor: pointer;
+        }
+        .row:last-child{
+            height: 150px;
         }
     </style>
 </head>
 <body>
-<h2>借还记录</h2>
-<ul>
-    <li>
-        <a href="{U("Admin/Item/index")}">返回</a>
-    </li>
-    <li>
-        <a href="{U("Admin/Record/update",['itemid'=>I('get.itemid')])}">新增记录</a>
-    </li>
-</ul>
-<table cellspacing="0" cellpadding="0" border="1">
-    <caption>记录列表</caption>
-    <tr>
-        <th>人物</th>
-        <th>物品</th>
-        <th>状态</th>
-        <th>操作员</th>
-        <th>操作时间</th>
-        <th>备注</th>
-        <th>编辑</th>
-        <th>删除</th>
-    </tr>
-    {foreach $records as $record}
-    <tr>
-        <td>{$record.person}</td>
-        <td>{$record.items.name}</td>
-        <td>{if $record.status eq 'out'}借出{else}归还{/if}</td>
-        <td>{$record.operators.name}</td>
-        <td>{$record.time}</td>
-        <td>{mb_substr($record.comment,0,20)|cat:'......'}</td>
-        <td>
-            <a href="{U("Admin/Record/update/itemid/{I('get.itemid')}/update_id/{$record.id}")}">编辑</a>
-        </td>
-        <td>
-            <a id="{$record.id}" class="del">删除</a>
-        </td>
-    </tr>
-    {/foreach}
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+            <h2>借还记录</h2>
+            <a href="{U("Admin/Item/index")}" class="btn btn-default">返回</a>
+            <a href="{U("Admin/Record/update",['itemid'=>I('get.itemid')])}" class="btn btn-default">新增记录</a>
+
+            <table class="table table-striped table-bordered table-hover">
+                <caption>记录列表</caption>
+                <tr>
+                    <th width="80">人物</th>
+                    <th>物品</th>
+                    <th width="60">状态</th>
+                    <th width="80">操作员</th>
+                    <th width="150">操作时间</th>
+                    <th width="300">备注</th>
+                    <th width="60">编辑</th>
+                    <th width="60">删除</th>
+                </tr>
+                {foreach $records as $record}
+                <tr>
+                    <td>{$record.person}</td>
+                    <td>{$record.items.name}</td>
+                    <td>{if $record.status eq 'out'}借出{else}归还{/if}</td>
+                    <td>{$record.operators.name}</td>
+                    <td>{$record.time}</td>
+                    <td>{mb_substr($record.comment,0,20)|cat:'......'}</td>
+                    <td>
+                        <a href="{U("Admin/Record/update/itemid/{I('get.itemid')}/update_id/{$record.id}")}">编辑</a>
+                    </td>
+                    <td>
+                        <a id="{$record.id}" class="del">删除</a>
+                    </td>
+                </tr>
+                {/foreach}
+            </table>
+        </div>
+    </div>
+</div>
+
 </body>
 <script>
     var dels = document.getElementsByClassName('del');
     for (var i = 0; i < dels.length; i++) {
         var each = dels[i];
         each.addEventListener('click', function () {
-            if (confirm('确认删除？')) {
+            /*{literal}*//*提示：literal标签是smarty模板引擎避免冲突的机制*/
+            layer.confirm('你确定要删除此条数据吗？', {btn:['确定', '取消']}, function () {/*{/literal}*/
                 var id = this.getAttribute('id');
                 var base = "{U("Admin/Record/update/itemid/{I('get.itemid')}/delete_id/")}";
                 base = base.substr(0, base.lastIndexOf('.')) + '/';
                 var href = base + id + '.html';
                 location.href = href;
-            }
-
+            }.bind(this));
         });
     }
 </script>
