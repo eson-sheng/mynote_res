@@ -42,7 +42,7 @@ class RecordController extends Controller
                     $this->records->add([
                         'itemid' => I('get.itemid'),
                         'operatorid' => session('operator')['id'],
-                        'time' => date('Y-m-d H:i:s', time()),
+                        'time' => date('Y-m-d H:i:s'),
                         'person' => I('post.person'),
                         'status' => I('post.status'),
                         'comment' => I('post.comment')
