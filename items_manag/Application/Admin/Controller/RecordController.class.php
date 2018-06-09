@@ -20,7 +20,7 @@ class RecordController extends Controller
     {
         $this->assign([
             'item' => $this->items->where(['id' => I('get.itemid')])->select()[0],
-            'records' => $this->records->Relation(true)->where(['deleted' => 0, 'itemid' => I('get.itemid')])->select()
+            'records' => $this->records->Relation(true)->where(['deleted' => 0, 'itemid' => I('get.itemid')])->order(['time'=>'desc'])->select()
         ]);
         $this->display();
     }
