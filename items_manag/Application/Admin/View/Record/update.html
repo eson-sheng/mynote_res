@@ -3,37 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>记录信息</title>
+    <link rel="stylesheet" href="{PUB}dist/css/bootstrap.min.css" />
     <style>
+        .container{
+            background-color: rgba(0,0,0,0.03);
+        }
+        h2{
+            margin-bottom: 30px;
+        }
+        .row:last-child{
+            height: 150px;
+        }
+        dt,dd{
+            padding: 4px 0;
+        }
         textarea{
-            width: 400px;
-            height: 100px;
+            height: 140px !important;
         }
     </style>
 </head>
 <body>
-<h2>记录信息</h2>
-<form action="" method="post">
-    <dl>
-        <dt>关联人物</dt>
-        <dd>
-            <input type="text" name="person" value="{$record.person}"/>
-        </dd>
-        <dt>物品状态</dt>
-        <dd>
-            <select name="status">
-                <option value="out" {if $record.status eq 'out'}selected='selected'{/if}>借出</option>
-                <option value="back" {if $record.status eq 'back'}selected='selected'{/if}>归还</option>
-            </select>
-        </dd>
-        <dt>备注</dt>
-        <dd>
-            <textarea name="comment">{$record.comment}</textarea>
-        </dd>
-    </dl>
-    <input type="button" value="返回" id="back"/>
-    <input type="submit"/>
-    {$itemid}
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <h2>记录信息</h2>
+            <form action="" method="post">
+                <dl>
+                    <dt>关联人物</dt>
+                    <dd>
+                        <input type="text" name="person" value="{$record.person}" class="form-control" required="required"/>
+                    </dd>
+                    <dt>物品状态</dt>
+                    <dd>
+                        <select name="status" class="form-control">
+                            <option value="out" {if $record.status eq 'out'}selected='selected'{/if}>借出</option>
+                            <option value="back" {if $record.status eq 'back'}selected='selected'{/if}>归还</option>
+                        </select>
+                    </dd>
+                    <dt>备注</dt>
+                    <dd>
+                        <textarea name="comment" class="form-control">{$record.comment}</textarea>
+                    </dd>
+                </dl>
+                <p>
+                    <a class="btn btn-default col-sm-4" id="back">返回</a>
+                    <button type="submit" class="btn btn-default col-sm-4 pull-right">确定</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="row"></div>
+</div>
 </body>
 <script>
     document.getElementById('back').addEventListener('click',function () {
