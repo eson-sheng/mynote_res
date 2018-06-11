@@ -48,7 +48,7 @@
                 {foreach $records as $record}
                 <tr>
                     <td>{$record.person}</td>
-                    <td>{if $record.status eq 'out'}借出{else}归还{/if}</td>
+                    <td>{if $record.status eq 'out'}借出{elseif $record.status eq 'back'}归还{else}使用{/if}</td>
                     <td>{$record.operators.name}</td>
                     <td>{$record.time}</td>
                     <td>{mb_substr($record.comment,0,22)|cat:'...'}</td>

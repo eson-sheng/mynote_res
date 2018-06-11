@@ -44,13 +44,14 @@ create table `records`
     `operatorid` bigint unsigned,
     `time`  datetime comment '操作时间',
     `person` nvarchar(10) comment '借走的人，或归还的人',
-    `status` varchar(15) comment '状态：out借走、back归还',
+    `status` varchar(15) comment '状态：out借走、back归还、using使用',
     `comment` text comment '备注',
 	`deleted` boolean default 0
 )engine=innodb;
 insert into `records`(`itemid`,`operatorid`,`time`,`person`,`status`,`comment`) values
 (1,2,'2018-1-2 10:31:22','大师傅','out','tel: 13511112222，啥来的咖啡进来撒快递费历史卡，的非吉拉斯卡的房间拉，斯卡的房间历史卡的非，冻死了开发骄傲了速度快房间里卡士大夫，上岛咖啡开始了对方吉拉斯卡地方，两点开始放假'),
-(2,1,'2018-2-3 14:21:5','第三方','back','去办一些事，收到了发卡机数量的看法，速度快放假死了快递费，思考地方，上岛咖啡');
+(2,1,'2018-2-3 14:21:5','第三方','back','去办一些事，收到了发卡机数量的看法，速度快放假死了快递费，思考地方，上岛咖啡'),
+(2,3,'2018-2-3 14:21:5','二人无','using','发送到了房间爱上了快递放假拉速度快放假,是的离开房间施蒂利克富士康的浪费,拉斯卡的房间拉斯卡的房间阿历史卡的非，深刻的风景');
 #======================================
 drop table if exists `operators`;
 create table `operators`

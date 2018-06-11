@@ -39,6 +39,7 @@
                         <select name="status" class="form-control">
                             <option value="out" {if $record.status eq 'out'}selected='selected'{/if}>借出</option>
                             <option value="back" {if $record.status eq 'back'}selected='selected'{/if}>归还</option>
+                            <option value="using" {if $record.status eq 'using'}selected='selected'{/if}>使用</option>
                         </select>
                     </dd>
                     <dt>备注</dt>
