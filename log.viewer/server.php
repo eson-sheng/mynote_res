@@ -16,6 +16,7 @@ function get_logs_content()
         $read_size = 500000;//默认配置：每次读取的长度
     }
     $data = [];
+    $err_info = '';
 
     if (isset($_POST['show']) && isset($_SESSION['last_end_index'])) {
         foreach ($_POST['show'] as $path => $on) {
@@ -32,7 +33,7 @@ function get_logs_content()
             $record_length1 = strlen($content);//记录内容的长度，用于检查
             $content = htmlentities($content);#转html标签为实体
             $record_length2 = strlen($content);//第二次记录内容的长度，用于检查
-            $err_info = '';
+
             if ($record_length2 === 0 && $record_length1 !== 0) {//截断了汉字出现乱码情况
                 $err_info = '索引值截断了汉字，请调整索引值后再试';
             }
@@ -40,6 +41,8 @@ function get_logs_content()
 
             $data[$path] = $content;
         }
+    }else{
+        $err_info='未设置';
     }
 
     if ($data && !$err_info) {
