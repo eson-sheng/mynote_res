@@ -249,7 +249,7 @@ if (is_file($path)) {
                         keyword = keyword.substr(1, keyword.length);
                         keyword = keyword.substr(0, keyword.length - 1);
                     }
-                    var pattern = new RegExp(keyword, 'gm');
+                    var pattern = new RegExp(keyword, 'gmi');
                     replaced = this.innerHTML.replace(pattern, function (target) {
                         return "<span class='match" + class_id + "'>" + target + "</span>";
                     });
