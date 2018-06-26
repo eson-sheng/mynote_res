@@ -19,13 +19,14 @@ if (is_file($path)) {
 }
 ?>
 <form id="form1">
-    <table cellpadding="0" cellspacing="0" border="1">
+    <table cellpadding="0" cellspacing="0" border="1" width="1000">
         <caption>日志列表<input type="reset" value="重新设置"/></caption>
         <tr>
-            <th width="60%">日志</th>
-            <th width="10%">查看<input id="select_all" type="checkbox"/></th>
+            <th width="500">日志</th>
+            <th width="60">查看<input id="select_all" type="checkbox"/></th>
             <th>起始部分</th>
             <th>起始索引</th>
+            <th>末尾开始<input id="select_all2" type="checkbox"/></th>
         </tr>
         <?php
         $count = 1;
@@ -41,6 +42,9 @@ if (is_file($path)) {
                 <td>
                     <input id='num_<?= $count ?>' type='number' name='index[<?= $log ?>]'/>
                 </td>
+                <td>
+                    <input type="checkbox" name="fromtail[<?=$log?>]"/>
+                </td>
             </tr>
             <?php
             $count++;
@@ -48,16 +52,15 @@ if (is_file($path)) {
     </table>
 </form>
 <p>
-    <button id="clear">清空显示内容(Alt+C)</button>
-    <button id="set_to_end">从末尾开始读(Alt+E)</button>
-    <button id="do_config">提交读取设置(Alt+D)</button>
-    <button id="submit">读取内容(Alt+F)</button>
+    <input id="colors" type="color"/>
+    <input id="color_code" type="text" value="#000000"/>
     <label>
         <input type="checkbox" id="toggle1" checked="checked"/>
         自动换行(Alt+W)
     </label>
-    <input id="colors" type="color"/>
-    <input id="color_code" type="text" value="#000000"/>
+    <button id="clear">清空显示(Alt+C)</button>
+    <button id="do_config">提交设置(Alt+D)</button>
+    <button id="submit">读取内容(Alt+F)</button>
 </p>
 <textarea id="keywords">
 </textarea>
@@ -141,11 +144,7 @@ if (is_file($path)) {
 
     //绑定热键
     $("body").delegate("", "keydown", function () {
-        if (event.key == 'e' && event.altKey) {//提交读取设置
-            $('#set_to_end').trigger('click');
-            event.preventDefault();//防止触发默认的热键
-        }
-        if (event.key == 'd' && event.altKey) {//提交读取设置
+        if (event.key == 'd' && event.altKey) {//提交设置
             $('#do_config').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
@@ -153,7 +152,7 @@ if (is_file($path)) {
             $('#submit').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
-        if (event.key == 'c' && event.altKey) {//清空显示内容
+        if (event.key == 'c' && event.altKey) {//清空显示
             $('#clear').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
@@ -163,15 +162,7 @@ if (is_file($path)) {
         }
     });
 
-    $('#set_to_end').on('click',function () {
-        $.get(server_path+'?op=set_to_end',{
-
-        },function (result) {
-            layer.msg(result.message);
-        },'json');
-    });
-
-    //按钮：提交读取设置
+    //按钮：提交设置
     $('#do_config').on('click', function () {
         $.ajax({
             url: server_path + '?op=do_config',
@@ -264,9 +255,18 @@ if (is_file($path)) {
     //全选或全不选
     $('#select_all').on('change', function () {
         if($(this).prop('checked')){
-            $('td [type=checkbox]').prop('checked', true);
+            $('td:nth-child(2) [type=checkbox]').prop('checked', true);
         }else{
-            $('td [type=checkbox]').prop('checked', false);
+            $('td:nth-child(2) [type=checkbox]').prop('checked', false);
+        }
+    });
+
+    //全选或全不选
+    $('#select_all2').on('change', function () {
+        if($(this).prop('checked')){
+            $('td:nth-child(5) [type=checkbox]').prop('checked', true);
+        }else{
+            $('td:nth-child(5) [type=checkbox]').prop('checked', false);
         }
     });
 

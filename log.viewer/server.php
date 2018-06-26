@@ -51,23 +51,35 @@ function get_logs_content()
 }
 
 /*
- * @describe 设置全部从当前末尾开始读
- * */
-function set_to_end()
-{
-    foreach ($_SESSION['last_end_index'] as $path => &$index) {
-        $index = filesize($path);
-    }
-    json(true, '所有日志将从当前末尾开始读', '');
-}
-
-/*
- * @describe 提交读取设置
+ * @describe 提交设置
  * */
 function do_config()
 {
-    if (isset($_POST['show'])) {
-        foreach ($_POST['from'] as $path => $from) {
+    if (isset($_POST['show'])) {//有选择要读取的日志
+        foreach ($_POST['show'] as $path => $on) {
+            $from = $_POST['from'][$path];#起始部分
+            $index = $_POST['index'][$path];#起始索引
+            $fromtail=null;
+            if(isset($_POST['fromtail'][$path])) {
+                $fromtail = $_POST['fromtail'][$path];
+            }#末尾开读
+
+            if($fromtail){#设置从末尾开始读
+                $_SESSION['last_end_index'][$path] = filesize($path);
+            }elseif($from){#设置了起始部分
+                $content = file_get_contents($path);
+                $_SESSION['last_end_index'][$path] = strpos($content, $from);
+            }elseif($index){#设置了起始索引
+                if ($index < 0) {//索引为负值
+                    $index = filesize($path) + $index;
+                }
+                $_SESSION['last_end_index'][$path] = $index;
+            }else {//都没有设置，默认从头开始读
+                $_SESSION['last_end_index'][$path] = 0;
+            }
+        }
+
+        /*foreach ($_POST['from'] as $path => $from) {
             $index = $_POST['index'][$path];
             if ($from) {//设置了起始部分
                 $content = file_get_contents($path);
@@ -80,7 +92,7 @@ function do_config()
             } else {//都没有设置，默认从头开始读
                 $_SESSION['last_end_index'][$path] = 0;
             }
-        }
+        }*/
     }
     json(true, '设置成功', '');
 }
