@@ -260,5 +260,18 @@ if (is_file($path)) {
             class_id++;
         });
     }
+    
+    //使点击单元格也能触发点击复选框
+    $('td').each(function () {
+        $(this).on('click', function () {
+            $(this).children('[type=checkbox]').trigger('click');
+        })
+    });
+    //阻止复选框的默认事件（与上面一段代码关联，否则点击复选框自身会响应两次）
+    $('table [type=checkbox]').each(function () {
+        $(this).on('click',function (e) {
+            e.stopPropagation();
+        })
+    });
 </script>
 </html>
