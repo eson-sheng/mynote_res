@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <style>
+        form{
+            border: 2px solid;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<form action="http://127.0.0.1:8081/process_get" method="GET">
+    First Name: <input type="text" name="first_name"/><br/>
+    Last Name: <input type="text" name="last_name"/><br/>
+    <input type="submit" value="Submit"/>
+</form>
+
+<form action="http://127.0.0.1:8081/process_post" method="post">
+    First Name: <input type="text" name="first_name"/><br/>
+    Last Name: <input type="text" name="last_name"/><br/>
+    <input type="submit" value="Submit"/>
+</form>
+
+<form action="http://127.0.0.1:8081/file_upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadfile1" size="50" />
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
