@@ -19,6 +19,7 @@ function get_logs_content()
 
     if (isset($_POST['show']) && isset($_SESSION['last_end_index'])) {
         foreach ($_POST['show'] as $path => $on) {
+            if(!file_exists($path))continue;#文件不存在，跳过
             $start_index = $_SESSION['last_end_index'][$path];
             $content = file_get_contents($path, false, null, $start_index, $read_size);
             $_SESSION['last_end_index'][$path] = $start_index + strlen($content);
@@ -57,6 +58,7 @@ function do_config()
 {
     if (isset($_POST['show'])) {//有选择要读取的日志
         foreach ($_POST['show'] as $path => $on) {
+            if(!file_exists($path))continue;#文件不存在，跳过
             $from = $_POST['from'][$path];#起始部分
             $index = $_POST['index'][$path];#起始索引
             $fromtail=null;
