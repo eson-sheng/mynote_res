@@ -23,7 +23,7 @@ if (is_file($path)) {
         <caption>日志列表<input type="reset" value="重新设置"/></caption>
         <tr>
             <th width="60%">日志</th>
-            <th width="10%">查看</th>
+            <th width="10%">查看<input id="select_all" type="checkbox"/></th>
             <th>起始部分</th>
             <th>起始索引</th>
         </tr>
@@ -260,9 +260,18 @@ if (is_file($path)) {
             class_id++;
         });
     }
-    
+
+    //全选或全不选
+    $('#select_all').on('change', function () {
+        if($(this).prop('checked')){
+            $('td [type=checkbox]').prop('checked', true);
+        }else{
+            $('td [type=checkbox]').prop('checked', false);
+        }
+    });
+
     //使点击单元格也能触发点击复选框
-    $('td').each(function () {
+    $('th,td').each(function () {
         $(this).on('click', function () {
             $(this).children('[type=checkbox]').trigger('click');
         })
