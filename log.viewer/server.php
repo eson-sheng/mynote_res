@@ -80,21 +80,6 @@ function do_config()
                 $_SESSION['last_end_index'][$path] = 0;
             }
         }
-
-        /*foreach ($_POST['from'] as $path => $from) {
-            $index = $_POST['index'][$path];
-            if ($from) {//设置了起始部分
-                $content = file_get_contents($path);
-                $_SESSION['last_end_index'][$path] = strpos($content, $from);
-            } elseif ($index) {//设置了起始索引
-                if ($index < 0) {//索引为负值
-                    $index = filesize($path) + $index;
-                }
-                $_SESSION['last_end_index'][$path] = $index ? $index : 0;
-            } else {//都没有设置，默认从头开始读
-                $_SESSION['last_end_index'][$path] = 0;
-            }
-        }*/
     }
     json(true, '设置成功', '');
 }
