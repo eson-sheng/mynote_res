@@ -7,3 +7,4 @@
 /log.viewer/*.log
 /log.viewer/**/*.log
 .idea
+/Vux/node_modules
