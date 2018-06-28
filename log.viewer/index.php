@@ -19,31 +19,35 @@ if (is_file($path)) {
 }
 ?>
 <form id="form1">
-    <table cellpadding="0" cellspacing="0" border="1" width="1000">
+    <table cellpadding="0" cellspacing="0" border="1" width="100%">
         <caption>日志列表<input type="reset" value="重新设置"/></caption>
         <tr>
             <th width="500">日志</th>
             <th width="60">查看<input id="select_all" type="checkbox"/></th>
             <th>起始部分</th>
             <th>起始索引</th>
-            <th>末尾开始<input id="select_all2" type="checkbox"/></th>
+            <th>末尾开始</th>
+            <th>提交设置</th>
         </tr>
         <?php
         $count = 1;
         foreach ($logs as $log) { ?>
             <tr>
-                <td><?= $log ?></td>
+                <td class="path"><?= $log ?></td>
                 <td>
                     <input id='che_<?= $count ?>' type='checkbox' name='show[<?= $log ?>]'/>
                 </td>
-                <td>
+                <td class="from">
                     <input id='txt_<?= $count ?>' type='text' name='from[<?= $log ?>]'/>
                 </td>
-                <td>
+                <td class="index">
                     <input id='num_<?= $count ?>' type='number' name='index[<?= $log ?>]'/>
                 </td>
                 <td>
-                    <input type="checkbox" name="fromtail[<?=$log?>]"/>
+                    <button class="fromtail" onclick="fromTail('<?= $log ?>')">末尾开始</button>
+                </td>
+                <td>
+                    <button class="do_config">提交设置</button>
                 </td>
             </tr>
             <?php
@@ -59,7 +63,8 @@ if (is_file($path)) {
         自动换行(Alt+W)
     </label>
     <button id="clear">清空显示(Alt+C)</button>
-    <button id="do_config">提交设置(Alt+D)</button>
+    <button id="fromtail_all">全部从末尾开始(Alt+T)</button>
+    <button id="do_config">提交所有设置(Alt+D)</button>
     <button id="submit">读取内容(Alt+F)</button>
 </p>
 <textarea id="keywords">
@@ -160,9 +165,13 @@ if (is_file($path)) {
             $('#toggle1').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
+        if (event.key == 't' && event.altKey) {//全部从末尾开始
+            $('#fromtail_all').trigger('click');
+            event.preventDefault();//防止触发默认的热键
+        }
     });
 
-    //按钮：提交设置
+    //按钮：提交设置（所有设置）
     $('#do_config').on('click', function () {
         $.ajax({
             url: server_path + '?op=do_config',
@@ -183,6 +192,40 @@ if (is_file($path)) {
 
         //保存表单内容
         config.saveCtrls();
+    });
+
+    //提交设置（单个）
+    $('.do_config').each(function () {
+        $(this).on('click',function (e) {
+            e.preventDefault();
+            var formData=new FormData();
+            var $tr=$(this).parent().parent();
+            var path=$tr.children('.path').text();
+            var from_text=$tr.children('.from').children().val();
+            var from_index=$tr.children('.index').children().val();
+            formData.append('path',path);
+            formData.append('from',from_text);
+            formData.append('index',from_index);
+            $.ajax({
+                url: server_path + '?op=do_config',
+                type: 'post',
+                async: true,
+                data: formData,
+                dataType: 'json',
+                success: function (result) {
+                    layer.msg(result.message);
+                },
+                error: function (xhr, status, message) {
+                    console.log('ajax error : ' + status + ' --> ' + message);
+                },
+                // cache:true,
+                contentType: false,
+                processData: false
+            });
+
+            //保存表单内容
+            config.saveCtrls();
+        });
     });
 
     //按钮：清空显示内容
@@ -261,15 +304,6 @@ if (is_file($path)) {
         }
     });
 
-    //全选或全不选
-    $('#select_all2').on('change', function () {
-        if($(this).prop('checked')){
-            $('td:nth-child(5) [type=checkbox]').prop('checked', true);
-        }else{
-            $('td:nth-child(5) [type=checkbox]').prop('checked', false);
-        }
-    });
-
     //使点击单元格也能触发点击复选框
     $('th,td').each(function () {
         $(this).on('click', function () {
@@ -282,5 +316,35 @@ if (is_file($path)) {
             e.stopPropagation();
         })
     });
+
+    //阻止按钮默认的提交事件
+    $('.fromtail,.submit').each(function () {
+        $(this).on('click',function (e) {
+            e.preventDefault();
+        })
+    });
+
+    //设置从末尾开始读（单个设置）
+    function fromTail(path) {
+        $.post(server_path+'?op=do_config', {
+            fromtail:[path]
+        }, function (result) {
+            layer.msg(result.message);
+        }, 'json');
+    }
+
+    //设置全部从末尾开始读（全体设置）
+    $('#fromtail_all').on('click',function () {
+        var paths=[];
+        $('.path').each(function () {
+            paths.push($(this).text());
+        });
+        $.post(server_path+'?op=do_config', {
+            fromtail:paths
+        }, function (result) {
+            layer.msg(result.message);
+        }, 'json');
+    });
+
 </script>
 </html>

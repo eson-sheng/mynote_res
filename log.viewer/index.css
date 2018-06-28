@@ -1,6 +1,6 @@
 /*表单样式*/
 #form1 {
-    width: 900px;
+    width: 1100px;
     text-align: center;
 }
 
@@ -21,7 +21,7 @@ table tr td:first-child{
 }
 
 p button {
-    width: 150px;
+    width: 170px;
 }
 
 #color_code{
