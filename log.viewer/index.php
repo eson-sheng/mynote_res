@@ -132,7 +132,7 @@ if (is_file($path)) {
                     id++;
                     var $toggle2 = $('<div id="'+id+'" class="toggle2">折叠</div>');
                     $toggle2.on('click', function () {
-                        $main.slideToggle(100);
+                        $main.toggle();
                         if($(this).text()=='折叠'){
                             $(this).text('展开');
                         }else{
@@ -146,7 +146,7 @@ if (is_file($path)) {
                         var $content=$('<div class="content"></div>');
                         var $toggle3=$('<div class="toggle3">折叠</div>');
                         $toggle3.on('click',function () {
-                            $(this).next().slideToggle(100);
+                            $(this).next().toggle();
                             if($(this).text()=='折叠'){
                                 $(this).text('展开');
                             }else{
@@ -284,10 +284,8 @@ if (is_file($path)) {
         }
         if ($paragraphs.css('white-space') == 'pre-wrap') {
             $paragraphs.css('white-space', 'pre');//保留行缩进，单行不允许自动折行
-            layer.msg('已取消自动换行');
         } else {
             $paragraphs.css('white-space', 'pre-wrap');//消除行缩进，单行自动折行
-            layer.msg('已设置自动换行');
         }
     });
 
