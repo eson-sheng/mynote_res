@@ -46,6 +46,7 @@ textarea{
     border: 1px solid;
     padding: 2px;
     white-space: pre-wrap;
+    word-break: break-word;
     margin-top: -1px;
 }
 
