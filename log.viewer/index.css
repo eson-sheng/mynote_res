@@ -42,35 +42,53 @@ textarea{
     position: relative;
 }
 
-.main > p{
+.main p{
     border: 1px solid;
     padding: 2px;
     white-space: pre-wrap;
+    margin-top: -1px;
 }
 
-.main > p:first-child {
+.toggle3{
+    margin-left: 30px;
+    border: 1px solid;
+    width: 33px;
+
+    cursor: pointer;
+    font-weight: bolder;
+    background-color: white;
+    color:black;
+    padding: 2px 5px;
+}
+
+.toggle3:hover{
+    background-color: black;
+    color:white;
+}
+
+.content{
+    padding-top: 15px;
+}
+
+.content:first-child p{
     color: red;
     border-color: red;
 }
-
-.main > p:nth-child(2) {
+.content:nth-child(2) p{
     color: blue;
     border-color: blue;
 }
-
-.main > p:nth-child(3) {
+.content:nth-child(3) p{
     color: purple;
     border-color: purple;
 }
-
-.main > p:nth-child(4) {
+.content:nth-child(4) p{
     color: darkgreen;
     border-color: darkgreen;
 }
-
-.main > p:last-child {
-    color: black;
-    border-color: black;
+.content:last-child p{
+    color: deeppink;
+    border-color: deeppink;
 }
 
 .toggle2{

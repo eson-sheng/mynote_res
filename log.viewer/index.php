@@ -72,22 +72,40 @@ if (is_file($path)) {
 <fieldset>
     <legend>日志内容</legend>
     <!--<div class="box">
-        <div class="toggle2">折叠</div>
-        <p>
-            11
-        </p>
-        <p>
-            22
-        </p>
-        <p>
-            33
-        </p>
-        <p>
-            44
-        </p>
-        <p>
-            55
-        </p>
+        <div class="main">
+            <div class="toggle2">折叠</div>
+
+            <div class="content">
+                <div class="toggle3">折叠</div>
+                <p>
+                    1
+                </p>
+            </div>
+            <div class="content">
+                <div class="toggle3">折叠</div>
+                <p>
+                    2
+                </p>
+            </div>
+            <div class="content">
+                <div class="toggle3">折叠</div>
+                <p>
+                    3
+                </p>
+            </div>
+            <div class="content">
+                <div class="toggle3">折叠</div>
+                <p>
+                    4
+                </p>
+            </div>
+            <div class="content">
+                <div class="toggle3">折叠</div>
+                <p>
+                    5
+                </p>
+            </div>
+        </div>
     </div>-->
 </fieldset>
 </body>
@@ -112,8 +130,8 @@ if (is_file($path)) {
                     $('#' + id).trigger('click');
                     event.preventDefault();//防止触发默认的热键
                     id++;
-                    var $toggle = $('<div id="'+id+'" class="toggle2">折叠</div>');
-                    $toggle.on('click', function () {
+                    var $toggle2 = $('<div id="'+id+'" class="toggle2">折叠</div>');
+                    $toggle2.on('click', function () {
                         $main.slideToggle(100);
                         if($(this).text()=='折叠'){
                             $(this).text('展开');
@@ -122,12 +140,24 @@ if (is_file($path)) {
                         }
                     });
                     for (var log in result.data) {
-                        var content = result.data[log];
+                        var data = result.data[log];
                         var $p = $('<p></p>');
-                        $p.html(content);
-                        $main.append($p);
+                        $p.html(data);
+                        var $content=$('<div class="content"></div>');
+                        var $toggle3=$('<div class="toggle3">折叠</div>');
+                        $toggle3.on('click',function () {
+                            $(this).next().slideToggle(100);
+                            if($(this).text()=='折叠'){
+                                $(this).text('展开');
+                            }else{
+                                $(this).text('折叠');
+                            }
+                        });
+                        $content.append($toggle3);
+                        $content.append($p);
+                        $main.append($content);
                     }
-                    $box.append($toggle);
+                    $box.append($toggle2);
                     $box.append($main);
                     $('fieldset').append($box);
                     highlight();
@@ -246,7 +276,7 @@ if (is_file($path)) {
 
     //按钮：切换换行样式
     $('#toggle1').on('click', function () {
-        var $paragraphs = $('.main > p');
+        var $paragraphs = $('.content > p');
         if ($paragraphs.length === 0) {
             layer.msg('日志内容不存在');
             $('#toggle1').prop('checked', true);
