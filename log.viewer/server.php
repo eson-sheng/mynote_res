@@ -81,7 +81,8 @@ function do_config()
             $_SESSION['last_end_index'][$path] = filesize($path);
         }
     }else{#设置从指定的地方开始读
-        foreach ($_POST['from'] as $path=>$from_text){
+        foreach ($_POST['show'] as $path=>$on){
+            $from_text = $_POST['from'][$path];
             $from_index = $_POST['index'][$path];
             if($from_text){#设置了起始部分
                 $content = file_get_contents($path);

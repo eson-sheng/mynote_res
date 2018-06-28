@@ -34,7 +34,7 @@ if (is_file($path)) {
         foreach ($logs as $log) { ?>
             <tr>
                 <td class="path"><?= $log ?></td>
-                <td>
+                <td class="show">
                     <input id='che_<?= $count ?>' type='checkbox' name='show[<?= $log ?>]'/>
                 </td>
                 <td class="from">
@@ -63,8 +63,8 @@ if (is_file($path)) {
         自动换行(Alt+W)
     </label>
     <button id="clear">清空显示(Alt+C)</button>
-    <button id="fromtail_all">全部从末尾开始(Alt+T)</button>
-    <button id="do_config">提交所有设置(Alt+D)</button>
+    <button id="fromtail_all">选中项从末尾开始(Alt+T)</button>
+    <button id="do_config">选中项提交设置(Alt+D)</button>
     <button id="submit">读取内容(Alt+F)</button>
 </p>
 <textarea id="keywords">
@@ -171,7 +171,7 @@ if (is_file($path)) {
         }
     });
 
-    //按钮：提交设置（所有设置）
+    //按钮：提交设置（选中项设置）
     $('#do_config').on('click', function () {
         $.ajax({
             url: server_path + '?op=do_config',
@@ -333,11 +333,13 @@ if (is_file($path)) {
         }, 'json');
     }
 
-    //设置全部从末尾开始读（全体设置）
+    //设置全部从末尾开始读（选中项设置）
     $('#fromtail_all').on('click',function () {
         var paths=[];
         $('.path').each(function () {
-            paths.push($(this).text());
+            if($(this).next().children().prop('checked')){//本行日志已选中
+                paths.push($(this).text());
+            }
         });
         $.post(server_path+'?op=do_config', {
             fromtail:paths
