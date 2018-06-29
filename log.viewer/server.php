@@ -84,6 +84,18 @@ function do_config()
     }
     json(true, '设置成功', '');
 }
+/*
+ * @describe 获取读取进度
+ * */
+function getPercentages()
+{
+    $percentages=[];
+    foreach ($_SESSION['last_end_index'] as $path=>$index){
+        $filesize=filesize($path);
+        $percentages[$path]=$index/$filesize;
+    }
+    json(true,'读取进度',$percentages);
+}
 
 /*
  * @describe 输出json数据

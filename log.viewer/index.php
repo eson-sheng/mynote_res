@@ -24,10 +24,11 @@ if (is_file($path)) {
         <tr>
             <th width="500">日志</th>
             <th width="60">查看<input id="select_all" type="checkbox"/></th>
-            <th>起始部分</th>
-            <th>起始索引</th>
-            <th>末尾开始</th>
-            <th>提交设置</th>
+            <th width="180">起始部分</th>
+            <th width="100">起始索引</th>
+            <th width="80">末尾开始</th>
+            <th width="80">提交设置</th>
+            <th>已读</th>
         </tr>
         <?php
         $count = 1;
@@ -48,6 +49,9 @@ if (is_file($path)) {
                 </td>
                 <td>
                     <button class="do_config">提交设置</button>
+                </td>
+                <td>
+                    <div class="percentage" path="<?= $log ?>">0%</div>
                 </td>
             </tr>
             <?php
@@ -377,5 +381,27 @@ if (is_file($path)) {
         }, 'json');
     });
 
+    setInterval(updatePercentages,1000);
+    //更新已读进度
+    function updatePercentages() {
+        $.get(server_path+'?op=getPercentages', {}, function (result) {
+            var data=result.data;
+            if (result.result == 'success') {
+                for(var path in data){
+                    var percentage=data[path].toString();
+                    if(percentage=='1'){
+                        percentage='100%';
+                    }else{
+                        percentage=percentage.substr(2,2)+'%';
+                        if(percentage=='%')percentage='0%';
+                        if(percentage=='00%')percentage='0%';
+                    }
+                    $percent=$('.percentage[path="'+path+'"]');
+                    $percent.css('width',percentage);
+                    $percent.text(percentage);
+                }
+            }
+        }, 'json');
+    }
 </script>
 </html>
