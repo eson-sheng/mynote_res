@@ -61,22 +61,7 @@ function get_logs_content()
  * */
 function do_config()
 {
-    if(isset($_POST['path'])){#单个设置
-        $path=$_POST['path'];
-        $from_text=$_POST['from'];
-        $from_index=$_POST['index'];
-        if($from_text){#设置了起始部分
-            $content = file_get_contents($path);
-            $_SESSION['last_end_index'][$path] = strpos($content, $from_text);
-        }elseif($from_index){#设置了起始索引
-            if ($from_index < 0) {//索引为负值
-                $from_index = filesize($path) + $from_index;
-            }
-            $_SESSION['last_end_index'][$path] = $from_index;
-        }else{#都没有设置，默认从头开始
-            $_SESSION['last_end_index'][$path] = 0;
-        }
-    } elseif(isset($_POST['fromtail'])){#设置从末尾开始读
+    if(isset($_POST['fromtail'])){#设置从末尾开始读
         foreach ($_POST['fromtail'] as $path){
             $_SESSION['last_end_index'][$path] = filesize($path);
         }

@@ -228,29 +228,30 @@ if (is_file($path)) {
     $('.do_config').each(function () {
         $(this).on('click',function (e) {
             e.preventDefault();
-            var formData=new FormData();
             var $tr=$(this).parent().parent();
             var path=$tr.children('.path').text();
             var from_text=$tr.children('.from').children().val();
             var from_index=$tr.children('.index').children().val();
-            formData.append('path',path);
-            formData.append('from',from_text);
-            formData.append('index',from_index);
+            var data={
+                show:{},
+                from:{},
+                index:{}
+            };
+            data.show[path]='on';
+            data.from[path]=from_text;
+            data.index[path]=from_index;
             $.ajax({
                 url: server_path + '?op=do_config',
                 type: 'post',
                 async: true,
-                data: formData,
+                data: data,
                 dataType: 'json',
                 success: function (result) {
                     layer.msg(result.message);
                 },
                 error: function (xhr, status, message) {
                     console.log('ajax error : ' + status + ' --> ' + message);
-                },
-                // cache:true,
-                contentType: false,
-                processData: false
+                }
             });
 
             //保存表单内容
