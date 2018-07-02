@@ -146,6 +146,11 @@ if (is_file($path)) {
                     for (var log in result.data) {
                         var data = result.data[log];
                         var $p = $('<p></p>');
+                        if(isPreWrap){
+                            $p.css('white-space','pre-wrap');
+                        }else{
+                            $p.css('white-space','pre');
+                        }
                         $p.html(data);
                         var $content=$('<div class="content"></div>');
                         var $toggle3=$('<div class="toggle3">折叠</div>');
@@ -279,6 +284,7 @@ if (is_file($path)) {
     ids.push("keywords");
     config = createConfig("myform", ids);
 
+    var isPreWrap=true;//是否为自动换行
     //按钮：切换换行样式
     $('#toggle1').on('click', function () {
         var $paragraphs = $('.content > p');
@@ -287,9 +293,11 @@ if (is_file($path)) {
             $('#toggle1').prop('checked', true);
             return;
         }
-        if ($paragraphs.css('white-space') == 'pre-wrap') {
+        if (isPreWrap) {
+            isPreWrap=false;
             $paragraphs.css('white-space', 'pre');//保留行缩进，单行不允许自动折行
         } else {
+            isPreWrap=true;
             $paragraphs.css('white-space', 'pre-wrap');//消除行缩进，单行自动折行
         }
     });
