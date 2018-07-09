@@ -36,5 +36,6 @@ for ($i = 0; $i < $countLines; $i++) {
     }else{
         $M->execute("insert into `requests`(`num`,`uri`,`sessid`,`params`) values($num,'$uri','$sessid','$params');");
     }
-
 }
+echo '程序执行完毕。';
+var_dump($_SESSION);
