@@ -18,24 +18,23 @@ $lines = explode("\n", $content);
 $countLines = count($lines);
 for ($i = 0; $i < $countLines; $i++) {
     $line = $lines[$i];
-    if (empty($line)) {#空行
+    if (empty($line) || $line === "\r") {#空行
         continue;
     }
     $peices = explode('||', $line);
-//    var_dump($peices);
-
-    $uri = trim(substr($peices[0], strpos($peices[0], ':') + 1));
-    $sessid = trim(substr($peices[1], strpos($peices[1], ':') + 1));
-    $num = trim(substr($peices[2], strpos($peices[2], ':') + 1));
-    $params = trim(substr($peices[3], strpos($peices[3], ':') + 1));
-    $time = null;
-    if (strpos($peices[3], 'params') === false) {
-        $time = $params;
+//    var_dump($peices);die;
+    $data = [];
+    foreach ($peices as $peice) {
+        $datum = explode(':', $peice);
+        $data[trim($datum[0])] = trim($datum[1]);
     }
-    if($time){
-        $M->execute("update `requests` set `time`='$time' where `num`=$num;");
+//    var_dump($data);
+
+    if (empty($data['time'])) {
+        $M->execute("insert into `requests`(`num`,`uri`,`sessid`,`params`) ".
+            "values({$data['rnum']},'{$data["REQUEST_URI"]}','{$data['PHPSESSID']}','{$data['params']}');");
     }else{
-        $M->execute("insert into `requests`(`num`,`uri`,`sessid`,`params`) values($num,'$uri','$sessid','$params');");
+        $M->execute("update `requests` set `time`='{$data['time']}' where `num`={$data['rnum']};");
     }
 }
 echo '程序执行完毕。';

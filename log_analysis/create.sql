@@ -27,6 +27,6 @@ create table `requests2`
     `request` nvarchar(80),
     `status` nvarchar(10),
     `bytes_sent` nvarchar(20),
-    `ua` nvarchar(50),
+    `ua` nvarchar(100),
     `forward` nvarchar(20)
 )engine=innodb;
