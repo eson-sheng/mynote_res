@@ -10,7 +10,13 @@ class PDOModel
     {
         try {
             $options = [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"];
-            $this->PDO = new PDO("mysql:host=localhost; dbname=log_data", 'root', 'root123.', $options);
+            global $g_config;
+            $host = $g_config['host'];
+            $port = $g_config['port'];
+            $dbname = $g_config['dbname'];
+            $user = $g_config['username'];
+            $pwd = $g_config['pwd'];
+            $this->PDO = new PDO("mysql:host=$host; port=$port; dbname=$dbname", $user, $pwd, $options);
         } catch (PDOException $e) {
             die( "数据库连接失败。" .$e->getMessage());
         }

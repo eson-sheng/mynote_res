@@ -2,6 +2,7 @@
 ini_set('session.name', 'log_analysis');
 session_start();
 include_once 'pdo.php';
+include_once "../config.php";
 $M = new PDOModel();
 $log_path = './logs2.txt';
 
