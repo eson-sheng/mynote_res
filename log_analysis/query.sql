@@ -1,5 +1,6 @@
 use `log_data`;
 select * from `requests`;
+select * from `requests2`;
 truncate `requests`;
 #==========================================
 

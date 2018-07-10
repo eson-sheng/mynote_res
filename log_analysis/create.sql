@@ -15,3 +15,18 @@ create table `requests`
     `time` nvarchar(20)
 )engine=innodb;
 #======================================
+drop table if exists `requests2`;
+create table `requests2`
+(
+	`id` serial primary key,
+    `ip` nvarchar(20),
+    `sessid` nvarchar(50),
+    `time` nvarchar(50),
+    `request_time` nvarchar(20),
+    `ur_time` nvarchar(20),
+    `request` nvarchar(80),
+    `status` nvarchar(10),
+    `bytes_sent` nvarchar(20),
+    `ua` nvarchar(50),
+    `forward` nvarchar(20)
+)engine=innodb;
