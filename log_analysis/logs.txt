@@ -4,5 +4,5 @@ REQUEST_URI: /yscx_xjc/index.php?m=index&a=welcome|| PHPSESSID: hve6co4gmjoojh1v
 REQUEST_URI: /yscx_xjc/index.php?m=order&a=getWarn|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1495662591|| params: 
 --REQUEST_END:/yscx_xjc/index.php?m=index&a=welcome|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1820721152|| time: 0.50202894210815s
 REQUEST_URI: /yscx_xjc/index.php?m=order&a=getWarn|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1495662591|| time: 0.000012121212s
-REQUEST_URI: /yscx_xjc/index.php?m=order&a=getWarn|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1495662593|| time: 0.000012121212s
-REQUEST_URI: /yscx_xjc/index.php?m=order&a=getWarn|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1495662594|| time: 0.000012121212s
+REQUEST_URI: /yscx_xjc/index.php?m=order&a=getWarn|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1495662592|| params: sdf,sdkfj,sd
+REQUEST_URI: /yscx_xjc/index.php?m=order&a=getWarn|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1495662592|| time: 0.000013333s
