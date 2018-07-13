@@ -1,6 +1,5 @@
 <?php
-$sign = 2;//第2个日志
-include_once 'common.php';
+include_once '../common.php';
 
 for ($i = 0; $i < $countLines; $i++) {
     $line = $lines[$i];
@@ -16,6 +15,11 @@ for ($i = 0; $i < $countLines; $i++) {
     }
 //    var_dump($data);die;
 
-    $result = $M->execute("insert into `requests2`(`ip`,`sessid`,`time`,`request_time`,`ur_time`,`request`,`status`,`bytes_sent`,`ua`,`forward`) values('{$data['IP']}','{$data['PHPSESSID']}','{$data['time']}','{$data['request_time']}','{$data['ur_time']}',{$data['request']},'{$data['status']}','{$data['bytes_sent']}',{$data['UA']},{$data['forward']});");
+    if (empty($data['time'])) {
+        $M->execute("insert into `mynote_request`(`num`,`uri`,`sessid`,`params`) ".
+            "values({$data['rnum']},'{$data["REQUEST_URI"]}','{$data['PHPSESSID']}','{$data['params']}');");
+    }else{
+        $M->execute("update `mynote_request` set `time`='{$data['time']}' where `num`={$data['rnum']};");
+    }
 }
 echo '日志 ',$log_path,' 分析完毕。';

@@ -1,10 +1,10 @@
 <?php
 include_once 'config.php';
 include_once 'pdo.php';
-include_once "../config.php";
+include_once __DIR__ . "/../config.php";
 
-$log_path = $log_paths[$sign - 1];
-$indexfile_path = "./last_end_index$sign.txt";
+$log_path = "logs.txt";
+$indexfile_path = "./last_end_index.txt";
 if (!file_exists($indexfile_path)) {
     file_put_contents($indexfile_path, 0);
 }

@@ -1,6 +1,5 @@
 <?php
-$sign = 1;//第1个日志
-include_once 'common.php';
+include_once '../common.php';
 
 for ($i = 0; $i < $countLines; $i++) {
     $line = $lines[$i];
@@ -16,11 +15,6 @@ for ($i = 0; $i < $countLines; $i++) {
     }
 //    var_dump($data);die;
 
-    if (empty($data['time'])) {
-        $M->execute("insert into `requests`(`num`,`uri`,`sessid`,`params`) ".
-            "values({$data['rnum']},'{$data["REQUEST_URI"]}','{$data['PHPSESSID']}','{$data['params']}');");
-    }else{
-        $M->execute("update `requests` set `time`='{$data['time']}' where `num`={$data['rnum']};");
-    }
+    $result = $M->execute("insert into `xjc_nginx`(`ip`,`sessid`,`time`,`request_time`,`ur_time`,`request`,`status`,`bytes_sent`,`ua`,`forward`) values('{$data['IP']}','{$data['PHPSESSID']}','{$data['time']}','{$data['request_time']}','{$data['ur_time']}',{$data['request']},'{$data['status']}','{$data['bytes_sent']}',{$data['UA']},{$data['forward']});");
 }
 echo '日志 ',$log_path,' 分析完毕。';

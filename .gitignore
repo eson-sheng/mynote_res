@@ -9,3 +9,5 @@
 .idea
 /Vux/node_modules
 config_my.php
+last_end_index.txt
+logs.txt
