@@ -8,3 +8,4 @@
 /log.viewer/**/*.log
 .idea
 /Vux/node_modules
+config_my.php
