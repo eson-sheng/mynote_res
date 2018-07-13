@@ -1,7 +1,7 @@
 use `log_data`;
-select * from `requests`;
-select * from `requests2`;
-truncate `requests`;
+select * from `mynote_request`;
+select * from `xjc_nginx`;
+truncate `mynote_request`;
 #==========================================
 
 #==========================================

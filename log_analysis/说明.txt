@@ -1,3 +1,0 @@
-config.php中配置两个日志文件的路径。
-log1_reader.php 读取config.php 数组的第一个路径。
-log2_reader.php 读取config.php 数组的第二个路径。
