@@ -1,8 +1,9 @@
 <?php
 include_once 'pdo.php';
 include_once __DIR__ . "/../config.php";
+include_once __DIR__ . "/../common.php";
 
-$log_path = "logs.txt";
+$log_path = get_safe($_REQUEST, "logpath", "logs.txt");
 $indexfile_path = "./last_end_index.txt";
 if (!file_exists($indexfile_path)) {
     file_put_contents($indexfile_path, 0);
