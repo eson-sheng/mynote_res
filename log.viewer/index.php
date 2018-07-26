@@ -18,63 +18,69 @@ if (is_file($path)) {
     die("<h3>没有找到配置文件 “$path ”。请参考文件 “./logs_tmpl.php”。</h3>");
 }
 ?>
-<form id="form1">
-    <table cellpadding="0" cellspacing="0" border="1" width="100%">
-        <caption>日志列表<input type="reset" value="重新设置"/></caption>
-        <tr>
-            <th width="500">日志</th>
-            <th width="60">查看<input id="select_all" type="checkbox"/></th>
-            <th width="180">起始部分</th>
-            <th width="100">起始索引</th>
-            <th width="80">末尾开始</th>
-            <th width="80">提交设置</th>
-            <th>已读</th>
-        </tr>
+<div id="control">
+  <form id="form1">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+      <caption>日志列表 &nbsp;<span id="input_reset">重新设置</span><input type="reset" value="重新设置"/></caption>
+      <tr>
+        <td width="500">日志</td>
+        <td width="80">查看<input id="select_all" type="checkbox"/></td>
+        <td width="180">起始部分</td>
+        <td width="100">起始索引</td>
+        <td width="100">末尾开始</td>
+        <td width="100">提交设置</td>
+        <td>已读</td>
+      </tr>
         <?php
         $count = 1;
         foreach ($logs as $log) { ?>
-            <tr>
-                <td class="path"><?= $log ?></td>
-                <td class="show">
-                    <input id='che_<?= $count ?>' type='checkbox' name='show[<?= $log ?>]'/>
-                </td>
-                <td class="from">
-                    <input id='txt_<?= $count ?>' type='text' name='from[<?= $log ?>]'/>
-                </td>
-                <td class="index">
-                    <input id='num_<?= $count ?>' type='number' name='index[<?= $log ?>]'/>
-                </td>
-                <td>
-                    <button class="fromtail" onclick="fromTail('<?= $log ?>')">末尾开始</button>
-                </td>
-                <td>
-                    <button class="do_config">提交设置</button>
-                </td>
-                <td>
-                    <div class="percentage" path="<?= $log ?>">0%</div>
-                </td>
-            </tr>
+          <tr>
+            <td class="path"><?= $log ?></td>
+            <td class="show">
+              <input id='che_<?= $count ?>' type='checkbox' name='show[<?= $log ?>]'/>
+            </td>
+            <td class="from">
+              <input id='txt_<?= $count ?>' type='text' name='from[<?= $log ?>]'/>
+            </td>
+            <td class="index">
+              <input min="0" id='num_<?= $count ?>' type='number' name='index[<?= $log ?>]'/>
+            </td>
+            <td>
+              <button class="fromtail" onclick="fromTail('<?= $log ?>')">末尾开始</button>
+            </td>
+            <td>
+              <button class="do_config">提交设置</button>
+            </td>
+            <td class="percent">
+              <div class="percentage" path="<?= $log ?>">0%</div>
+            </td>
+          </tr>
             <?php
             $count++;
         } ?>
     </table>
-</form>
-<p>
-    <input id="colors" type="color"/>
-    <input id="color_code" type="text" value="#000000"/>
-    <label>
+  </form>
+  <div id="panel_box">
+    <p id="panel">
+    <span>
+      <input id="colors" type="color" title="获取颜色代码"/>
+      <input type="text" id="color_code" value="#000000"/>
+    </span>
+      <label>
         <input type="checkbox" id="toggle1" checked="checked"/>
         自动换行(Alt+W)
-    </label>
-    <button id="clear">清空显示(Alt+C)</button>
-    <button id="fromtail_all">选中项从末尾开始(Alt+T)</button>
-    <button id="do_config">选中项提交设置(Alt+D)</button>
-    <button id="submit">读取内容(Alt+F)</button>
-</p>
-<textarea id="keywords">
-</textarea>
+      </label>
+      <button id="clear">清空显示(Alt+C)</button>
+      <button id="fromtail_all">选中项从末尾开始(Alt+T)</button>
+      <button id="do_config">选中项提交设置(Alt+D)</button>
+      <button id="submit">读取内容(Alt+F)</button>
+    </p>
+    <textarea id="keywords"></textarea>
+  </div>
+</div>
+
+<h2>日志内容</h2>
 <fieldset>
-    <legend>日志内容</legend>
     <!--<div class="box">
         <div class="main">
             <div class="toggle2">折叠</div>
@@ -411,5 +417,10 @@ if (is_file($path)) {
             }
         }, 'json');
     }
+
+    //触发表单重置
+    $("#input_reset").on('click',function () {
+      $('[type=reset]').trigger('click');
+    });
 </script>
 </html>
