@@ -10,8 +10,12 @@ for ($i = 0; $i < $countLines; $i++) {
 //    var_dump($peices);die;
     $data = [];
     foreach ($peices as $peice) {
-        $datum = explode(':', $peice);
-        $data[trim($datum[0])] = trim($datum[1]);
+        $datum = explode(':', $peice,2);
+        if(trim($datum[0])==='time'){
+            $data[trim($datum[0])] = date('Y-m-d H:i:s',strtotime($datum[1]));
+        }else{
+            $data[trim($datum[0])] = trim($datum[1]);
+        }
     }
 //    var_dump($data);die;
 
