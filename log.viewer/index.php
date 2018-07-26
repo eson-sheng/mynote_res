@@ -81,41 +81,20 @@ if (is_file($path)) {
 
 <h2>日志内容</h2>
 <fieldset>
-    <!--<div class="box">
-        <div class="main">
-            <div class="toggle2">折叠</div>
+    <!--<div class="box1">
+      <div class="btn1"></div>
 
-            <div class="content">
-                <div class="toggle3">折叠</div>
-                <p>
-                    1
-                </p>
-            </div>
-            <div class="content">
-                <div class="toggle3">折叠</div>
-                <p>
-                    2
-                </p>
-            </div>
-            <div class="content">
-                <div class="toggle3">折叠</div>
-                <p>
-                    3
-                </p>
-            </div>
-            <div class="content">
-                <div class="toggle3">折叠</div>
-                <p>
-                    4
-                </p>
-            </div>
-            <div class="content">
-                <div class="toggle3">折叠</div>
-                <p>
-                    5
-                </p>
-            </div>
+      <div>
+        <div class="box2">
+          <div class="btn2"></div>
+          <div class="content">11</div>
         </div>
+
+        <div class="box2">
+          <div class="btn2"></div>
+          <div class="content">22</div>
+        </div>
+      </div>
     </div>-->
 </fieldset>
 </body>
@@ -134,47 +113,47 @@ if (is_file($path)) {
             data: new FormData($('#form1')[0]),
             dataType: 'json',
             success: function (result) {
-                if (result.result == 'success') {
-                    var $box = $('<div class="box"></div>');
-                    var $main = $('<div class="main"></div>');
-                    $('#' + id).trigger('click');
-                    event.preventDefault();//防止触发默认的热键
+                if (result.result === 'success') {
+                    $('#btn1_' + (id-1)).trigger('click');//折叠上一次的读取结果
+                    var $box1 = $('<div class="box1"></div>');
+                    var $btn1 = $('<div class="btn1" id="btn1_'+id+'"></div>');
                     id++;
-                    var $toggle2 = $('<div id="'+id+'" class="toggle2">折叠</div>');
-                    $toggle2.on('click', function () {
-                        $main.toggle();
-                        if($(this).text()=='折叠'){
-                            $(this).text('展开');
+                    var $div = $('<div></div>');
+                    $box1.append($btn1);
+                    $btn1.on('click',function () {
+                        $(this).next().toggle();
+                        if($(this).css('background-image').indexOf('close')!=-1){
+                            $(this).css('background-image',"url('img/open.png')");
                         }else{
-                            $(this).text('折叠');
+                            $(this).css('background-image',"url('img/close.png')");
                         }
                     });
+
                     for (var log in result.data) {
                         var data = result.data[log];
-                        var $p = $('<p></p>');
-                        if(isPreWrap){
-                            $p.css('white-space','pre-wrap');
-                        }else{
-                            $p.css('white-space','pre');
-                        }
-                        $p.html(data);
-                        var $content=$('<div class="content"></div>');
-                        var $toggle3=$('<div class="toggle3">折叠</div>');
-                        $toggle3.on('click',function () {
+                        var $box2 = $('<div class="box2"></div>');
+                        var $btn2 = $('<div class="btn2"></div>');
+                        $box2.append($btn2);
+                        $btn2.on('click',function () {
                             $(this).next().toggle();
-                            if($(this).text()=='折叠'){
-                                $(this).text('展开');
+                            if($(this).css('background-image').indexOf('close')!=-1){
+                                $(this).css('background-image',"url('img/open2.png')");
                             }else{
-                                $(this).text('折叠');
+                                $(this).css('background-image',"url('img/close2.png')");
                             }
                         });
-                        $content.append($toggle3);
-                        $content.append($p);
-                        $main.append($content);
+                        var $content=$('<div class="content"></div>');
+                        if(isPreWrap){
+                            $content.css('white-space','pre-wrap');
+                        }else{
+                            $content.css('white-space','pre-wrap');
+                        }
+                        $content.html(data);
+                        $box2.append($content);
+                        $div.append($box2);
                     }
-                    $box.append($toggle2);
-                    $box.append($main);
-                    $('fieldset').append($box);
+                    $box1.append($div);
+                    $('fieldset').append($box1);
                     highlight();
                 } else {
                     layer.msg(result.message);
@@ -276,7 +255,7 @@ if (is_file($path)) {
 
     //按钮：清空显示内容
     $('#clear').on('click', function () {
-        $('.box').remove();
+        $('.box1').remove();
     });
 
     //还原表单内容
@@ -293,7 +272,7 @@ if (is_file($path)) {
     var isPreWrap=true;//是否为自动换行
     //按钮：切换换行样式
     $('#toggle1').on('click', function () {
-        var $paragraphs = $('.content > p');
+        var $paragraphs = $('.content');
         if ($paragraphs.length === 0) {
             layer.msg('日志内容不存在');
             $('#toggle1').prop('checked', true);
@@ -325,7 +304,7 @@ if (is_file($path)) {
                 var color_code = line.substring(0, split_index);
                 var keyword = line.substring(split_index + 1, line.length);
                 var replaced;
-                $(".box p").each(function () {
+                $(".content").each(function () {
                     if (keyword.match(/^\/{1}.*\/{1}$/)) {//是正则表达式，取掉首尾的/
                         keyword = keyword.substr(1, keyword.length);
                         keyword = keyword.substr(0, keyword.length - 1);

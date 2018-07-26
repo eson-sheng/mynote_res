@@ -114,75 +114,58 @@ fieldset{/*日志显示区域*/
     border: 0;
 }
 
-.box {/*日志大框*/
-    border: 5px solid gray;
-    padding: 2px;
-    margin-top: 10px;
+.box1 {/*日志大框*/
     position: relative;
+    padding: 2px;
+    margin: 30px 5px 20px 80px;
+    border: 1px solid lightgrey;
 }
 
-.main p{/*日志正文*/
-    border: 1px solid;
+.btn1{
+    position: absolute;
+    top: -10px;
+    left: -80px;
+    background-image: url("img/close.png");
+    width: 76px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.box2 {/*日志小框*/
+    position: relative;
     padding: 2px;
+    margin: 40px 5px 20px 10px;
+    border: 1px solid lightgrey;
+}
+
+.content{
+    background-color: #f3f3f3;
     white-space: pre-wrap;
     word-break: break-word;
-    margin-top: -1px;
 }
 
-.content{/*日志小框*/
-    padding-top: 15px;
-}
-
-.toggle3{/*日志小框折叠按钮*/
-    margin-left: 30px;
-    border: 1px solid;
-    width: 33px;
-
-    cursor: pointer;
-    font-weight: bolder;
-    background-color: white;
-    color:black;
-    padding: 2px 5px;
-}
-
-.toggle3:hover{/*日志小框折叠按钮*/
-    background-color: black;
-    color:white;
-}
-
-.toggle2{/*日志大框折叠按钮*/
-    border: 1px solid;
-    cursor: pointer;
+.btn2{
     position: absolute;
-    top:-12px;
-    font-weight: bolder;
-    background-color: white;
-    color:black;
-    padding: 2px 5px;
+    top: -30px;
+    left: -1px;
+    background-image: url("img/close2.png");
+    width: 76px;
+    height: 28px;
+    cursor: pointer;
 }
 
-.toggle2:hover{/*日志大框折叠按钮*/
-    background-color: black;
-    color:white;
-}
-
-.content:first-child p{/*日志内容样式*/
+.box2:first-of-type .content{/*日志内容样式*/
     color: red;
-    border-color: red;
 }
-.content:nth-child(2) p{/*日志内容样式*/
+.box2:nth-of-type(2) .content{/*日志内容样式*/
     color: blue;
-    border-color: blue;
 }
-.content:nth-child(3) p{/*日志内容样式*/
+.box2:nth-of-type(3) .content{/*日志内容样式*/
     color: purple;
-    border-color: purple;
 }
-.content:nth-child(4) p{/*日志内容样式*/
+.box2:nth-of-type(4) .content{/*日志内容样式*/
     color: darkgreen;
-    border-color: darkgreen;
 }
-.content:last-child p{/*日志内容样式*/
+.box2:last-of-type .content{/*日志内容样式*/
     color: deeppink;
-    border-color: deeppink;
 }
