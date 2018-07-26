@@ -1,8 +1,10 @@
-REQUEST_URI: /yscx_xjc/index.php?m=index&a=index|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 2036400128|| params: 
---REQUEST_END:/yscx_xjc/index.php?m=index&a=index|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 2036400128|| time: 1.1520659923553s
-REQUEST_URI: /yscx_xjc/index.php?m=index&a=welcome|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1820721152|| params: 
-REQUEST_URI: /yscx_xjc/index.php?m=order&a=getWarn|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1495662591|| params: 
---REQUEST_END:/yscx_xjc/index.php?m=index&a=welcome|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1820721152|| time: 0.50202894210815s
-REQUEST_URI: /yscx_xjc/index.php?m=order&a=getWarn|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1495662591|| time: 0.000012121212s
-REQUEST_URI: /yscx_xjc/index.php?m=order&a=getWarn|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1495662592|| params: sdf,sdkfj,sd
-REQUEST_URI: /yscx_xjc/index.php?m=order&a=getWarn|| PHPSESSID: hve6co4gmjoojh1vrpgptq6f04|| rnum: 1495662592|| time: 0.000013333s
+REQUEST_URI: /|| PHPSESSID: fbeq1s88ajiitu8n7hpog2fqso|| rnum: 1473935911|| params: 
+REQUEST_URI: /api/userinfo/recommend|| PHPSESSID: fbeq1s88ajiitu8n7hpog2fqso1|| rnum: 0856317016|| params: 
+--REQUEST_END:/api/userinfo/recommend|| PHPSESSID: fbeq1s88ajiitu8n7hpog2fqso1|| rnum: 0856317016|| time: 0.035396099090576s
+REQUEST_URI: /api/article/lunbotu|| PHPSESSID: fbeq1s88ajiitu8n7hpog2fqso1|| rnum: 0041311738|| params: 
+--REQUEST_END:/api/article/lunbotu|| PHPSESSID: fbeq1s88ajiitu8n7hpog2fqso1|| rnum: 0041311738|| time: 0.038993835449219s
+--REQUEST_END:/|| PHPSESSID: fbeq1s88ajiitu8n7hpog2fqso|| rnum: 1473935911|| time: 0.12648391723633s
+REQUEST_URI: /common/base/do|| PHPSESSID: fbeq1s88ajiitu8n7hpog2fqso|| rnum: 1975067558|| params: _csrf=-qBkSXV2gU4mGCIlyNdyCEE6XCnOoAXW_G0g4ojtfJuc-jIwIC_zK2NRQXXxmQpgFlssQa_iZOefCFSUzbk3_A%3D%3D&type=%2Farticle%2Frecommend&json%5Bnum%5D=0
+REQUEST_URI: /api/article/recommend|| PHPSESSID: fbeq1s88ajiitu8n7hpog2fqso1|| rnum: 0288007580|| params: num=0
+--REQUEST_END:/api/article/recommend|| PHPSESSID: fbeq1s88ajiitu8n7hpog2fqso1|| rnum: 0288007580|| time: 0.035752058029175s
+--REQUEST_END:/common/base/do|| PHPSESSID: fbeq1s88ajiitu8n7hpog2fqso|| rnum: 1975067558|| time: 0.072613954544067s
