@@ -173,23 +173,25 @@ if (is_file($path)) {
 
     //绑定热键
     $("body").delegate("", "keydown", function () {
-        if (event.key == 'd' && (event.altKey || event.ctrlKey)) {//提交设置
+        var modifier = (event.altKey && navigator.platform.indexOf("Win") === 0) ||
+            (event.ctrlKey && navigator.platform.indexOf("Mac") === 0);
+        if (event.key == 'd' && modifier) {//提交设置
             $('#do_config').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
-        if (event.key == 'f' && (event.altKey || event.ctrlKey)) {//获取日志内容
+        if (event.key == 'f' && modifier) {//获取日志内容
             $('#submit').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
-        if (event.key == 'c' && (event.altKey || event.ctrlKey)) {//清空显示
+        if (event.key == 'c' && modifier) {//清空显示
             $('#clear').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
-        if (event.key == 'w' && (event.altKey || event.ctrlKey)) {//切换换行样式
+        if (event.key == 'w' && modifier) {//切换换行样式
             $('#toggle1').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
-        if (event.key == 't' && (event.altKey || event.ctrlKey)) {//全部从末尾开始
+        if (event.key == 't' && modifier) {//全部从末尾开始
             $('#fromtail_all').trigger('click');
             event.preventDefault();//防止触发默认的热键
         }
