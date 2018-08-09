@@ -75,7 +75,8 @@ if (is_file($path)) {
       <button id="do_config">选中项提交设置(Alt+D)</button>
       <button id="submit">读取内容(Alt+F)</button>
     </p>
-    <textarea id="keywords"></textarea>
+    <textarea id="keywords" placeholder="#80ff00,username
+#408080,/mynote/"></textarea>
   </div>
 </div>
 
