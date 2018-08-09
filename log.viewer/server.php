@@ -25,20 +25,34 @@ function get_logs_content()
             }
             $start_index = $_SESSION['last_end_index'][$path];
             $content = file_get_contents($path, false, null, $start_index, $read_size);
+
+            // 尝试寻找"\n"
+            for ($i = strlen($content) - 1; $i >= 0; $i--) {
+                if ($content[$i] === "\n") {
+                    break;
+                }
+            }
+            // 找到了"\n"，截断为整行
+            if ($i > 0) {
+                $content = substr($content, 0, $i);
+            }
             $_SESSION['last_end_index'][$path] = $start_index + strlen($content);
 
-            $encoding = mb_detect_encoding($content, "gb2312, utf-8", true);#转编码格式
-            if ($encoding == 'EUC-CN') {#是gbk则转为utf-8
-                $content = iconv("gbk", "utf-8", $content);
+            if ($content !== "") {
+                $encoding = mb_detect_encoding($content, "gb2312, utf-8", true);#转编码格式
+                if ($encoding == 'EUC-CN') {#是gbk则转为utf-8
+                    $content = iconv("gbk", "utf-8", $content);
+                }
+
+                $record_length1 = strlen($content);//记录内容的长度，用于检查
+                $content = htmlentities($content);#转html标签为实体
+                $record_length2 = strlen($content);//第二次记录内容的长度，用于检查
+
+                if ($record_length2 === 0 && $record_length1 !== 0) {//截断了汉字出现乱码情况
+                    $err_info = '索引值截断了汉字，请调整索引值后再试';
+                }
             }
 
-            $record_length1 = strlen($content);//记录内容的长度，用于检查
-            $content = htmlentities($content);#转html标签为实体
-            $record_length2 = strlen($content);//第二次记录内容的长度，用于检查
-
-            if ($record_length2 === 0 && $record_length1 !== 0) {//截断了汉字出现乱码情况
-                $err_info = '索引值截断了汉字，请调整索引值后再试';
-            }
             $content = "$path\n" . $content;#首行插入日志路径
 
             $data[$path] = $content;
