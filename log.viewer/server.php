@@ -37,7 +37,7 @@ function get_logs_content()
             }
             // 找到了"\n"，截断为整行
             if ($i > 0) {
-                $content = substr($content, 0, $i);
+                $content = substr($content, 0, $i + 1);
             }
             $_SESSION['last_end_index'][$path] = $start_index + strlen($content);
 
