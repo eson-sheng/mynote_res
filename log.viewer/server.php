@@ -17,10 +17,13 @@ function get_logs_content()
     }
     $data = [];
     $err_info = '';
+    $no_log=[];//不存在的日志
 
     if (isset($_POST['show']) && isset($_SESSION['last_end_index'])) {
         foreach ($_POST['show'] as $path => $on) {
             if(!file_exists($path)){
+                $err_info='不存在的日志文件';
+                $no_log[]=$path;
                 continue;#文件不存在，跳过
             }
             $start_index = $_SESSION['last_end_index'][$path];
@@ -64,7 +67,12 @@ function get_logs_content()
     if ($data && !$err_info) {
         json(true, '指定日志的内容', $data);
     } elseif($err_info) {
-        json(false, $err_info, '');
+        if($no_log!=[]){
+            json(false, $err_info."<br/>".implode("<br/>",$no_log), '');
+        }else{
+            json(false, $err_info, '');
+        }
+
     }else{
         json(false, '尚未设置', '');
     }
@@ -105,8 +113,13 @@ function getPercentages()
 {
     $percentages=[];
     foreach ($_SESSION['last_end_index'] as $path=>$index){
-        $filesize=filesize($path);
-        $percentages[$path]=$index/$filesize;
+        if(!file_exists($path)){
+            $percentages[$path]=0;
+        }else{
+            $filesize=filesize($path);
+            $percentages[$path]=$index/$filesize;
+        }
+
     }
     json(true,'读取进度',$percentages);
 }
