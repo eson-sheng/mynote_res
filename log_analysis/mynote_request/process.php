@@ -1,6 +1,6 @@
 <?php
 include_once '../common.php';
-$dbname = get_safe($_REQUEST, "dbname", "mynote_request");
+$tbname = get_safe($_REQUEST, "tbname", "mynote_request");
 
 for ($i = 0; $i < $countLines; $i++) {
     $line = $lines[$i];
@@ -17,10 +17,10 @@ for ($i = 0; $i < $countLines; $i++) {
 //    var_dump($data);die;
 
     if (empty($data['time'])) {
-        $M->execute("insert into `$dbname`(`num`,`uri`,`sessid`,`params`) ".
+        $M->execute("insert into `$tbname`(`num`,`uri`,`sessid`,`params`) ".
             "values({$data['rnum']},'{$data["REQUEST_URI"]}','{$data['PHPSESSID']}','{$data['params']}');");
     }else{
-        $M->execute("update `$dbname` set `time`='{$data['time']}' where `num`={$data['rnum']};");
+        $M->execute("update `$tbname` set `time`='{$data['time']}' where `num`={$data['rnum']};");
     }
 }
 echo '日志 ',$log_path,' 分析完毕。';
