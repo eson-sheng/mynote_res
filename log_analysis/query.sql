@@ -2,7 +2,8 @@ use `log_data`;
 select * from `mynote_request`;
 select * from `xjc_nginx`;
 select * from `mynote_log`;
-truncate `mynote_log`;
+select * from `mynote_login`;
+truncate `mynote_login`;
 #==========================================
 
 #==========================================
