@@ -11,6 +11,7 @@
 </head>
 <body>
 <?php
+$paths = [];
 $path = './logs.php';
 if (is_file($path)) {
     require_once $path;
