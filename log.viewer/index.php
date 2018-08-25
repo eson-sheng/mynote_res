@@ -33,8 +33,12 @@ if (is_file($path)) {
       </tr>
         <?php
         $logs=[];
-        foreach ($dir_paths as $dir_path) {
-            $logs[] = $dir_path . '\\' . date('Ymd') . '.log';
+        foreach ($paths as $path) {
+          if(is_dir($path)){
+              $logs[] = $path . '/' . date('Ymd') . '.log';
+          }else{
+              $logs[] = $path;
+          }
         }
         $count = 1;
         foreach ($logs as $log) { ?>
