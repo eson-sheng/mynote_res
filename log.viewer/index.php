@@ -32,6 +32,10 @@ if (is_file($path)) {
         <td>已读</td>
       </tr>
         <?php
+        $logs=[];
+        foreach ($dir_paths as $dir_path) {
+            $logs[] = $dir_path . '\\' . date('Ymd') . '.log';
+        }
         $count = 1;
         foreach ($logs as $log) { ?>
           <tr>

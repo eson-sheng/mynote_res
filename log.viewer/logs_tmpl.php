@@ -1,6 +1,5 @@
 <?php
 // 复制此文件到logs.php进行配置，eg：
-$logs = [
-	'./aa/a.log',
-	'./b.log',
+$dir_paths = [
+	'D:\Program_Files\xampp\htdocs\mynote\basic\runtime\seaslog\api',
 ];
