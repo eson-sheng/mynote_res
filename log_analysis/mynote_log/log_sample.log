@@ -1,0 +1,45 @@
+2018-08-25 15:30:58  INFO  /user/account?pageNo_global=1  C  BaseController.php:126  e3ljlk7smimsjf3t52npn8ou9r | 1412189706  httpCode: 200 
+ url: http://www.mynote.com/api/user/getuserinfo 
+ param: id=8 
+ result: 
+ {"errno":"","data":{"id":"8","username":"1089785219","email":null,"mobile":"13547884390","nick":"zxy","pic":"http://www.mynote.com/./upload_pic/avatar_8","status":"1","message_bool":false,"num":"42"},"status":true} 
+2018-08-25 15:30:58  INFO  /user/account?pageNo_global=1  C  BaseController.php:126  e3ljlk7smimsjf3t52npn8ou9r | 1412189706  httpCode: 200 
+ url: http://www.mynote.com/api/user/getuserinfo 
+ param: id=8 
+ result: 
+ {"errno":"","data":{"id":"8","username":"1089785219","email":null,"mobile":"13547884390","nick":"zxy","pic":"http://www.mynote.com/./upload_pic/avatar_8","status":"1","message_bool":false,"num":"42"},"status":true} 
+2018-08-25 15:30:58  INFO  /user/account?pageNo_global=1  C  BaseController.php:126  e3ljlk7smimsjf3t52npn8ou9r | 1412189706  httpCode: 200 
+ url: http://www.mynote.com/api/userinfo/getfollow 
+ param:  
+ result: 
+ {"status":true,"data":{"guanzhu":[],"fensi":[{"id":"3","username":"1068799191","email":null,"mobile":"13320817857","nick":"cyb","pic":"http://47.97.186.229/./upload_pic/avatar_3","reg_time":"2018-03-15 09:47:43","artnum":"28","follow":null},{"id":"1","username":"1092917203","email":"834767372@qq.com","mobile":"13980812761","nick":"eson","pic":"http://47.97.186.229/./upload_pic/avatar_1","reg_time":"2018-03-14 14:11:12","artnum":"10","follow":null}]},"errno":""} 
+2018-08-25 15:30:58  INFO  /user/account?pageNo_global=1  C  BaseController.php:126  e3ljlk7smimsjf3t52npn8ou9r | 1412189706  httpCode: 200 
+ url: http://www.mynote.com/api/message/show 
+ param: type=Global 
+ result: 
+ {"status":true,"data":[{"id":"1","mess":"【公告】\nmynote 数据重新恢复，现在可以安心的写笔记了！","time":"2018-08-11 18:30:49","status":"2"}],"unread_num":"0","all_num":"1","errno":""} 
+2018-08-25 15:30:58  INFO  /user/account?pageNo_global=1  C  BaseController.php:126  e3ljlk7smimsjf3t52npn8ou9r | 1412189706  httpCode: 200 
+ url: http://www.mynote.com/api/message/show 
+ param: type=Global&start=0 
+ result: 
+ {"status":true,"data":[{"id":"1","mess":"【公告】\nmynote 数据重新恢复，现在可以安心的写笔记了！","time":"2018-08-11 18:30:49","status":"2"}],"unread_num":"0","all_num":"1","errno":""} 
+2018-08-25 15:30:58  INFO  /user/account?pageNo_global=1  C  BaseController.php:126  e3ljlk7smimsjf3t52npn8ou9r | 1412189706  httpCode: 200 
+ url: http://www.mynote.com/api/message/show 
+ param: type=Public 
+ result: 
+ {"status":false,"data":[],"unread_num":"0","all_num":"0","errno":-1404} 
+2018-08-25 15:30:58  INFO  /user/account?pageNo_global=1  C  BaseController.php:126  e3ljlk7smimsjf3t52npn8ou9r | 1412189706  httpCode: 200 
+ url: http://www.mynote.com/api/message/show 
+ param: type=Public&start=0 
+ result: 
+ {"status":false,"data":[],"unread_num":"0","all_num":"0","errno":-1404} 
+2018-08-25 15:30:58  INFO  /user/account?pageNo_global=1  C  BaseController.php:126  e3ljlk7smimsjf3t52npn8ou9r | 1412189706  httpCode: 200 
+ url: http://www.mynote.com/api/message/show 
+ param: type=Private 
+ result: 
+ {"status":false,"data":[],"unread_num":"0","all_num":"0","errno":-1404} 
+2018-08-25 15:30:58  INFO  /user/account?pageNo_global=1  C  BaseController.php:126  e3ljlk7smimsjf3t52npn8ou9r | 1412189706  httpCode: 200 
+ url: http://www.mynote.com/api/message/show 
+ param: type=Private&start=0 
+ result: 
+ {"status":false,"data":[],"unread_num":"0","all_num":"0","errno":-1404} 
