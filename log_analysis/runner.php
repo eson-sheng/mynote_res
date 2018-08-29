@@ -16,6 +16,7 @@ if (is_file($path_my)) {
     require_once $path_my;
 }
 
+$res = array();
 foreach ($items as $item) {
     $params["logpath"] = $item["path"];
     if(isset($item["tbname"])) {
@@ -23,6 +24,11 @@ foreach ($items as $item) {
     }
 
     $url = $base_url . $item["api"] . "?" . http_build_query($params);
-    echo $url;
-    echo shell_exec("curl $url");
+    /*返回数据*/
+    $res[] = array(
+        'url' => $url,
+        'res' => json_decode(shell_exec("curl $url")),
+    );
 }
+
+echo json_encode($res);

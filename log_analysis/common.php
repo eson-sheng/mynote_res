@@ -14,7 +14,12 @@ if (!file_exists($indexfile_path)) {
 $last_end_index = file_get_contents($indexfile_path);
 $content = file_get_contents($log_path, false, null, $last_end_index);
 if ($content === '') {
-    die("日志 $log_path 没有更新内容。");
+    echo json_encode([
+        'status'    => FALSE,
+        'log_path'  => $log_path,
+        'message'   => "日志 $log_path 没有更新内容。",
+    ]);
+    die();
 }
 $last_end_index += strlen($content);
 file_put_contents($indexfile_path, $last_end_index);

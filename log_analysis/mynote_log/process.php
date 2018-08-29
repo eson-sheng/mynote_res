@@ -52,4 +52,10 @@ for ($i = 0; $i < $countLines; $i++) {
 }
 $M->execute("insert into `$tbname`(`datetime`,`level`,`uri`,`class`,`filename`,`reqnum`,`message`) " .
     "values('{$line_peices[0]}',{$line_peices[1]},'{$line_peices[2]}','{$line_peices[3]}','{$line_peices[4]}','{$line_peices[5]}','".addslashes($line_peices[6])."');");//插入最后一行数据
-echo '日志 ', $log_path, ' 分析完毕。';
+
+/*返回数据*/
+echo json_encode([
+    'status'    => TRUE,
+    'log_path'  => $log_path,
+    'message'   => "日志 {$log_path} 分析完毕。",
+]);

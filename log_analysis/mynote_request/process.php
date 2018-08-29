@@ -23,4 +23,10 @@ for ($i = 0; $i < $countLines; $i++) {
         $M->execute("update `$tbname` set `time`='{$data['time']}' where `reqnum`={$data['rnum']};");
     }
 }
-echo '日志 ',$log_path,' 分析完毕。';
+
+/*返回数据*/
+echo json_encode([
+    'status'    => TRUE,
+    'log_path'  => $log_path,
+    'message'   => "日志 {$log_path} 分析完毕。",
+]);

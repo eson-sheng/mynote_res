@@ -61,4 +61,10 @@ $sessionid = $arr[1];
 $status = $arr[2];
 $M->execute("insert into `$tbname`(`datetime`,`reqid`,`uid`,`sessionid`,`status`) " .
     "values('{$line_peices[0]}',{$line_peices[5]},'$uid','$sessionid',$status);");
-echo '日志 ', $log_path, ' 分析完毕。';
+
+/*返回数据*/
+echo json_encode([
+    'status'    => TRUE,
+    'log_path'  => $log_path,
+    'message'   => "日志 {$log_path} 分析完毕。",
+]);
