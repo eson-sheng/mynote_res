@@ -8,8 +8,8 @@ for ($i = 0; $i < $countLines; $i++) {
     if (empty($line) || $line === "\r") {#空行
         continue;
     }
-    $peices = explode('', $line);
-    if (strpos($line,'') !== false) { //是数据首行
+    $peices = explode('-||-', $line);
+    if (strpos($line,'-||-') !== false) { //是数据首行
         switch (trim($peices[1])) {
             case 'DEBUG':
                 $peices[1] = 8;
