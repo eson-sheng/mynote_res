@@ -9,7 +9,7 @@ class PDOModel
     function __construct()
     {
         try {
-            $options = [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"];
+            $options = [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'", PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING];
             global $g_config;
             $host = $g_config['host'];
             $port = $g_config['port'];
