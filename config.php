@@ -4,7 +4,7 @@ $g_config["host"] = "localhost";
 $g_config["username"] = "root";
 $g_config["pwd"] = "root";
 $g_config["port"] = "3306";
-$g_config["dbname"] = "log_data";
+$g_config["logana_dbname"] = "mynote";
 
 $config_my_path = __DIR__ . '/config_my.php';
 if (file_exists($config_my_path)) {

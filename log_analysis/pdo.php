@@ -13,7 +13,7 @@ class PDOModel
             global $g_config;
             $host = $g_config['host'];
             $port = $g_config['port'];
-            $dbname = $g_config['dbname'];
+            $dbname = $g_config['logana_dbname'];
             $user = $g_config['username'];
             $pwd = $g_config['pwd'];
             $this->PDO = new PDO("mysql:host=$host; port=$port; dbname=$dbname", $user, $pwd, $options);
