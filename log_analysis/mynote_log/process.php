@@ -39,7 +39,7 @@ for ($i = 0; $i < $countLines; $i++) {
         if ($i !== 0) {
 
             $M->execute("insert into `$tbname`(`datetime`,`level`,`uri`,`class`,`filename`,`reqid`,`message`) " .
-                "values('{$line_peices[0]}',{$line_peices[1]},'{$line_peices[2]}','{$line_peices[3]}','{$line_peices[4]}','{$line_peices[5]}','{$line_peices[6]}');");
+                "values('{$line_peices[0]}',{$line_peices[1]},'{$line_peices[2]}','{$line_peices[3]}','{$line_peices[4]}','{$line_peices[5]}','".addslashes($line_peices[6])."');");
 
             $line_peices = [];
         }
@@ -51,5 +51,5 @@ for ($i = 0; $i < $countLines; $i++) {
     }
 }
 $M->execute("insert into `$tbname`(`datetime`,`level`,`uri`,`class`,`filename`,`reqid`,`message`) " .
-    "values('{$line_peices[0]}',{$line_peices[1]},'{$line_peices[2]}','{$line_peices[3]}','{$line_peices[4]}','{$line_peices[5]}','{$line_peices[6]}');");//插入最后一行数据
+    "values('{$line_peices[0]}',{$line_peices[1]},'{$line_peices[2]}','{$line_peices[3]}','{$line_peices[4]}','{$line_peices[5]}','".addslashes($line_peices[6])."');");//插入最后一行数据
 echo '日志 ', $log_path, ' 分析完毕。';
