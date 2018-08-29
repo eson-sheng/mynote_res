@@ -8,6 +8,6 @@ create table `mynote_log`
     `uri` nvarchar(1024),
     `class` nvarchar(50),
     `filename` nvarchar(100),
-    `reqid` nvarchar(12),
+    `reqnum` nvarchar(12),
     `message` text
 )engine=innodb;
