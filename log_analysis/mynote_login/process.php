@@ -54,6 +54,11 @@ for ($i = 0; $i < $countLines; $i++) {
         $line_peices[6] .= $peices[0];
     }
 }
+
+$arr = explode(',', $line_peices[6]);
+$nickname = $arr[0];
+$sessionid = $arr[1];
+$status = $arr[2];
 $M->execute("insert into `$tbname`(`datetime`,`reqid`,`nickname`,`sessionid`,`status`) " .
     "values('{$line_peices[0]}',{$line_peices[5]},'$nickname','$sessionid',$status);");
 echo '日志 ', $log_path, ' 分析完毕。';

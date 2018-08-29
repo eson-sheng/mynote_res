@@ -3,8 +3,8 @@ create table `mynote_request`
 (
 	`id` serial primary key,
     `num` bigint,
-    `uri` nvarchar(100),
-    `sessid` nvarchar(20),
-    `params` nvarchar(100),
+    `uri` nvarchar(1024),
+    `sessid` nvarchar(40),
+    `params` text,
     `time` nvarchar(20)
 )engine=innodb;
