@@ -7,5 +7,8 @@ create table `mynote_login`
     `reqid` nvarchar(100),
     `uid` nvarchar(50),
     `sessionid` nvarchar(100),
-    `status` tinyint
+    `status` tinyint,
+    KEY `reqid` (`reqid`),
+    KEY `sessionid` (`sessionid`),
+    KEY `uid` (`uid`)
 )engine=innodb;

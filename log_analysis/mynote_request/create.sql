@@ -7,5 +7,8 @@ create table `mynote_request`
     `uri` nvarchar(1024),
     `sessionid` nvarchar(40),
     `params` text,
-    `time` nvarchar(20)
+    `time` nvarchar(20),
+    KEY `reqnum` (`reqnum`),
+    KEY `uri` (`uri`),
+    KEY `sessionid` (`sessionid`)
 )engine=innodb;

@@ -9,5 +9,7 @@ create table `mynote_log`
     `class` nvarchar(50),
     `filename` nvarchar(100),
     `reqnum` nvarchar(12),
-    `message` text
+    `message` text,
+    KEY `reqnum` (`reqnum`),
+    KEY `uri` (`uri`)
 )engine=innodb;
