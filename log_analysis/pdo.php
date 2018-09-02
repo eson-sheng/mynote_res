@@ -27,6 +27,11 @@ class PDOModel
         $this->PDO = null;
     }
 
+    function index()
+    {
+        return $this->PDO;
+    }
+
     /*
      * @describe 执行查询
      * @param $sql 要执行的SQL语句
