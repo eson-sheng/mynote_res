@@ -61,4 +61,6 @@ echo json_encode([
     "handled_lines" => $countLines,
 ]);
 
+$M->execute("commit;");
+
 CT_log("process finished, time=" . (get_time() - $begin) . "s");

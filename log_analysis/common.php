@@ -13,6 +13,8 @@ if(is_dir($log_path)){
     $log_path = $log_path . '/' . date('Ymd') . '.log';
 }
 
+$M->query("set autocommit = 0;");
+
 /*查询数据库得到文件行号*/
 $sql = "
 SELECT `last_end_index` FROM `mynote_indexfile` WHERE indexfile_path = '{$log_path}' ;
