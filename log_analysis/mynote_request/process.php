@@ -8,10 +8,17 @@ for ($i = 0; $i < $countLines; $i++) {
         continue;
     }
     $peices = explode('||', $line);
+    if (count($peices) < 2) {
+        CT_log("parse error 1: " . ($i + 1) . " line: " . $line);
+        continue;
+    }
 //    var_dump($peices);die;
     $data = [];
     foreach ($peices as $peice) {
         $datum = explode(':', $peice);
+        if(count($datum) < 2) {
+            CT_log("parse error 2: " . ($i + 1) . " line: " . $line);
+        }
         $data[trim($datum[0])] = trim($datum[1]);
     }
 //    var_dump($data);die;
@@ -29,4 +36,7 @@ echo json_encode([
     'status'    => TRUE,
     'log_path'  => $log_path,
     'message'   => "日志 {$log_path} 分析完毕。",
+    "handled_lines" => $countLines,
 ]);
+
+CT_log("process finished, time=" . (get_time() - $begin) . "s");

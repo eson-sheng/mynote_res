@@ -58,4 +58,7 @@ echo json_encode([
     'status'    => TRUE,
     'log_path'  => $log_path,
     'message'   => "日志 {$log_path} 分析完毕。",
+    "handled_lines" => $countLines,
 ]);
+
+CT_log("process finished, time=" . (get_time() - $begin) . "s");
