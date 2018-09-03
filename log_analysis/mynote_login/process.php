@@ -37,13 +37,13 @@ for ($i = 0; $i < $countLines; $i++) {
                 break;
         }
         if ($i !== 0) {
-            $arr = explode(',', $line_peices[6]);
+            $arr = explode(',', $line_peices[5]);
             $uid = $arr[0];
             $sessionid = $arr[1];
             $status = $arr[2];
 
             $M->execute("insert into `$tbname`(`datetime`,`reqid`,`uid`,`sessionid`,`status`) " .
-                "values('{$line_peices[0]}',{$line_peices[5]},'$uid','$sessionid',$status);");
+                "values('{$line_peices[0]}',{$line_peices[4]},'$uid','$sessionid',$status);");
 
             $line_peices = [];
         }
@@ -51,17 +51,17 @@ for ($i = 0; $i < $countLines; $i++) {
         $line_peices = $peices;
 
     } else {//非数据首行，插入到最后一个字段
-        $line_peices[6] .= $peices[0];
+        $line_peices[5] .= $peices[0];
     }
 }
 
-if (count($line_peices) > 6) {
-    $arr = explode(',', $line_peices[6]);
+if (count($line_peices) > 5) {
+    $arr = explode(',', $line_peices[5]);
     $uid = $arr[0];
     $sessionid = $arr[1];
     $status = $arr[2];
     $M->execute("insert into `$tbname`(`datetime`,`reqid`,`uid`,`sessionid`,`status`) " .
-        "values('{$line_peices[0]}',{$line_peices[5]},'$uid','$sessionid',$status);");
+        "values('{$line_peices[0]}',{$line_peices[4]},'$uid','$sessionid',$status);");
 }
 
 /*返回数据*/

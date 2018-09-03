@@ -9,5 +9,6 @@ create table `mynote_log`
     `filename` nvarchar(100),
     `reqnum` nvarchar(12),
     `message` text,
+    `logger` nvarchar(10),
     KEY `reqnum` (`reqnum`)
 )engine=innodb;
