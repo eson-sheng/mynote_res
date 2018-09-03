@@ -88,12 +88,12 @@ function err_handler($errno, $errstr, $errfile, $errline)
 
 // 获取当前系统时间，返回float格式，单位：秒
 function get_time() {
-	date_default_timezone_set('Asia/Shanghai');
 	list($usec, $sec) = explode(" ", microtime());
 	return ((float)$usec + (float)$sec);
 }
 
 function get_prefix() {
+    /*
     return "";
     Global $ip, $pid;
     if(!isset($ip)) {
@@ -101,6 +101,9 @@ function get_prefix() {
         $ip = $_SERVER['REMOTE_ADDR'];
     }
     return $pid.' '.$ip.' '.date("m-d H:i:s ");
+    */
+    list($usec, $sec) = explode(" ", microtime());
+    return date("m-d H:i:s ", $sec) . $usec . ": ";
 }
 
 function CT($content) {
@@ -124,7 +127,7 @@ function CT($content) {
                 $ignore_count++;
             }
         }
-        $all_out = get_prefix() . str_pad("", $count - 2 - $ignore_count, " ") . $request_num . " " . $content;
+        $all_out = /*get_prefix() .*/ str_pad("", $count - 2 - $ignore_count, " ") . $request_num . " " . $content;
         $cur_time=get_time();
         if(!$is_first) {
             $is_first = true;

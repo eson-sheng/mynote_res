@@ -74,4 +74,4 @@ echo json_encode([
 
 $M->execute("commit;");
 
-CT_log(date( 'Y-m-d H:i:s') . ": process finished, time=" . (get_time() - $begin) . "s");
+CT_log("process finished, time=" . (get_time() - $begin) . "s");
