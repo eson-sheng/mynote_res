@@ -35,6 +35,8 @@ if (!is_file($log_path)) {
         'log_path'  => $log_path,
         'message'   => "日志 $log_path 不存在。",
     ]);
+    CT_log(date( 'Y-m-d H:i:s') . ": process finished, time=" . (get_time() - $begin) . "s");
+    die();
 }
 
 $content = file_get_contents($log_path, false, null, $last_end_index);
