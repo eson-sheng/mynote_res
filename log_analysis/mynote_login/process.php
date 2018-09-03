@@ -55,12 +55,14 @@ for ($i = 0; $i < $countLines; $i++) {
     }
 }
 
-$arr = explode(',', $line_peices[6]);
-$uid = $arr[0];
-$sessionid = $arr[1];
-$status = $arr[2];
-$M->execute("insert into `$tbname`(`datetime`,`reqid`,`uid`,`sessionid`,`status`) " .
-    "values('{$line_peices[0]}',{$line_peices[5]},'$uid','$sessionid',$status);");
+if (count($line_peices) > 6) {
+    $arr = explode(',', $line_peices[6]);
+    $uid = $arr[0];
+    $sessionid = $arr[1];
+    $status = $arr[2];
+    $M->execute("insert into `$tbname`(`datetime`,`reqid`,`uid`,`sessionid`,`status`) " .
+        "values('{$line_peices[0]}',{$line_peices[5]},'$uid','$sessionid',$status);");
+}
 
 /*返回数据*/
 echo json_encode([

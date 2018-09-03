@@ -50,8 +50,10 @@ for ($i = 0; $i < $countLines; $i++) {
         $line_peices[6] .= $peices[0];
     }
 }
-$M->execute("insert into `$tbname`(`datetime`,`level`,`uri`,`class`,`filename`,`reqnum`,`message`) " .
-    "values('{$line_peices[0]}',{$line_peices[1]},'{$line_peices[2]}','{$line_peices[3]}','{$line_peices[4]}','{$line_peices[5]}','".addslashes($line_peices[6])."');");//插入最后一行数据
+if (count($line_peices) > 6) {
+    $M->execute("insert into `$tbname`(`datetime`,`level`,`uri`,`class`,`filename`,`reqnum`,`message`) " .
+        "values('{$line_peices[0]}',{$line_peices[1]},'{$line_peices[2]}','{$line_peices[3]}','{$line_peices[4]}','{$line_peices[5]}','".addslashes($line_peices[6])."');");//插入最后一行数据
+}
 
 /*返回数据*/
 echo json_encode([
