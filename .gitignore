@@ -4,11 +4,8 @@
 *.my.php
 *.lnk
 /log.viewer/logs.php
-/log.viewer/*.log
-/log.viewer/**/*.log
+*.log
 .idea
 /Vux/node_modules
 config_my.php
-last_end_index.txt
 logs.txt
-ana_logs.txt

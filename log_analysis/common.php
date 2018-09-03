@@ -1,12 +1,13 @@
 <?php
-$ct_log_path = __DIR__ . "/ana_logs.txt";
+$ct_log_path = __DIR__ . "/ana_one.log";
 
 include_once 'pdo.php';
 include_once __DIR__ . "/../config.php";
 include_once __DIR__ . "/../common.php";
+CT_log(get_safe($_REQUEST, "REQUEST_URI", ""));
 
-$M = new PDOModel();
 $begin = get_time();
+$M = new PDOModel();
 
 $log_path = get_safe($_REQUEST, "logpath", "logs.txt");
 if(is_dir($log_path)){
@@ -35,7 +36,7 @@ if (!is_file($log_path)) {
         'log_path'  => $log_path,
         'message'   => "日志 $log_path 不存在。",
     ]);
-    CT_log(date( 'Y-m-d H:i:s') . ": process finished, time=" . (get_time() - $begin) . "s");
+    CT_log("process finished, time=" . (get_time() - $begin) . "s");
     die();
 }
 
