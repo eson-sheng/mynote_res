@@ -5,7 +5,6 @@ create table `mynote_log`
 	`id` serial primary key,
     `datetime` datetime,
     `level` tinyint,
-    `uri` nvarchar(1024),
     `class` nvarchar(50),
     `filename` nvarchar(100),
     `reqnum` nvarchar(12),
