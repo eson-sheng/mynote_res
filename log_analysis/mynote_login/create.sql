@@ -3,7 +3,7 @@ drop table if exists `mynote_login`;
 create table `mynote_login`
 (
 	`id` serial primary key,
-    `datetime` datetime,
+    `datetime` nvarchar(15),
     `reqid` nvarchar(100),
     `uid` nvarchar(50),
     `sessionid` nvarchar(100),

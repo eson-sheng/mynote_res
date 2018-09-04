@@ -3,7 +3,7 @@ drop table if exists `mynote_log`;
 create table `mynote_log`
 (
 	`id` serial primary key,
-    `datetime` datetime,
+    `datetime` nvarchar(15),
     `level` tinyint,
     `class` nvarchar(50),
     `filename` nvarchar(100),
