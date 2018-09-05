@@ -43,7 +43,7 @@ for ($i = 0; $i < $countLines; $i++) {
             $status = $arr[2];
 
             $M->execute("insert into `$tbname`(`datetime`,`reqid`,`uid`,`sessionid`,`status`) " .
-                "values('{$line_peices[0]}',{$line_peices[4]},'$uid','$sessionid',$status);");
+                "values('{$line_peices[0]}','{$line_peices[4]}','$uid','$sessionid',$status);");
 
             $line_peices = [];
         }
@@ -61,7 +61,7 @@ if (count($line_peices) > 5) {
     $sessionid = $arr[1];
     $status = $arr[2];
     $M->execute("insert into `$tbname`(`datetime`,`reqid`,`uid`,`sessionid`,`status`) " .
-        "values('{$line_peices[0]}',{$line_peices[4]},'$uid','$sessionid',$status);");
+        "values('{$line_peices[0]}','{$line_peices[4]}','$uid','$sessionid',$status);");
 }
 
 /*返回数据*/
