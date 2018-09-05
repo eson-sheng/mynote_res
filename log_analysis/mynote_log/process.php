@@ -39,7 +39,7 @@ for ($i = 0; $i < $countLines; $i++) {
         if ($i !== 0) {
 
             $M->execute("insert into `$tbname`(`datetime`,`level`,`class`,`filename`,`reqnum`,`message`,`logger`) " .
-                "values('{$line_peices[0]}',{$line_peices[1]},'{$line_peices[2]}','{$line_peices[3]}','{$line_peices[4]}','".addslashes($line_peices[5])."','{$logger}');");
+                "values('{$line_peices[0]}',{$line_peices[1]},'{$line_peices[2]}','{$line_peices[3]}','".trim($line_peices[4])."','".addslashes($line_peices[5])."','{$logger}');");
 
             $line_peices = [];
         }
@@ -52,7 +52,7 @@ for ($i = 0; $i < $countLines; $i++) {
 }
 if (count($line_peices) > 5) {
     $M->execute("insert into `$tbname`(`datetime`,`level`,`class`,`filename`,`reqnum`,`message`,`logger`) " .
-        "values('{$line_peices[0]}',{$line_peices[1]},'{$line_peices[2]}','{$line_peices[3]}','{$line_peices[4]}','".addslashes($line_peices[5])."','{$logger}');");//插入最后一行数据
+        "values('{$line_peices[0]}',{$line_peices[1]},'{$line_peices[2]}','{$line_peices[3]}','".trim($line_peices[4])."','".addslashes($line_peices[5])."','{$logger}');");//插入最后一行数据
 }
 
 /*返回数据*/
