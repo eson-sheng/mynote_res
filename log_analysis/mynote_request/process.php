@@ -24,8 +24,8 @@ for ($i = 0; $i < $countLines; $i++) {
 //    var_dump($data);die;
 
     if (empty($data['time'])) {
-        $M->execute("insert into `$tbname`(`reqnum`,`uri`,`sessionid`,`params`) ".
-            "values('{$data['rnum']}','{$data["REQUEST_URI"]}','{$data['PHPSESSID']}','{$data['params']}');");
+        $M->execute("insert into `$tbname`(`reqnum`,`uri`,`sessionid`,`params`,`req_time`) ".
+            "values('{$data['rnum']}','{$data["REQUEST_URI"]}','{$data['PHPSESSID']}','{$data['params']}','{$data['req_time']}');");
     }else{
         $M->execute("update `$tbname` set `time`='{$data['time']}' where `reqnum`='{$data['rnum']}';");
     }
