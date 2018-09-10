@@ -47,7 +47,7 @@ for ($i = 0; $i < $countLines; $i++) {
         $line_peices = $peices;
 
     } else {//非数据首行，插入到最后一个字段
-        $line_peices[5] .= $peices[0];
+        $line_peices[5] .= "\\n {$peices[0]}";
     }
 }
 if (count($line_peices) > 5) {
